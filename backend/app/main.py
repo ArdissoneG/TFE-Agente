@@ -1,7 +1,16 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.models.schemas import ChatRequest, ChatResponse
+import ollama
 
 app = FastAPI(title="Agente educación financiera - API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8501"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/health")
 def health_check():
@@ -9,6 +18,11 @@ def health_check():
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
-    # Mock por ahora - en el Sprint 3 esto va a llamar a Ollama
-    mock_reply = f"(respuesta simulada del backend) Recibí: '{request.message}'"
-    return ChatResponse(response=mock_reply)
+    result = ollama.chat(
+        model="phi3:mini",
+        messages=[
+            {"role": "user", "content": request.message}
+        ]
+    )
+    reply = result["message"]["content"]
+    return ChatResponse(response=reply)
