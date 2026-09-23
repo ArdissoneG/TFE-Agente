@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.models.schemas import ChatRequest, ChatResponse, UserProfile
-from app.models.risk_profile import clasificar_perfil
+from app.models.schemas import ChatRequest, ChatResponse, DiagnosticoRequest, KnowledgeProfile
+from app.models.knowledge_profile import clasificar_conocimiento
 from app.rag.retriever import buscar_contexto
 import ollama
 
@@ -18,10 +18,9 @@ app.add_middleware(
 def health_check():
     return {"status": "ok"}
 
-@app.post("/profile")
-def profile(user_profile: UserProfile):
-    clasificacion = clasificar_perfil(user_profile)
-    return {"clasificacion": clasificacion}
+@app.post("/diagnostico", response_model=KnowledgeProfile)
+def diagnostico(request: DiagnosticoRequest):
+    return clasificar_conocimiento(request)
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
