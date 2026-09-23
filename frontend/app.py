@@ -5,79 +5,81 @@ st.title("Asistente de educación financiera")
 
 BACKEND_URL = "http://127.0.0.1:8000"
 
-PREGUNTAS_PERFIL = [
+PREGUNTAS_DIAGNOSTICO = [
     {
-        "key": "experiencia",
-        "texto": "¿Cuál es tu experiencia invirtiendo?",
-        "opciones": {
-            "Nunca invertí": "ninguna",
-            "Invertí alguna vez, pero sin mucho conocimiento": "basica",
-            "Tengo conocimientos y experiencia moderada": "intermedia",
-            "Invierto de forma activa y conozco bien el tema": "avanzada",
-        },
+        "tema": "Conceptos básicos",
+        "preguntas": [
+            {"key": "conceptos_basicos_ahorro_inversion", "texto": "¿Sabés diferenciar ahorro de inversión?"},
+            {"key": "conceptos_basicos_riesgo_rentabilidad", "texto": "¿Entendés la relación entre riesgo y rentabilidad?"},
+        ],
     },
     {
-        "key": "tolerancia_riesgo",
-        "texto": "Si tu inversión bajara un 10% en un mes, ¿qué harías?",
-        "opciones": {
-            "La retiraría de inmediato para no perder más": "baja",
-            "Esperaría un tiempo antes de decidir": "media",
-            "No me preocuparía, es parte del proceso": "alta",
-        },
+        "tema": "Instrumentos de inversión",
+        "preguntas": [
+            {"key": "instrumentos_conoce_acciones_bonos", "texto": "¿Sabés qué son las acciones y los bonos?"},
+            {"key": "instrumentos_conoce_fci_cedears", "texto": "¿Conocés qué son los FCI y los CEDEARs?"},
+        ],
     },
     {
-        "key": "horizonte_inversion",
-        "texto": "¿Por cuánto tiempo pensás mantener esta inversión?",
-        "opciones": {
-            "Menos de 1 año": "corto",
-            "Entre 1 y 5 años": "mediano",
-            "Más de 5 años": "largo",
-        },
+        "tema": "Sesgos y riesgos",
+        "preguntas": [
+            {"key": "sesgos_conoce_sesgos_cognitivos", "texto": "¿Conocés los sesgos que pueden afectar tus decisiones de inversión?"},
+            {"key": "sesgos_distingue_regulado_no_regulado", "texto": "¿Sabés distinguir un instrumento regulado de uno no regulado?"},
+        ],
+    },
+    {
+        "tema": "Fraudes y protección",
+        "preguntas": [
+            {"key": "fraudes_reconoce_senales_estafa", "texto": "¿Reconocés señales de una posible estafa de inversión?"},
+            {"key": "fraudes_conoce_canales_denuncia", "texto": "¿Sabés a dónde recurrir si sospechás un fraude?"},
+        ],
     },
 ]
 
-if "perfil_completo" not in st.session_state:
-    st.session_state.perfil_completo = None
+OPCIONES = {
+    "No, no lo sé": "no",
+    "Algo sé, pero no estoy seguro/a": "algo",
+    "Sí, lo tengo claro": "si",
+}
+
+if "knowledge_profile" not in st.session_state:
+    st.session_state.knowledge_profile = None
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-# --- ETAPA 1: ENTREVISTA DE PERFILADO ---
-if st.session_state.perfil_completo is None:
-    st.subheader("Antes de arrancar, contanos un poco sobre vos")
+# --- ETAPA 1: DIAGNÓSTICO DE CONOCIMIENTO ---
+if st.session_state.knowledge_profile is None:
+    st.subheader("Antes de arrancar, veamos qué tanto sabés de cada tema")
+    st.caption("No hay respuestas incorrectas — esto nos ayuda a explicarte con el nivel de detalle justo.")
 
     respuestas = {}
-    for pregunta in PREGUNTAS_PERFIL:
-        seleccion = st.radio(
-            pregunta["texto"],
-            options=list(pregunta["opciones"].keys()),
-            key=pregunta["key"],
-        )
-        respuestas[pregunta["key"]] = pregunta["opciones"][seleccion]
+    for grupo in PREGUNTAS_DIAGNOSTICO:
+        st.markdown(f"**{grupo['tema']}**")
+        for pregunta in grupo["preguntas"]:
+            seleccion = st.radio(
+                pregunta["texto"],
+                options=list(OPCIONES.keys()),
+                key=pregunta["key"],
+            )
+            respuestas[pregunta["key"]] = OPCIONES[seleccion]
 
-    monto = st.number_input("¿Con qué monto aproximado pensás invertir? (opcional)", min_value=0.0, step=1000.0)
-
-    if st.button("Confirmar perfil"):
-        payload = {
-            "experiencia": respuestas["experiencia"],
-            "tolerancia_riesgo": respuestas["tolerancia_riesgo"],
-            "horizonte_inversion": respuestas["horizonte_inversion"],
-            "monto_aproximado": monto if monto > 0 else None,
-        }
+    if st.button("Ver mi diagnóstico"):
         try:
-            res = requests.post(f"{BACKEND_URL}/profile", json=payload)
+            res = requests.post(f"{BACKEND_URL}/diagnostico", json=respuestas)
             res.raise_for_status()
-            clasificacion = res.json()["clasificacion"]
-            st.session_state.perfil_completo = clasificacion
+            st.session_state.knowledge_profile = res.json()["niveles"]
             st.rerun()
         except requests.exceptions.RequestException as e:
-            st.error(f"No pude calcular tu perfil: {e}")
+            st.error(f"No pude calcular tu diagnóstico: {e}")
 
 
 # --- ETAPA 2: CHAT LIBRE ---
 else:
-    st.success(f"Tu perfil de riesgo es: **{st.session_state.perfil_completo}**")
+    st.success("Tu diagnóstico de conocimiento:")
+    for tema, nivel in st.session_state.knowledge_profile.items():
+        st.write(f"- **{tema.replace('_', ' ')}**: {nivel}")
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -85,7 +87,11 @@ else:
 
     def get_response(user_input: str) -> str:
         try:
-            res = requests.post(f"{BACKEND_URL}/chat", json={"message": user_input})
+            payload = {
+                "message": user_input,
+                "knowledge_profile": {"niveles": st.session_state.knowledge_profile},
+            }
+            res = requests.post(f"{BACKEND_URL}/chat", json=payload)
             res.raise_for_status()
             return res.json()["response"]
         except requests.exceptions.RequestException as e:
