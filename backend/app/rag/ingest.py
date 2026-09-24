@@ -2,19 +2,33 @@ import pypdf
 import chromadb
 import ollama
 
-PDF_PATH = "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf"
 CHROMA_PATH = "./chroma_db"
 COLLECTION_NAME = "educacion_financiera"
-CHUNK_SIZE = 1000  # caracteres aproximados por chunk
-CHUNK_OVERLAP = 200  # caracteres que se repiten entre chunks consecutivos
+CHUNK_SIZE = 1000
+CHUNK_OVERLAP = 200
+
+# Cada documento define su propio mapeo de páginas a tema,
+# porque cada PDF tiene su propia estructura/índice.
+DOCUMENTOS = [
+    {
+        "path": "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf",
+        "rangos_tema": [
+            (5, 10, "conceptos_basicos"),
+            (12, 14, "instrumentos_inversion"),
+            (21, 23, "sesgos_y_riesgos"),
+            (24, 32, "fraudes_y_proteccion"),
+        ],
+    },
+    # Para sumar otro documento en el futuro, se agrega otra entrada acá,
+    # con su propio "path" y su propio "rangos_tema".
+]
 
 
-def extraer_texto(pdf_path: str) -> str:
-    reader = pypdf.PdfReader(pdf_path)
-    texto_completo = ""
-    for page in reader.pages:
-        texto_completo += page.extract_text() + "\n"
-    return texto_completo
+def tema_para_pagina(num_pagina: int, rangos_tema: list) -> str:
+    for inicio, fin, tema in rangos_tema:
+        if inicio <= num_pagina <= fin:
+            return tema
+    return "general"
 
 
 def dividir_en_chunks(texto: str, chunk_size: int, overlap: int) -> list[str]:
@@ -32,30 +46,54 @@ def generar_embedding(texto: str) -> list[float]:
     return result["embeddings"][0]
 
 
+def ingestar_documento(collection, path: str, rangos_tema: list) -> int:
+    print(f"\nProcesando: {path}")
+    reader = pypdf.PdfReader(path)
+    total_chunks = 0
+
+    for i, page in enumerate(reader.pages):
+        num_pagina = i + 1
+        texto_pagina = page.extract_text()
+        if not texto_pagina.strip():
+            continue
+
+        tema = tema_para_pagina(num_pagina, rangos_tema)
+        chunks = dividir_en_chunks(texto_pagina, CHUNK_SIZE, CHUNK_OVERLAP)
+
+        for j, chunk in enumerate(chunks):
+            embedding = generar_embedding(chunk)
+            # id único combinando nombre de archivo + página + chunk,
+            # para que no choquen ids entre documentos distintos
+            chunk_id = f"{path}_pagina{num_pagina}_chunk{j}"
+            collection.add(
+                ids=[chunk_id],
+                embeddings=[embedding],
+                documents=[chunk],
+                metadatas=[{"tema": tema, "pagina": num_pagina, "fuente": path}],
+            )
+            total_chunks += 1
+            print(f"  Página {num_pagina} ({tema}) - chunk {j+1}/{len(chunks)} procesado")
+
+    return total_chunks
+
+
 def main():
-    print("Extrayendo texto del PDF...")
-    texto = extraer_texto(PDF_PATH)
-    print(f"Texto extraído: {len(texto)} caracteres")
-
-    print("Dividiendo en chunks...")
-    chunks = dividir_en_chunks(texto, CHUNK_SIZE, CHUNK_OVERLAP)
-    print(f"Se generaron {len(chunks)} chunks")
-
     print("Conectando a ChromaDB...")
     client = chromadb.PersistentClient(path=CHROMA_PATH)
+
+    try:
+        client.delete_collection(name=COLLECTION_NAME)
+        print("Colección anterior eliminada.")
+    except Exception:
+        pass
+
     collection = client.get_or_create_collection(name=COLLECTION_NAME)
 
-    print("Generando embeddings e insertando en ChromaDB...")
-    for i, chunk in enumerate(chunks):
-        embedding = generar_embedding(chunk)
-        collection.add(
-            ids=[f"chunk_{i}"],
-            embeddings=[embedding],
-            documents=[chunk],
-        )
-        print(f"  Chunk {i+1}/{len(chunks)} procesado")
+    total_general = 0
+    for doc in DOCUMENTOS:
+        total_general += ingestar_documento(collection, doc["path"], doc["rangos_tema"])
 
-    print("¡Ingestión completa!")
+    print(f"\n¡Ingestión completa! Total: {total_general} chunks, de {len(DOCUMENTOS)} documento(s).")
 
 
 if __name__ == "__main__":
