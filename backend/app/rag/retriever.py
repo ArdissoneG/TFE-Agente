@@ -5,7 +5,7 @@ CHROMA_PATH = "./chroma_db"
 COLLECTION_NAME = "educacion_financiera"
 
 
-def buscar_contexto(pregunta: str, n_resultados: int = 3) -> list[str]:
+def buscar_contexto(pregunta: str, n_resultados: int = 3) -> dict:
     client = chromadb.PersistentClient(path=CHROMA_PATH)
     collection = client.get_or_create_collection(name=COLLECTION_NAME)
 
@@ -16,4 +16,11 @@ def buscar_contexto(pregunta: str, n_resultados: int = 3) -> list[str]:
         n_results=n_resultados,
     )
 
-    return resultados["documents"][0]
+    chunks = resultados["documents"][0]
+    metadatas = resultados["metadatas"][0]
+    temas = [m["tema"] for m in metadatas]
+
+    # tema más frecuente entre los chunks recuperados (voto por mayoría simple)
+    tema_detectado = max(set(temas), key=temas.count) if temas else "general"
+
+    return {"chunks": chunks, "tema_detectado": tema_detectado}

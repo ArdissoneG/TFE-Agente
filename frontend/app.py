@@ -84,8 +84,13 @@ else:
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.write(message["content"])
+            if message["role"] == "assistant" and message.get("tema_detectado"):
+                st.caption(
+                    f"🔎 Tema detectado: {message['tema_detectado'].replace('_', ' ')} "
+                    f"· Nivel aplicado: {message['nivel_aplicado']}"
+                )
 
-    def get_response(user_input: str) -> str:
+    def get_response(user_input: str) -> dict:
         try:
             payload = {
                 "message": user_input,
@@ -93,9 +98,9 @@ else:
             }
             res = requests.post(f"{BACKEND_URL}/chat", json=payload)
             res.raise_for_status()
-            return res.json()["response"]
+            return res.json()
         except requests.exceptions.RequestException as e:
-            return f"⚠️ No pude conectar con el backend: {e}"
+            return {"response": f"⚠️ No pude conectar con el backend: {e}", "tema_detectado": None, "nivel_aplicado": None}
 
     user_input = st.chat_input("Escribí tu consulta...")
 
@@ -104,7 +109,17 @@ else:
         with st.chat_message("user"):
             st.write(user_input)
 
-        response = get_response(user_input)
-        st.session_state.messages.append({"role": "assistant", "content": response})
+        respuesta_json = get_response(user_input)
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": respuesta_json["response"],
+            "tema_detectado": respuesta_json.get("tema_detectado"),
+            "nivel_aplicado": respuesta_json.get("nivel_aplicado"),
+        })
         with st.chat_message("assistant"):
-            st.write(response)
+            st.write(respuesta_json["response"])
+            if respuesta_json.get("tema_detectado"):
+                st.caption(
+                    f"🔎 Tema detectado: {respuesta_json['tema_detectado'].replace('_', ' ')} "
+                    f"· Nivel aplicado: {respuesta_json['nivel_aplicado']}"
+                )

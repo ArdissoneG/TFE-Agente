@@ -24,14 +24,28 @@ def diagnostico(request: DiagnosticoRequest):
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
-    contexto_chunks = buscar_contexto(request.message)
+    resultado_busqueda = buscar_contexto(request.message)
+    contexto_chunks = resultado_busqueda["chunks"]
+    tema_detectado = resultado_busqueda["tema_detectado"]
     contexto_texto = "\n\n".join(contexto_chunks)
+
+    nivel_usuario = "intermedio"  # valor por defecto si no hay diagnóstico o el tema no está en niveles
+    if request.knowledge_profile:
+        nivel_usuario = request.knowledge_profile.niveles.get(tema_detectado, "intermedio")
+
+    instrucciones_nivel = {
+        "principiante": "Explicá en lenguaje simple, sin jerga técnica. Usá analogías cotidianas cuando ayuden. No asumas conocimientos previos.",
+        "intermedio": "Explicá con cierto nivel técnico, pero aclarando los términos clave la primera vez que aparecen.",
+        "avanzado": "Respondé de forma directa y técnica, sin explicar conceptos básicos que ya se asumen conocidos.",
+    }
 
     prompt_sistema = (
         "Sos un asistente de educación financiera para inversores minoristas en Argentina. "
-        "Respondé de forma clara y en lenguaje simple, apoyándote en el siguiente contexto extraído "
-        "de material oficial de educación financiera. Si el contexto no tiene información suficiente "
-        "para responder con precisión, decilo explícitamente en vez de inventar una respuesta.\n\n"
+        f"El usuario tiene un nivel de conocimiento '{nivel_usuario}' en el tema de esta pregunta. "
+        f"{instrucciones_nivel[nivel_usuario]} "
+        "Apoyate en el siguiente contexto extraído de material oficial de educación financiera. "
+        "Si el contexto no tiene información suficiente para responder con precisión, decilo "
+        "explícitamente en vez de inventar una respuesta.\n\n"
         f"Contexto:\n{contexto_texto}"
     )
 
@@ -43,4 +57,4 @@ def chat(request: ChatRequest):
         ]
     )
     reply = result["message"]["content"]
-    return ChatResponse(response=reply)
+    return ChatResponse(response=reply, tema_detectado=tema_detectado, nivel_aplicado=nivel_usuario)

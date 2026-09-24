@@ -22,3 +22,5 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     response: str
+    tema_detectado: Optional[str] = None
+    nivel_aplicado: Optional[str] = None
