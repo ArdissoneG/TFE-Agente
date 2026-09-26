@@ -19,8 +19,13 @@ DOCUMENTOS = [
             (24, 32, "fraudes_y_proteccion"),
         ],
     },
-    # Para sumar otro documento en el futuro, se agrega otra entrada acá,
-    # con su propio "path" y su propio "rangos_tema".
+    {
+        "path": "../data/raw/Educ. Financiera_agosto_2023.pdf",
+        "rangos_tema": [
+            (9, 34, "conceptos_basicos"),
+        ],
+    },
+    # Agregar más documentos aquí
 ]
 
 

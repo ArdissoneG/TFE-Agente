@@ -35,3 +35,7 @@ class VerificacionResponse(BaseModel):
     nivel_anterior: str
     nivel_nuevo: str
     knowledge_profile: KnowledgeProfile
+
+class ResponderVerificacionRequest(BaseModel):
+    thread_id: str
+    opcion_elegida: str
