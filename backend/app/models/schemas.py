@@ -24,3 +24,14 @@ class ChatResponse(BaseModel):
     response: str
     tema_detectado: Optional[str] = None
     nivel_aplicado: Optional[str] = None
+
+class VerificacionRequest(BaseModel):
+    tema: str
+    opcion_elegida: str
+    knowledge_profile: KnowledgeProfile
+
+class VerificacionResponse(BaseModel):
+    correcto: bool
+    nivel_anterior: str
+    nivel_nuevo: str
+    knowledge_profile: KnowledgeProfile

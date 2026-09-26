@@ -44,10 +44,25 @@ OPCIONES = {
 
 if "knowledge_profile" not in st.session_state:
     st.session_state.knowledge_profile = None
+    try:
+        res = requests.get(f"{BACKEND_URL}/perfil")
+        if res.status_code == 200:
+            st.session_state.knowledge_profile = res.json()["niveles"]
+    except requests.exceptions.RequestException:
+        pass  # sin conexión al backend; sigue el flujo de diagnóstico normal
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+with st.sidebar:
+    if st.button("Reiniciar diagnóstico"):
+        try:
+            requests.delete(f"{BACKEND_URL}/perfil")
+        except requests.exceptions.RequestException:
+            pass
+        st.session_state.knowledge_profile = None
+        st.session_state.messages = []
+        st.rerun()
 
 # --- ETAPA 1: DIAGNÓSTICO DE CONOCIMIENTO ---
 if st.session_state.knowledge_profile is None:
@@ -81,7 +96,32 @@ else:
     for tema, nivel in st.session_state.knowledge_profile.items():
         st.write(f"- **{tema.replace('_', ' ')}**: {nivel}")
 
-    for message in st.session_state.messages:
+    def responder_verificacion(idx: int, tema: str, opcion_id: str):
+        payload = {
+            "tema": tema,
+            "opcion_elegida": opcion_id,
+            "knowledge_profile": {"niveles": st.session_state.knowledge_profile},
+        }
+        try:
+            res = requests.post(f"{BACKEND_URL}/verificacion", json=payload)
+            res.raise_for_status()
+            data = res.json()
+            st.session_state.knowledge_profile = data["knowledge_profile"]["niveles"]
+            st.session_state.messages[idx]["verificacion"]["resultado"] = data
+        except requests.exceptions.RequestException as e:
+            st.session_state.messages[idx]["verificacion"]["error"] = str(e)
+
+    def obtener_pregunta_verificacion(tema: str):
+        try:
+            res = requests.get(f"{BACKEND_URL}/verificacion/{tema}")
+            if res.status_code == 404:
+                return None
+            res.raise_for_status()
+            return res.json()
+        except requests.exceptions.RequestException:
+            return None
+
+    for idx, message in enumerate(st.session_state.messages):
         with st.chat_message(message["role"]):
             st.write(message["content"])
             if message["role"] == "assistant" and message.get("tema_detectado"):
@@ -89,6 +129,37 @@ else:
                     f"🔎 Tema detectado: {message['tema_detectado'].replace('_', ' ')} "
                     f"· Nivel aplicado: {message['nivel_aplicado']}"
                 )
+
+                verificacion = message.get("verificacion")
+                if verificacion and verificacion.get("pregunta"):
+                    resultado = verificacion.get("resultado")
+                    if resultado is None:
+                        st.markdown("**¿Entendiste bien? Probá esta pregunta:**")
+                        st.write(verificacion["pregunta"]["pregunta"])
+                        opciones = verificacion["pregunta"]["opciones"]
+                        etiquetas = [o["texto"] for o in opciones]
+                        seleccion = st.radio(
+                            "Elegí una opción",
+                            options=range(len(opciones)),
+                            format_func=lambda i: etiquetas[i],
+                            key=f"verificacion_radio_{idx}",
+                        )
+                        if st.button("Verificar", key=f"verificacion_btn_{idx}"):
+                            opcion_id = opciones[seleccion]["id"]
+                            responder_verificacion(idx, message["tema_detectado"], opcion_id)
+                            st.rerun()
+                    else:
+                        tema_legible = message["tema_detectado"].replace("_", " ")
+                        if resultado["correcto"]:
+                            st.success(
+                                f"✅ ¡Correcto! Nivel de '{tema_legible}' "
+                                f"actualizado: {resultado['nivel_anterior']} → {resultado['nivel_nuevo']}"
+                            )
+                        else:
+                            st.warning(
+                                f"❌ No era esa. Nivel de '{tema_legible}' "
+                                f"ajustado: {resultado['nivel_anterior']} → {resultado['nivel_nuevo']}"
+                            )
 
     def get_response(user_input: str) -> dict:
         try:
@@ -106,20 +177,14 @@ else:
 
     if user_input:
         st.session_state.messages.append({"role": "user", "content": user_input})
-        with st.chat_message("user"):
-            st.write(user_input)
-
         respuesta_json = get_response(user_input)
+        tema_detectado = respuesta_json.get("tema_detectado")
+        pregunta_verificacion = obtener_pregunta_verificacion(tema_detectado) if tema_detectado else None
         st.session_state.messages.append({
             "role": "assistant",
             "content": respuesta_json["response"],
-            "tema_detectado": respuesta_json.get("tema_detectado"),
+            "tema_detectado": tema_detectado,
             "nivel_aplicado": respuesta_json.get("nivel_aplicado"),
+            "verificacion": {"pregunta": pregunta_verificacion, "resultado": None} if pregunta_verificacion else None,
         })
-        with st.chat_message("assistant"):
-            st.write(respuesta_json["response"])
-            if respuesta_json.get("tema_detectado"):
-                st.caption(
-                    f"🔎 Tema detectado: {respuesta_json['tema_detectado'].replace('_', ' ')} "
-                    f"· Nivel aplicado: {respuesta_json['nivel_aplicado']}"
-                )
+        st.rerun()

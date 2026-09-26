@@ -22,6 +22,7 @@ data/processed/*
 !data/processed/.gitkeep
 *.sqlite3
 chroma_db/
+*.db
 
 # IDE / OS
 .vscode/

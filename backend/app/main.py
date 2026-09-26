@@ -1,9 +1,13 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from app.models.schemas import ChatRequest, ChatResponse, DiagnosticoRequest, KnowledgeProfile
+from app.models.schemas import ChatRequest, ChatResponse, DiagnosticoRequest, KnowledgeProfile, VerificacionRequest, VerificacionResponse
 from app.models.knowledge_profile import clasificar_conocimiento
+from app.verification.preguntas import PREGUNTAS, armar_pregunta, verificar_respuesta, siguiente_nivel
 from app.rag.retriever import buscar_contexto
+from app.db import inicializar_db, guardar_perfil, obtener_perfil, borrar_perfil
 import ollama
+
+USUARIO_ID = "default"
 
 app = FastAPI(title="Agente educación financiera - API")
 
@@ -14,12 +18,30 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.on_event("startup")
+def startup():
+    inicializar_db()
+
+@app.get("/perfil")
+def obtener_perfil_guardado():
+    niveles = obtener_perfil(USUARIO_ID)
+    if niveles is None:
+        raise HTTPException(status_code=404, detail="No hay un perfil guardado todavía")
+    return {"niveles": niveles}
+
+@app.delete("/perfil")
+def eliminar_perfil():
+    borrar_perfil(USUARIO_ID)
+    return {"status": "ok"}
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
 
 @app.post("/diagnostico", response_model=KnowledgeProfile)
 def diagnostico(request: DiagnosticoRequest):
+    perfil = clasificar_conocimiento(request)
+    guardar_perfil(USUARIO_ID, perfil.niveles)
     return clasificar_conocimiento(request)
 
 @app.post("/chat", response_model=ChatResponse)
@@ -58,3 +80,31 @@ def chat(request: ChatRequest):
     )
     reply = result["message"]["content"]
     return ChatResponse(response=reply, tema_detectado=tema_detectado, nivel_aplicado=nivel_usuario)
+
+@app.get("/verificacion/{tema}")
+def obtener_pregunta(tema: str):
+    pregunta = armar_pregunta(tema)
+    if pregunta is None:
+        raise HTTPException(status_code=404, detail=f"No hay pregunta de verificación para el tema '{tema}'")
+    guardar_perfil(USUARIO_ID, niveles_actualizados)
+    return pregunta
+
+@app.post("/verificacion", response_model=VerificacionResponse)
+def verificar(request: VerificacionRequest):
+    acierto = verificar_respuesta(request.tema, request.opcion_elegida)
+    if acierto is None:
+        raise HTTPException(status_code=404, detail=f"No hay pregunta de verificación para el tema '{request.tema}'")
+
+    nivel_anterior = request.knowledge_profile.niveles.get(request.tema, "intermedio")
+    nivel_nuevo = siguiente_nivel(nivel_anterior, acierto)
+
+    niveles_actualizados = dict(request.knowledge_profile.niveles)
+    niveles_actualizados[request.tema] = nivel_nuevo
+
+    return VerificacionResponse(
+        correcto=acierto,
+        nivel_anterior=nivel_anterior,
+        nivel_nuevo=nivel_nuevo,
+        knowledge_profile=KnowledgeProfile(niveles=niveles_actualizados),
+    )
+
