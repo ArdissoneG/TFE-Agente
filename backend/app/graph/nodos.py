@@ -4,7 +4,7 @@ from app.rag.retriever import buscar_contexto
 from app.db import guardar_perfil
 from app.llm import generar
 from app.registro import registrar
-from app.verification.preguntas import elegir_pregunta, calificar_respuesta, siguiente_nivel
+from app.verification.preguntas import CATEGORIAS_ERROR, elegir_pregunta, calificar_respuesta, siguiente_nivel
 
 USUARIO_ID = "default"
 
@@ -93,6 +93,7 @@ def verificar(state: EstadoChat) -> dict:
 def evaluar_verificacion(state: EstadoChat) -> dict:
     meta = _meta(state)
     tema = state["tema_detectado"]
+    # state["respuesta_usuario"] es el id de la opción elegida ("a", "b", "c" o "d")
     calificacion = calificar_respuesta(state["pregunta_id"], state["respuesta_usuario"])
     acierto = calificacion["correcta"] if calificacion else None
 
@@ -112,9 +113,10 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
             **_campos_comunes(state, "verificacion"),
             "tema_detectado": tema,
             "pregunta_id": state["pregunta_id"],
-            "respuesta_usuario": state["respuesta_usuario"],
+            "opcion_elegida": state["respuesta_usuario"],
+            "opcion_correcta": calificacion["opcion_correcta"] if calificacion else None,
+            "categoria_error": calificacion["categoria_error"] if calificacion else None,
             "correcto": acierto,
-            "calificacion": calificacion,
             "nivel_anterior": nivel_anterior,
             "nivel_nuevo": nivel_nuevo,
         },
@@ -122,27 +124,31 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
     )
 
     actualizacion = {
+        "calificacion": calificacion,
         "correcto": acierto,
         "nivel_nuevo": nivel_nuevo,
         "knowledge_profile": niveles_actualizados,
     }
 
-    if acierto is not True:
-        # La re-explicación recibe el mismo contexto recuperado y la misma instrucción de no
-        # inventar que la explicación original; antes solo veía la explicación anterior, y por
-        # eso podía seguir elaborando sobre contenido inventado.
+    if acierto is False:
+        # Nueva explicación: ya no recibe la explicación anterior (el modelo tendía a copiarla y a
+        # repetir sus errores). Recibe el contexto recuperado, la opción incorrecta que eligió la
+        # persona con su categoría de error, y el enunciado correcto del banco, que está escrito
+        # de antemano a partir del corpus: el modelo solo tiene que reformularlo para esa persona.
         prompt_reexplicacion = (
             "Sos un asistente de educación financiera para inversores minoristas en Argentina. "
-            "El usuario respondió una pregunta de verificación sobre este tema de forma incompleta "
-            "o incorrecta, lo que indica que la explicación anterior no fue suficientemente clara. "
-            "Explicá el mismo concepto de nuevo, usando un enfoque o una analogía DISTINTA a la que "
-            "usaste antes, en lenguaje simple. "
+            "El usuario leyó una explicación y después respondió una pregunta de opción múltiple "
+            "eligiendo una opción incorrecta. "
+            f"La opción que eligió fue: \"{calificacion['texto_elegido']}\". "
+            f"Ese error es de este tipo: {CATEGORIAS_ERROR[calificacion['categoria_error']]} "
+            f"Lo correcto, según el material, es: \"{calificacion['texto_correcto']}\". "
+            "Explicá el concepto de nuevo en lenguaje simple, con una analogía distinta, "
+            "corrigiendo ese error puntual. Hablale directamente al usuario, sin mencionar "
+            "su error ni referirte a él en tercera persona. "
             "Apoyate en el siguiente contexto extraído de material oficial de educación financiera. "
             "Si el contexto no tiene información suficiente para responder con precisión, decilo "
-            "explícitamente en vez de inventar una respuesta. "
-            "Si la explicación anterior contiene datos que el contexto no respalda, no los repitas.\n\n"
+            "explícitamente en vez de inventar una respuesta.\n\n"
             f"Contexto:\n{state['contexto_texto']}\n\n"
-            f"Explicación anterior:\n{state['respuesta']}\n\n"
             f"Pregunta original del usuario: {state['mensaje']}"
         )
         generacion = generar(
@@ -160,6 +166,7 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
                 "parametros": generacion["parametros"],
                 "tema_detectado": tema,
                 "chunk_ids": state.get("chunk_ids"),
+                "categoria_error": calificacion["categoria_error"],
                 "respuesta": generacion["texto"],
             },
             ruta=meta.get("ruta_log"),

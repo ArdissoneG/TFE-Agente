@@ -96,8 +96,8 @@ else:
     for tema, nivel in st.session_state.knowledge_profile.items():
         st.write(f"- **{tema.replace('_', ' ')}**: {nivel}")
 
-    def responder_verificacion(idx: int, thread_id: str, respuesta_texto: str):
-        payload = {"thread_id": thread_id, "respuesta_texto": respuesta_texto}
+    def responder_verificacion(idx: int, thread_id: str, opcion_id: str):
+        payload = {"thread_id": thread_id, "opcion_id": opcion_id}
         try:
             res = requests.post(f"{BACKEND_URL}/chat/verificar", json=payload)
             res.raise_for_status()
@@ -118,22 +118,41 @@ else:
 
                 verificacion = message.get("verificacion")
                 if verificacion and verificacion.get("pregunta"):
+                    pregunta = verificacion["pregunta"]
+                    textos = {o["id"]: o["texto"] for o in pregunta["opciones"]}
                     resultado = verificacion.get("resultado")
                     if resultado is None:
-                        st.markdown("**¿Entendiste bien? Contestá con tus palabras:**")
-                        st.write(verificacion["pregunta"]["pregunta"])
-                        respuesta_texto = st.text_area("Tu respuesta", key=f"verificacion_texto_{idx}")
-                        if st.button("Verificar", key=f"verificacion_btn_{idx}"):
-                            responder_verificacion(idx, message["thread_id"], respuesta_texto)
+                        st.markdown("**¿Entendiste bien? Elegí la opción correcta:**")
+                        st.write(pregunta["pregunta"])
+                        elegida = st.radio(
+                            "Opciones",
+                            options=list(textos.keys()),
+                            format_func=lambda i, t=textos: f"{i.upper()}) {t[i]}",
+                            index=None,
+                            key=f"verificacion_opcion_{idx}",
+                            label_visibility="collapsed",
+                        )
+                        if st.button("Verificar", key=f"verificacion_btn_{idx}", disabled=elegida is None):
+                            responder_verificacion(idx, message["thread_id"], elegida)
                             st.rerun()
                     else:
                         tema_legible = message["tema_detectado"].replace("_", " ")
+                        st.markdown("**Pregunta de verificación:**")
+                        st.write(pregunta["pregunta"])
+                        elegida = resultado.get("opcion_elegida")
+                        correcta = resultado.get("opcion_correcta")
+                        if elegida:
+                            st.write(f"Tu respuesta: **{elegida.upper()})** {textos.get(elegida, '')}")
                         if resultado["correcto"] is True:
                             st.success(f"✅ ¡Bien! Nivel de '{tema_legible}' actualizado: → {resultado['nivel_nuevo']}")
                         elif resultado["correcto"] is False:
-                            st.warning(f"❌ Faltó algo importante. Nivel de '{tema_legible}' ajustado: → {resultado['nivel_nuevo']}")
+                            st.warning(f"❌ Esa no era. Nivel de '{tema_legible}' ajustado: → {resultado['nivel_nuevo']}")
+                            if correcta:
+                                st.write(f"La opción correcta era **{correcta.upper()})** {textos.get(correcta, '')}")
                         else:
-                            st.info("No pude calificar tu respuesta con seguridad — el nivel no cambió.")
+                            st.info("No pude corregir tu respuesta — el nivel no cambió.")
+                        if resultado.get("explicacion"):
+                            st.caption(f"📖 Según el material: {resultado['explicacion']}")
                         if resultado.get("reexplicacion"):
                             st.markdown("**Probemos de otra forma:**")
                             st.write(resultado["reexplicacion"])

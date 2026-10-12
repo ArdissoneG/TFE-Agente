@@ -73,14 +73,25 @@ def chat(request: ChatRequest):
 @app.post("/chat/verificar")
 def responder_verificacion(request: ResponderVerificacionRequest):
     config = {"configurable": {"thread_id": request.thread_id}}
-    resultado = grafo.invoke(Command(resume=request.respuesta_texto), config=config)
+    resultado = grafo.invoke(Command(resume=request.opcion_id), config=config)
 
+    calificacion = resultado.get("calificacion") or {}
     return {
         "correcto": resultado["correcto"],
         "nivel_nuevo": resultado["nivel_nuevo"],
         "knowledge_profile": {"niveles": resultado["knowledge_profile"]},
         "reexplicacion": resultado.get("reexplicacion"),
+        "opcion_elegida": calificacion.get("opcion_elegida"),
+        "opcion_correcta": calificacion.get("opcion_correcta"),
+        "explicacion": calificacion.get("explicacion"),
     }
+
+    #return {
+    #    "correcto": resultado["correcto"],
+    #    "nivel_nuevo": resultado["nivel_nuevo"],
+    #    "knowledge_profile": {"niveles": resultado["knowledge_profile"]},
+    #   "reexplicacion": resultado.get("reexplicacion"),
+    #}
 
 
 @app.post("/chat/baseline")

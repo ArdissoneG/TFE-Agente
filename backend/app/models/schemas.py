@@ -38,4 +38,4 @@ class VerificacionResponse(BaseModel):
 
 class ResponderVerificacionRequest(BaseModel):
     thread_id: str
-    respuesta_texto: str 
+    opcion_id: str
