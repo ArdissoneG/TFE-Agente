@@ -66,6 +66,8 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
     niveles_actualizados = dict(state["knowledge_profile"])
     niveles_actualizados[tema] = nivel_nuevo
 
+    guardar_perfil(USUARIO_ID, niveles_actualizados)
+    
     actualizacion = {
         "correcto": acierto,
         "nivel_nuevo": nivel_nuevo,

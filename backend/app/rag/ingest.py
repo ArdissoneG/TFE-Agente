@@ -12,7 +12,7 @@ DOCUMENTOS = [
     {
         "path": "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf",
         "rangos_tema": [
-            (5, 10, "conceptos_basicos"),
+            (5, 11, "conceptos_basicos"),
             (12, 14, "instrumentos_inversion"),
             (21, 23, "sesgos_y_riesgos"),
             (24, 32, "fraudes_y_proteccion"),

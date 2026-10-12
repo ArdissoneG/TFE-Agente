@@ -24,7 +24,7 @@ PREGUNTAS = [
         ),
         "rubrica": [
             "un rendimiento inusualmente alto suele venir acompañado de un riesgo mayor",
-            "conviene desconfiar quiando no se explica el origen de ese rendimiento",
+            "conviene desconfiar cuando no se explica el origen de ese rendimiento",
         ],
         "contexto_semantico": "relación entre riesgo y rentabilidad, desconfiar de rendimientos prometidos muy por encima del mercado",
     },
