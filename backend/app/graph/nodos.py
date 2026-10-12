@@ -1,8 +1,9 @@
-import ollama
 from langgraph.types import interrupt
 from app.graph.estado import EstadoChat
 from app.rag.retriever import buscar_contexto
 from app.db import guardar_perfil
+from app.llm import generar
+from app.registro import registrar
 from app.verification.preguntas import elegir_pregunta, calificar_respuesta, siguiente_nivel
 
 USUARIO_ID = "default"
@@ -26,26 +27,60 @@ def _armar_prompt_sistema(nivel: str, contexto_texto: str) -> str:
     )
 
 
+def _meta(state: EstadoChat) -> dict:
+    return state.get("meta") or {}
+
+
+def _campos_comunes(state: EstadoChat, tipo: str) -> dict:
+    meta = _meta(state)
+    return {
+        "tipo": tipo,
+        "condicion": meta.get("condicion", "agente_completo"),
+        "run_id": meta.get("run_id"),
+        "escenario_id": meta.get("escenario_id"),
+        "repeticion": meta.get("repeticion"),
+        "seed": meta.get("seed"),
+        "mensaje": state["mensaje"],
+    }
+
+
 def detectar_tema_y_contexto(state: EstadoChat) -> dict:
     resultado = buscar_contexto(state["mensaje"])
     return {
         "tema_detectado": resultado["tema_detectado"],
         "contexto_texto": "\n\n".join(resultado["chunks"]),
+        "chunk_ids": resultado["ids"],
+        "distancias": resultado["distancias"],
     }
 
 
 def explicar(state: EstadoChat) -> dict:
+    meta = _meta(state)
     tema = state["tema_detectado"]
     nivel = state["knowledge_profile"].get(tema, "intermedio")
     prompt_sistema = _armar_prompt_sistema(nivel, state["contexto_texto"])
-    result = ollama.chat(
-        model="phi3:mini",
-        messages=[
+    generacion = generar(
+        [
             {"role": "system", "content": prompt_sistema},
             {"role": "user", "content": state["mensaje"]},
         ],
+        seed=meta.get("seed"),
     )
-    return {"nivel_aplicado": nivel, "respuesta": result["message"]["content"]}
+    registrar(
+        {
+            **_campos_comunes(state, "explicacion"),
+            "modelo": generacion["modelo"],
+            "digest": generacion["digest"],
+            "parametros": generacion["parametros"],
+            "tema_detectado": tema,
+            "nivel_aplicado": nivel,
+            "chunk_ids": state.get("chunk_ids"),
+            "distancias": state.get("distancias"),
+            "respuesta": generacion["texto"],
+        },
+        ruta=meta.get("ruta_log"),
+    )
+    return {"nivel_aplicado": nivel, "respuesta": generacion["texto"]}
 
 
 def verificar(state: EstadoChat) -> dict:
@@ -56,6 +91,7 @@ def verificar(state: EstadoChat) -> dict:
 
 
 def evaluar_verificacion(state: EstadoChat) -> dict:
+    meta = _meta(state)
     tema = state["tema_detectado"]
     calificacion = calificar_respuesta(state["pregunta_id"], state["respuesta_usuario"])
     acierto = calificacion["correcta"] if calificacion else None
@@ -66,31 +102,68 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
     niveles_actualizados = dict(state["knowledge_profile"])
     niveles_actualizados[tema] = nivel_nuevo
 
-    guardar_perfil(USUARIO_ID, niveles_actualizados)
-    
+    # En evaluación (meta["persistir"] = False) el perfil queda solo en el estado del grafo,
+    # así cada persona ficticia tiene el suyo y no se pisa el perfil real guardado en SQLite.
+    if meta.get("persistir", True):
+        guardar_perfil(meta.get("usuario_id", USUARIO_ID), niveles_actualizados)
+
+    registrar(
+        {
+            **_campos_comunes(state, "verificacion"),
+            "tema_detectado": tema,
+            "pregunta_id": state["pregunta_id"],
+            "respuesta_usuario": state["respuesta_usuario"],
+            "correcto": acierto,
+            "calificacion": calificacion,
+            "nivel_anterior": nivel_anterior,
+            "nivel_nuevo": nivel_nuevo,
+        },
+        ruta=meta.get("ruta_log"),
+    )
+
     actualizacion = {
         "correcto": acierto,
         "nivel_nuevo": nivel_nuevo,
         "knowledge_profile": niveles_actualizados,
     }
 
-    
     if acierto is not True:
+        # La re-explicación recibe el mismo contexto recuperado y la misma instrucción de no
+        # inventar que la explicación original; antes solo veía la explicación anterior, y por
+        # eso podía seguir elaborando sobre contenido inventado.
         prompt_reexplicacion = (
-            "Sos un asistente de educación financiera. El usuario respondió una pregunta de "
-            "verificación sobre este tema de forma incompleta o incorrecta, lo que indica que "
-            "la explicación anterior no fue suficientemente clara. Explicá el mismo concepto de "
-            "nuevo, usando un enfoque o una analogía DISTINTA a la que usaste antes, en lenguaje simple.\n\n"
+            "Sos un asistente de educación financiera para inversores minoristas en Argentina. "
+            "El usuario respondió una pregunta de verificación sobre este tema de forma incompleta "
+            "o incorrecta, lo que indica que la explicación anterior no fue suficientemente clara. "
+            "Explicá el mismo concepto de nuevo, usando un enfoque o una analogía DISTINTA a la que "
+            "usaste antes, en lenguaje simple. "
+            "Apoyate en el siguiente contexto extraído de material oficial de educación financiera. "
+            "Si el contexto no tiene información suficiente para responder con precisión, decilo "
+            "explícitamente en vez de inventar una respuesta. "
+            "Si la explicación anterior contiene datos que el contexto no respalda, no los repitas.\n\n"
+            f"Contexto:\n{state['contexto_texto']}\n\n"
             f"Explicación anterior:\n{state['respuesta']}\n\n"
             f"Pregunta original del usuario: {state['mensaje']}"
         )
-        result = ollama.chat(
-            model="phi3:mini",
-            messages=[
+        generacion = generar(
+            [
                 {"role": "system", "content": prompt_reexplicacion},
                 {"role": "user", "content": state["mensaje"]},
             ],
+            seed=meta.get("seed"),
         )
-        actualizacion["reexplicacion"] = result["message"]["content"]
+        registrar(
+            {
+                **_campos_comunes(state, "reexplicacion"),
+                "modelo": generacion["modelo"],
+                "digest": generacion["digest"],
+                "parametros": generacion["parametros"],
+                "tema_detectado": tema,
+                "chunk_ids": state.get("chunk_ids"),
+                "respuesta": generacion["texto"],
+            },
+            ruta=meta.get("ruta_log"),
+        )
+        actualizacion["reexplicacion"] = generacion["texto"]
 
     return actualizacion

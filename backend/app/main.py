@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.models.schemas import ChatRequest, ChatResponse, DiagnosticoRequest, KnowledgeProfile, VerificacionRequest, VerificacionResponse, ResponderVerificacionRequest
 from app.models.knowledge_profile import clasificar_conocimiento
 from app.verification.preguntas import armar_pregunta
+from app.baseline import responder_baseline
 from app.rag.retriever import buscar_contexto
 from app.db import inicializar_db, guardar_perfil, obtener_perfil, borrar_perfil
 import ollama
@@ -55,7 +56,7 @@ def chat(request: ChatRequest):
         "mensaje": request.message,
         "knowledge_profile": request.knowledge_profile.niveles if request.knowledge_profile else {},
     }
-    resultado = grafo.invoke(estado_inicial, config=config)  
+    resultado = grafo.invoke(estado_inicial, config=config)
 
     interrupcion = resultado["__interrupt__"][0].value
     pregunta = armar_pregunta(interrupcion["pregunta_id"])
@@ -72,7 +73,7 @@ def chat(request: ChatRequest):
 @app.post("/chat/verificar")
 def responder_verificacion(request: ResponderVerificacionRequest):
     config = {"configurable": {"thread_id": request.thread_id}}
-    resultado = grafo.invoke(Command(resume=request.respuesta_texto), config=config)   
+    resultado = grafo.invoke(Command(resume=request.respuesta_texto), config=config)
 
     return {
         "correcto": resultado["correcto"],
@@ -80,3 +81,9 @@ def responder_verificacion(request: ResponderVerificacionRequest):
         "knowledge_profile": {"niveles": resultado["knowledge_profile"]},
         "reexplicacion": resultado.get("reexplicacion"),
     }
+
+
+@app.post("/chat/baseline")
+def chat_baseline(request: ChatRequest):
+    # Caso base de la evaluación: mismo modelo y parámetros, sin RAG, nivel ni verificación.
+    return responder_baseline(request.message)

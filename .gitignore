@@ -31,3 +31,6 @@ chroma_db/
 
 # Logs
 *.log
+
+# Log de interacciones de la app (en evaluación se escribe en evaluation/resultados/)
+backend/registros/
