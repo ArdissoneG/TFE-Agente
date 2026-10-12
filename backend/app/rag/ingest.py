@@ -27,6 +27,20 @@ DOCUMENTOS = [
     # Agregar más documentos aquí
 ]
 
+TRANSCRIPCIONES = [
+    {
+        "fuente": "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf",
+        "pagina": 28,
+        "tema": "fraudes_y_proteccion",
+        "path": "../data/transcripciones/guia_cnv_pagina_28.txt",
+    },
+    {
+        "fuente": "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf",
+        "pagina": 29,
+        "tema": "fraudes_y_proteccion",
+        "path": "../data/transcripciones/guia_cnv_pagina_29.txt",
+    },
+]
 
 def tema_para_pagina(num_pagina: int, rangos_tema: list) -> str:
     for inicio, fin, tema in rangos_tema:
@@ -80,6 +94,26 @@ def ingestar_documento(collection, path: str, rangos_tema: list) -> int:
 
     return total_chunks
 
+def ingestar_transcripcion(collection, transcripcion: dict) -> int:
+    print(f"\nProcesando transcripción: {transcripcion['path']}")
+    with open(transcripcion["path"], encoding="utf-8") as f:
+        texto = f.read()
+    chunks = dividir_en_chunks(texto, CHUNK_SIZE, CHUNK_OVERLAP)
+    for j, chunk in enumerate(chunks):
+        # el id lleva "transcripcion" para no chocar con los chunks que pypdf
+        # ya extrajo de esa misma página (por ejemplo el título de la 28)
+        collection.add(
+            ids=[f"{transcripcion['fuente']}_pagina{transcripcion['pagina']}_transcripcion_chunk{j}"],
+            embeddings=[generar_embedding(chunk)],
+            documents=[chunk],
+            metadatas=[{
+                "tema": transcripcion["tema"],
+                "pagina": transcripcion["pagina"],
+                "fuente": transcripcion["fuente"],
+                "transcripcion": True,
+            }],
+        )
+    return len(chunks)
 
 def main():
     print("Conectando a ChromaDB...")
@@ -96,6 +130,9 @@ def main():
     total_general = 0
     for doc in DOCUMENTOS:
         total_general += ingestar_documento(collection, doc["path"], doc["rangos_tema"])
+
+    for transcripcion in TRANSCRIPCIONES:
+        total_general += ingestar_transcripcion(collection, transcripcion)
 
     print(f"\n¡Ingestión completa! Total: {total_general} chunks, de {len(DOCUMENTOS)} documento(s).")
 
