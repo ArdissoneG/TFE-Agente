@@ -32,6 +32,12 @@ DOCUMENTOS = [
 TRANSCRIPCIONES = [
     {
         "fuente": "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf",
+        "pagina": 21,
+        "tema": "sesgos_y_riesgos",
+        "path": "../data/transcripciones/guia_cnv_pagina_21.txt",
+    },
+    {
+        "fuente": "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf",
         "pagina": 28,
         "tema": "fraudes_y_proteccion",
         "path": "../data/transcripciones/guia_cnv_pagina_28.txt",

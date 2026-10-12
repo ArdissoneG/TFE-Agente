@@ -201,21 +201,21 @@ PREGUNTAS = [
         "riesgos de la renta variable, acciones, rentabilidad incierta, el pasado no garantiza el futuro",
     ),
 
-    # ------------------------------------------------------------------ sesgos_y_riesgos
+        # ------------------------------------------------------------------ sesgos_y_riesgos
     _pregunta(
-        "sesgos_y_riesgos_sesgos_generales", "sesgos_y_riesgos",
-        "¿Qué plantea el material sobre los sesgos que afectan las decisiones de inversión?",
+        "sesgos_y_riesgos_sesgo_autoridad", "sesgos_y_riesgos",
+        "Invertís en algo solo porque te lo recomendó un familiar, un amigo o un influencer, sin analizarlo por tu cuenta. ¿Qué sesgo estás mostrando?",
         0,
-        "Que conviene conocerlos y ser consciente de que nadie está exento de ellos.",
+        "Sesgo de autoridad: sobreestimar la opinión de ciertas personas por ser quienes son, sin someterla a un análisis previo.",
         [
-            ("generalizacion_excesiva", "Que solo afectan a quienes recién empiezan a invertir y desaparecen con la experiencia."),
-            ("riesgo_nulo", "Que con una buena estrategia se pueden eliminar por completo."),
-            ("generalizacion_excesiva", "Que no influyen en las decisiones, porque estas se toman con datos objetivos."),
+            ("confusion_conceptos", "Sesgo de prueba social: imitar lo que hacen otras personas creyendo que es el comportamiento correcto."),
+            ("confusion_conceptos", "Sesgo de anclaje: darle más peso a la primera información recibida que a una nueva que la contradice."),
+            ("confusion_conceptos", "Sesgo de confirmación: buscar solo información que confirme lo que ya pensabas."),
         ],
-        "Las personas inversoras deben informarse sobre los sesgos que afectan su toma de decisiones y ser conscientes de que nadie está exento de ellos.",
-        ["CNV_p21_c0"],
-        ["nadie está exento de ellos"],
-        "sesgos cognitivos que afectan las decisiones de inversión, comportamiento del inversor",
+        "El sesgo de autoridad consiste en sobreestimar las opiniones de determinadas personas por el mero hecho de ser quienes son, sin someterlas a un enjuiciamiento previo; el riesgo es invertir únicamente porque lo recomienda un familiar, amigo, famoso o influencer. El consejo es hacer análisis adicionales considerando tus necesidades y tu perfil de riesgo.",
+        ["CNV_p21_t1", "CNV_p21_t2"],
+        ["sin someterlas a un enjuiciamiento previo", "únicamente porque la recomienda o la aconseja un familiar, amigo, famoso, influencer"],
+        "sesgo de autoridad, invertir por la recomendación de un familiar, amigo, famoso o influencer",
     ),
     _pregunta(
         "sesgos_y_riesgos_instrumentos_no_regulados", "sesgos_y_riesgos",
@@ -233,6 +233,21 @@ PREGUNTAS = [
         "instrumentos regulados y no regulados, valores negociables, ley del mercado de capitales",
     ),
     _pregunta(
+        "sesgos_y_riesgos_aversion_perdidas", "sesgos_y_riesgos",
+        "Alguien mantiene una inversión que viene perdiendo y casi no tiene chances de recuperarse, solo para no asumir la pérdida. ¿Qué sesgo es ese y cuál es su riesgo?",
+        0,
+        "Aversión a las pérdidas: se considera que las pérdidas pesan más que las ganancias, y el riesgo es acabar perdiendo todo lo invertido.",
+        [
+            ("confusion_conceptos", "Ilusión de control: creer que se puede influir en el mercado, con el riesgo de asumir un nivel de riesgo excesivo."),
+            ("confusion_conceptos", "Descuento hiperbólico: preferir recompensas pequeñas e inmediatas, con el riesgo de deshacer una inversión de largo plazo."),
+            ("generalizacion_excesiva", "No es un sesgo: mantener una inversión que baja es siempre la mejor estrategia, porque el mercado siempre se recupera."),
+        ],
+        "La aversión a las pérdidas es la tendencia a considerar que las pérdidas pesan más que las ganancias. El riesgo es que, con tal de no incurrir en pérdidas, se mantenga una inversión con mínimas perspectivas de recuperación y se acabe perdiendo todo lo invertido; el consejo es diversificar en productos y en horizontes temporales.",
+        ["CNV_p21_t3"],
+        ["las pérdidas pesan más que las ganancias", "se acabe perdiendo todo lo invertido"],
+        "sesgo de aversión a las pérdidas, no vender una inversión en baja para evitar asumir la pérdida",
+    ),
+    _pregunta(
         "sesgos_y_riesgos_proteccion_cnv", "sesgos_y_riesgos",
         "Si invertís en un producto que no está bajo la competencia de la CNV, ¿qué ocurre con la protección de este organismo?",
         1,
@@ -248,36 +263,21 @@ PREGUNTAS = [
         "protección de la CNV a los inversores, productos fuera del ámbito de la CNV",
     ),
     _pregunta(
-        "sesgos_y_riesgos_caracteristicas_no_regulados", "sesgos_y_riesgos",
-        "¿Cuál es una característica de los instrumentos no regulados que señala el material?",
-        0,
-        "Se negocian sin un mercado abierto ni un mecanismo centralizador, y pueden operar las 24 horas, sufrir períodos de iliquidez y tener mayores spreads.",
-        [
-            ("relacion_invertida", "Solo se negocian en el horario del mercado de capitales, con un mecanismo centralizador."),
-            ("riesgo_nulo", "Tienen liquidez garantizada, porque se pueden vender en cualquier momento."),
-            ("relacion_invertida", "Tienen spreads más chicos que los valores negociables regulados."),
-        ],
-        "Por lo general se negocian sin una reglamentación estricta, ni en un mercado abierto, y sin un mecanismo centralizador; muchas veces se operan las veinticuatro horas del día, con posibles períodos de iliquidez y mayores spreads.",
-        ["CNV_p22_c1"],
-        ["las veinticuatro horas del día", "mecanismo centralizador"],
-        "características de los productos no regulados, liquidez, spreads, mercado abierto",
-    ),
-    _pregunta(
-        "sesgos_y_riesgos_lista_no_regulados", "sesgos_y_riesgos",
-        "El material lista productos no regulados (criptomonedas, CFD, Forex, entre otros). Si un producto no aparece en esa lista, ¿qué significa?",
+        "sesgos_y_riesgos_descuento_hiperbolico", "sesgos_y_riesgos",
+        "Una persona vende antes de tiempo una inversión pensada a largo plazo porque el mercado se ve atractivo en el corto plazo. ¿Qué sesgo muestra?",
         3,
-        "Nada en particular: la lista no es exhaustiva y su ausencia no implica pronunciamiento sobre la legalidad o conformidad del producto.",
+        "Descuento hiperbólico: elegir recompensas más pequeñas e inmediatas frente a otras mayores pero más alejadas en el tiempo.",
         [
-            ("senal_superficial", "Que el producto está autorizado por la CNV."),
-            ("generalizacion_excesiva", "Que el producto está regulado, porque la lista incluye todos los no regulados."),
-            ("equivalencia_indebida", "Que el producto está prohibido por la normativa."),
+            ("confusion_conceptos", "Aversión a las pérdidas: considerar que las pérdidas pesan más que las ganancias."),
+            ("confusion_conceptos", "Prueba social: imitar lo que hacen otras personas creyendo que es lo correcto."),
+            ("confusion_conceptos", "Ilusión de control: creer que se controlan los vaivenes del mercado."),
         ],
-        "La lista no es exhaustiva y deriva de búsquedas en Internet y consultas recibidas; la no inclusión de un producto no implica pronunciamiento alguno sobre su conformidad o legalidad.",
-        ["CNV_p23_c0"],
-        ["no es exhaustiva", "no implica pronunciamiento alguno"],
-        "lista de productos no regulados, criptoactivos, CFD, Forex, plataformas de trading",
+        "El descuento hiperbólico es la tendencia a elegir recompensas más pequeñas e inmediatas frente a recompensas mayores y alejadas en el tiempo. El riesgo es deshacer una inversión pensada a largo plazo y adecuada para el propio perfil, alterando los objetivos iniciales; el consejo es ser coherente con el plan, los objetivos y los plazos.",
+        ["CNV_p21_t2", "CNV_p21_t3"],
+        ["recompensas más pequeñas e inmediatas", "deshacer una inversión pensada a largo plazo"],
+        "sesgo de descuento hiperbólico, deshacer una inversión de largo plazo por una ganancia inmediata",
     ),
-
+    
     # ------------------------------------------------------------------ fraudes_y_proteccion
     _pregunta(
         "fraudes_y_proteccion_senales_estafa", "fraudes_y_proteccion",
