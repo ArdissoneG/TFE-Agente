@@ -20,7 +20,7 @@ def buscar_contexto(pregunta: str, n_resultados: int = 3) -> dict:
     metadatas = resultados["metadatas"][0]
     temas = [m["tema"] for m in metadatas]
 
-    # tema más frecuente entre los chunks recuperados (voto por mayoría simple)
+    
     tema_detectado = max(set(temas), key=temas.count) if temas else "general"
 
     return {"chunks": chunks, "tema_detectado": tema_detectado}

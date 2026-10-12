@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from app.models.schemas import ChatRequest, ChatResponse, DiagnosticoRequest, KnowledgeProfile, VerificacionRequest, VerificacionResponse, ResponderVerificacionRequest
 from app.models.knowledge_profile import clasificar_conocimiento
-from app.verification.preguntas import PREGUNTAS, armar_pregunta, verificar_respuesta, siguiente_nivel
+from app.verification.preguntas import armar_pregunta
 from app.rag.retriever import buscar_contexto
 from app.db import inicializar_db, guardar_perfil, obtener_perfil, borrar_perfil
 import ollama
@@ -55,10 +55,10 @@ def chat(request: ChatRequest):
         "mensaje": request.message,
         "knowledge_profile": request.knowledge_profile.niveles if request.knowledge_profile else {},
     }
-    resultado = grafo.invoke(estado_inicial, config=config)
+    resultado = grafo.invoke(estado_inicial, config=config)  
 
     interrupcion = resultado["__interrupt__"][0].value
-    pregunta = armar_pregunta(interrupcion["tema"])
+    pregunta = armar_pregunta(interrupcion["pregunta_id"])
 
     return {
         "thread_id": thread_id,
@@ -66,13 +66,13 @@ def chat(request: ChatRequest):
         "tema_detectado": resultado["tema_detectado"],
         "nivel_aplicado": resultado["nivel_aplicado"],
         "pregunta_verificacion": pregunta,
-    }
+        }
 
 
 @app.post("/chat/verificar")
 def responder_verificacion(request: ResponderVerificacionRequest):
     config = {"configurable": {"thread_id": request.thread_id}}
-    resultado = grafo.invoke(Command(resume=request.opcion_elegida), config=config)
+    resultado = grafo.invoke(Command(resume=request.respuesta_texto), config=config)   
 
     return {
         "correcto": resultado["correcto"],

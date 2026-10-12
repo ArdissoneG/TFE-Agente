@@ -3,7 +3,7 @@ from langgraph.types import interrupt
 from app.graph.estado import EstadoChat
 from app.rag.retriever import buscar_contexto
 from app.db import guardar_perfil
-from app.verification.preguntas import verificar_respuesta, siguiente_nivel
+from app.verification.preguntas import elegir_pregunta, calificar_respuesta, siguiente_nivel
 
 USUARIO_ID = "default"
 
@@ -49,21 +49,22 @@ def explicar(state: EstadoChat) -> dict:
 
 
 def verificar(state: EstadoChat) -> dict:
-    # El grafo se pausa acá. Lo que le pasamos a interrupt() es lo que recibe
-    # quien llame a /chat la primera vez (para armar la pregunta en el frontend).
-    opcion = interrupt({"tema": state["tema_detectado"]})
-    return {"opcion_elegida": opcion}
+    tema = state["tema_detectado"]
+    pregunta_id = elegir_pregunta(tema, state["mensaje"])
+    respuesta_usuario = interrupt({"tema": tema, "pregunta_id": pregunta_id})
+    return {"respuesta_usuario": respuesta_usuario, "pregunta_id": pregunta_id}
 
 
 def evaluar_verificacion(state: EstadoChat) -> dict:
     tema = state["tema_detectado"]
-    acierto = verificar_respuesta(tema, state["opcion_elegida"])
+    calificacion = calificar_respuesta(state["pregunta_id"], state["respuesta_usuario"])
+    acierto = calificacion["correcta"] if calificacion else None
+
     nivel_anterior = state["knowledge_profile"].get(tema, "intermedio")
     nivel_nuevo = siguiente_nivel(nivel_anterior, acierto)
 
     niveles_actualizados = dict(state["knowledge_profile"])
     niveles_actualizados[tema] = nivel_nuevo
-    guardar_perfil(USUARIO_ID, niveles_actualizados)
 
     actualizacion = {
         "correcto": acierto,
@@ -71,15 +72,13 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
         "knowledge_profile": niveles_actualizados,
     }
 
-    # Acá está la rama condicional real: solo si falló, se genera una segunda
-    # explicación con otro enfoque. Antes de este sprint, esto no existía.
-    if not acierto:
+    
+    if acierto is not True:
         prompt_reexplicacion = (
-            "Sos un asistente de educación financiera. El usuario respondió mal una "
-            "pregunta de verificación sobre este tema, lo que indica que la explicación "
-            "anterior no fue suficientemente clara para él. Explicá el mismo concepto de "
-            "nuevo, usando un enfoque o una analogía DISTINTA a la que usaste antes, en "
-            "lenguaje simple.\n\n"
+            "Sos un asistente de educación financiera. El usuario respondió una pregunta de "
+            "verificación sobre este tema de forma incompleta o incorrecta, lo que indica que "
+            "la explicación anterior no fue suficientemente clara. Explicá el mismo concepto de "
+            "nuevo, usando un enfoque o una analogía DISTINTA a la que usaste antes, en lenguaje simple.\n\n"
             f"Explicación anterior:\n{state['respuesta']}\n\n"
             f"Pregunta original del usuario: {state['mensaje']}"
         )

@@ -19,7 +19,7 @@ def buscar(pregunta: str, n_resultados: int = 3):
     print(f"\nPregunta: {pregunta}\n")
     for i, doc in enumerate(resultados["documents"][0]):
         print(f"--- Resultado {i+1} ---")
-        print(doc[:300])  # primeros 300 caracteres para no saturar la terminal
+        print(doc[:300])  
         print()
 
 

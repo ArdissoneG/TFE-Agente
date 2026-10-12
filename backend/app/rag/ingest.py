@@ -7,8 +7,7 @@ COLLECTION_NAME = "educacion_financiera"
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 
-# Cada documento define su propio mapeo de páginas a tema,
-# porque cada PDF tiene su propia estructura/índice.
+
 DOCUMENTOS = [
     {
         "path": "../data/raw/texto_guia_de_inversoras_v2_0_2.pdf",

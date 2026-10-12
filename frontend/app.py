@@ -96,8 +96,8 @@ else:
     for tema, nivel in st.session_state.knowledge_profile.items():
         st.write(f"- **{tema.replace('_', ' ')}**: {nivel}")
 
-    def responder_verificacion(idx: int, thread_id: str, opcion_id: str):
-        payload = {"thread_id": thread_id, "opcion_elegida": opcion_id}
+    def responder_verificacion(idx: int, thread_id: str, respuesta_texto: str):
+        payload = {"thread_id": thread_id, "respuesta_texto": respuesta_texto}
         try:
             res = requests.post(f"{BACKEND_URL}/chat/verificar", json=payload)
             res.raise_for_status()
@@ -120,35 +120,23 @@ else:
                 if verificacion and verificacion.get("pregunta"):
                     resultado = verificacion.get("resultado")
                     if resultado is None:
-                        st.markdown("**¿Entendiste bien? Probá esta pregunta:**")
+                        st.markdown("**¿Entendiste bien? Contestá con tus palabras:**")
                         st.write(verificacion["pregunta"]["pregunta"])
-                        opciones = verificacion["pregunta"]["opciones"]
-                        etiquetas = [o["texto"] for o in opciones]
-                        seleccion = st.radio(
-                            "Elegí una opción",
-                            options=range(len(opciones)),
-                            format_func=lambda i: etiquetas[i],
-                            key=f"verificacion_radio_{idx}",
-                        )
+                        respuesta_texto = st.text_area("Tu respuesta", key=f"verificacion_texto_{idx}")
                         if st.button("Verificar", key=f"verificacion_btn_{idx}"):
-                            opcion_id = opciones[seleccion]["id"]
-                            responder_verificacion(idx, message["thread_id"], opcion_id)
+                            responder_verificacion(idx, message["thread_id"], respuesta_texto)
                             st.rerun()
                     else:
                         tema_legible = message["tema_detectado"].replace("_", " ")
-                        if resultado["correcto"]:
-                            st.success(
-                                f"✅ ¡Correcto! Nivel de '{tema_legible}' "
-                                f"actualizado: → {resultado['nivel_nuevo']}"
-                            )
+                        if resultado["correcto"] is True:
+                            st.success(f"✅ ¡Bien! Nivel de '{tema_legible}' actualizado: → {resultado['nivel_nuevo']}")
+                        elif resultado["correcto"] is False:
+                            st.warning(f"❌ Faltó algo importante. Nivel de '{tema_legible}' ajustado: → {resultado['nivel_nuevo']}")
                         else:
-                            st.warning(
-                                f"❌ No era esa. Nivel de '{tema_legible}' "
-                                f"ajustado: → {resultado['nivel_nuevo']}"
-                            )
-                            if resultado.get("reexplicacion"):
-                                st.markdown("**Probemos de otra forma:**")
-                                st.write(resultado["reexplicacion"])
+                            st.info("No pude calificar tu respuesta con seguridad — el nivel no cambió.")
+                        if resultado.get("reexplicacion"):
+                            st.markdown("**Probemos de otra forma:**")
+                            st.write(resultado["reexplicacion"])
 
     def get_response(user_input: str) -> dict:
         try:
