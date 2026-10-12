@@ -17,14 +17,16 @@ DOCUMENTOS = [
             (21, 23, "sesgos_y_riesgos"),
             (24, 32, "fraudes_y_proteccion"),
         ],
+        "ingestar_sin_tema": False,
     },
     {
         "path": "../data/raw/Educ. Financiera_agosto_2023.pdf",
         "rangos_tema": [
             (9, 34, "conceptos_basicos"),
         ],
+        "ingestar_sin_tema": False,
     },
-    # Agregar más documentos aquí
+    
 ]
 
 TRANSCRIPCIONES = [
@@ -64,7 +66,7 @@ def generar_embedding(texto: str) -> list[float]:
     return result["embeddings"][0]
 
 
-def ingestar_documento(collection, path: str, rangos_tema: list) -> int:
+def ingestar_documento(collection, path: str, rangos_tema: list, ingestar_sin_tema: bool = True) -> int:
     print(f"\nProcesando: {path}")
     reader = pypdf.PdfReader(path)
     total_chunks = 0
@@ -76,6 +78,8 @@ def ingestar_documento(collection, path: str, rangos_tema: list) -> int:
             continue
 
         tema = tema_para_pagina(num_pagina, rangos_tema)
+        if tema == "general" and not ingestar_sin_tema:
+            continue
         chunks = dividir_en_chunks(texto_pagina, CHUNK_SIZE, CHUNK_OVERLAP)
 
         for j, chunk in enumerate(chunks):
@@ -129,7 +133,7 @@ def main():
 
     total_general = 0
     for doc in DOCUMENTOS:
-        total_general += ingestar_documento(collection, doc["path"], doc["rangos_tema"])
+        total_general += ingestar_documento(collection, doc["path"], doc["rangos_tema"], doc.get("ingestar_sin_tema", True))
 
     for transcripcion in TRANSCRIPCIONES:
         total_general += ingestar_transcripcion(collection, transcripcion)
