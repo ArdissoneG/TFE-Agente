@@ -1,0 +1,31 @@
+id,tipo,pregunta,tema_esperado,tema_detectado,tema_coincide,precision_at_3,recall_at_3,mrr,recuperados,distancias,relevantes
+R01,recuperacion,¿Cuál es la diferencia entre ahorrar e invertir?,conceptos_basicos,conceptos_basicos,True,0.333,0.25,0.333,CUA_p23_c1 | CNV_p9_c2 | CNV_p5_c1,0.3058 | 0.4353 | 0.48,CNV_p5_c0 | CNV_p5_c1 | CUA_p24_c0 | CUA_p25_c0
+R02,recuperacion,¿Qué es un plazo fijo UVA?,conceptos_basicos,conceptos_basicos,True,0.333,1.0,0.333,CUA_p28_c0 | CUA_p31_c3 | CUA_p29_c2,0.3864 | 0.4999 | 0.591,CUA_p29_c2
+R03,recuperacion,¿En qué se diferencia el interés simple del interés compuesto?,conceptos_basicos,conceptos_basicos,True,0.0,0.0,0.0,CUA_p32_c2 | CUA_p23_c1 | CUA_p31_c1,0.4321 | 0.5165 | 0.5216,CUA_p31_c2
+R04,recuperacion,¿Cómo armo un presupuesto mensual?,conceptos_basicos,conceptos_basicos,True,0.667,1.0,1.0,CUA_p20_c0 | CUA_p21_c0 | CUA_p18_c0,0.6216 | 0.6251 | 0.629,CUA_p18_c0 | CUA_p20_c0
+R05,recuperacion,¿Qué son los gastos hormiga?,conceptos_basicos,conceptos_basicos,True,0.333,1.0,1.0,CUA_p17_c0 | CUA_p20_c1 | CNV_p9_c0,0.5081 | 0.5399 | 0.5818,CUA_p17_c0
+R06,recuperacion,¿Qué es la renta fija?,instrumentos_inversion,instrumentos_inversion,True,0.0,0.0,0.0,CNV_p12_c2 | CNV_p13_c0 | CNV_p12_c1,0.5204 | 0.521 | 0.5486,CNV_p12_c0 | CNV_p14_c0
+R07,recuperacion,¿Qué es un CEDEAR?,instrumentos_inversion,conceptos_basicos,False,0.0,0.0,0.0,CUA_p18_c1 | CNV_p12_c3 | CNV_p10_c2,0.6029 | 0.7426 | 0.7759,CNV_p13_c1 | CNV_p13_c2
+R08,recuperacion,¿Qué riesgos tiene invertir en acciones?,instrumentos_inversion,conceptos_basicos,False,0.0,0.0,0.0,CNV_p6_c0 | CNV_p9_c2 | CNV_p9_c1,0.3081 | 0.3555 | 0.3891,CNV_p13_c2 | CNV_p14_c0
+R09,recuperacion,¿Qué pasa si la empresa que emitió el bono no puede pagarme?,instrumentos_inversion,fraudes_y_proteccion,False,0.0,0.0,0.0,CNV_p26_c2 | CNV_p9_c1 | CNV_p23_c0,0.6253 | 0.6272 | 0.6416,CNV_p13_c0
+R10,recuperacion,¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?,instrumentos_inversion,instrumentos_inversion,True,0.333,0.5,1.0,CNV_p12_c2 | CNV_p13_c2 | CNV_p31_c1,0.5676 | 0.5926 | 0.5945,CNV_p12_c2 | CNV_p14_c1
+R11,recuperacion,¿Qué es la aversión a las pérdidas?,sesgos_y_riesgos,fraudes_y_proteccion,False,0.0,0.0,0.0,CNV_p12_c3 | CUA_p18_c1 | CNV_p27_c2,0.5996 | 0.654 | 0.7423,CNV_p21_t3
+R12,recuperacion,¿Qué es el sesgo de confirmación?,sesgos_y_riesgos,sesgos_y_riesgos,True,0.333,1.0,0.5,CNV_p12_c3 | CNV_p21_t0 | CNV_p21_t3,0.5711 | 0.6427 | 0.6475,CNV_p21_t0
+R13,recuperacion,¿Qué son los instrumentos no regulados?,sesgos_y_riesgos,sesgos_y_riesgos,True,0.333,1.0,0.5,CNV_p22_c0 | CNV_p22_c1 | CNV_p22_c2,0.5147 | 0.5606 | 0.6318,CNV_p22_c1
+R14,recuperacion,¿Las criptomonedas están reguladas por la CNV?,sesgos_y_riesgos,sesgos_y_riesgos,True,0.333,1.0,0.5,CNV_p22_c0 | CNV_p22_c2 | CNV_p12_c3,0.4861 | 0.4862 | 0.5381,CNV_p22_c2
+R15,recuperacion,"Todos mis amigos están comprando lo mismo y me dan ganas de imitarlos, ¿es buena idea?",sesgos_y_riesgos,fraudes_y_proteccion,False,0.0,0.0,0.0,CNV_p27_c1 | CNV_p27_c2 | CNV_p29_t0,0.5116 | 0.562 | 0.5659,CNV_p21_t2
+R16,recuperacion,¿Cuáles son las señales de que una oferta de inversión puede ser una estafa?,fraudes_y_proteccion,fraudes_y_proteccion,True,0.333,0.333,0.5,CNV_p24_c0 | CNV_p25_c0 | CNV_p28_t1,0.3958 | 0.4817 | 0.4969,CNV_p24_c1 | CNV_p25_c0 | CNV_p29_t0
+R17,recuperacion,¿Qué es un esquema Ponzi?,fraudes_y_proteccion,fraudes_y_proteccion,True,0.333,0.5,1.0,CNV_p26_c1 | CUA_p18_c1 | CNV_p25_c2,0.5456 | 0.6786 | 0.7033,CNV_p26_c0 | CNV_p26_c1
+R18,recuperacion,¿Qué es el pump and dump?,fraudes_y_proteccion,instrumentos_inversion,False,0.0,0.0,0.0,CNV_p12_c3 | CNV_p13_c0 | CNV_p12_c0,0.6969 | 0.7186 | 0.7268,CNV_p26_c1 | CNV_p26_c2
+R19,recuperacion,¿Cómo puedo protegerme de las estafas de inversión?,fraudes_y_proteccion,fraudes_y_proteccion,True,0.333,0.5,0.333,CNV_p24_c0 | CNV_p29_t0 | CNV_p28_t1,0.4859 | 0.5295 | 0.5302,CNV_p28_t0 | CNV_p28_t1
+R20,recuperacion,¿Dónde puedo denunciar una estafa de inversión?,fraudes_y_proteccion,fraudes_y_proteccion,True,0.333,1.0,0.5,CNV_p32_c1 | CNV_p32_c0 | CNV_p24_c0,0.4217 | 0.4952 | 0.509,CNV_p32_c0
+O01,fuera_de_corpus,¿Cómo abro una caja de ahorro en un banco?,,conceptos_basicos,,,,,CUA_p27_c1 | CUA_p27_c0 | CUA_p27_c2,0.435 | 0.4418 | 0.4578,
+O02,fuera_de_corpus,¿Cómo se calculan los intereses de la tarjeta de crédito si pago solo el mínimo?,,conceptos_basicos,,,,,CUA_p31_c1 | CNV_p9_c0 | CNV_p13_c0,0.5883 | 0.6143 | 0.6197,
+O03,fuera_de_corpus,¿Cómo se compra dólar MEP?,,conceptos_basicos,,,,,CUA_p19_c1 | CUA_p18_c1 | CNV_p23_c0,0.7647 | 0.8243 | 0.8318,
+O04,fuera_de_corpus,¿Qué es un fondo money market y cuánto rinde?,,conceptos_basicos,,,,,CUA_p29_c2 | CUA_p29_c1 | CNV_p8_c0,0.5267 | 0.5329 | 0.5619,
+O05,fuera_de_corpus,¿Cómo se calcula el impuesto a las ganancias por vender acciones o bonos?,,fraudes_y_proteccion,,,,,CNV_p24_c1 | CNV_p26_c2 | CNV_p13_c2,0.5308 | 0.5585 | 0.5633,
+O06,fuera_de_corpus,¿Cómo pido un préstamo personal y qué significa el CFT?,,conceptos_basicos,,,,,CNV_p8_c0 | CNV_p27_c1 | CUA_p31_c1,0.5894 | 0.6263 | 0.6295,
+O07,fuera_de_corpus,¿Qué cubre el seguro de depósitos y hasta qué monto?,,fraudes_y_proteccion,,,,,CNV_p8_c1 | CNV_p28_t1 | CNV_p24_c0,0.5618 | 0.5981 | 0.6053,
+O08,fuera_de_corpus,¿Cómo funciona Mercado Pago para pagar con QR?,,fraudes_y_proteccion,,,,,CNV_p6_c2 | CNV_p27_c2 | CNV_p29_t0,0.6575 | 0.6594 | 0.6597,
+O09,fuera_de_corpus,¿Qué es el riesgo país y cómo afecta a los bonos?,,conceptos_basicos,,,,,CNV_p6_c0 | CNV_p6_c2 | CNV_p9_c2,0.5516 | 0.5737 | 0.6105,
+O10,fuera_de_corpus,¿Cuál es la mejor acción para comprar este mes?,,conceptos_basicos,,,,,CUA_p23_c1 | CNV_p9_c1 | CNV_p26_c2,0.5009 | 0.597 | 0.6015,

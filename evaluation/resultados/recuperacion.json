@@ -1,0 +1,716 @@
+{
+  "resumen": {
+    "k": 3,
+    "global": {
+      "preguntas": 20,
+      "precision_at_3": 0.217,
+      "recall_at_3": 0.454,
+      "mrr": 0.375,
+      "coincidencia_tema": 0.7,
+      "sin_ningun_relevante": 8
+    },
+    "por_tema": {
+      "conceptos_basicos": {
+        "preguntas": 5,
+        "precision_at_3": 0.333,
+        "recall_at_3": 0.65,
+        "mrr": 0.533,
+        "coincidencia_tema": 1.0,
+        "sin_ningun_relevante": 1
+      },
+      "instrumentos_inversion": {
+        "preguntas": 5,
+        "precision_at_3": 0.067,
+        "recall_at_3": 0.1,
+        "mrr": 0.2,
+        "coincidencia_tema": 0.4,
+        "sin_ningun_relevante": 4
+      },
+      "sesgos_y_riesgos": {
+        "preguntas": 5,
+        "precision_at_3": 0.2,
+        "recall_at_3": 0.6,
+        "mrr": 0.3,
+        "coincidencia_tema": 0.6,
+        "sin_ningun_relevante": 2
+      },
+      "fraudes_y_proteccion": {
+        "preguntas": 5,
+        "precision_at_3": 0.266,
+        "recall_at_3": 0.467,
+        "mrr": 0.467,
+        "coincidencia_tema": 0.8,
+        "sin_ningun_relevante": 1
+      }
+    },
+    "distancia_top1_media": {
+      "con_respuesta_en_corpus": 0.505,
+      "fuera_de_corpus": 0.571
+    }
+  },
+  "detalle": [
+    {
+      "id": "R01",
+      "tipo": "recuperacion",
+      "pregunta": "¿Cuál es la diferencia entre ahorrar e invertir?",
+      "recuperados": [
+        "CUA_p23_c1",
+        "CNV_p9_c2",
+        "CNV_p5_c1"
+      ],
+      "distancias": [
+        0.3058,
+        0.4353,
+        0.48
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": "conceptos_basicos",
+      "relevantes": [
+        "CNV_p5_c0",
+        "CNV_p5_c1",
+        "CUA_p24_c0",
+        "CUA_p25_c0"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 0.25,
+      "mrr": 0.333,
+      "tema_coincide": true
+    },
+    {
+      "id": "R02",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué es un plazo fijo UVA?",
+      "recuperados": [
+        "CUA_p28_c0",
+        "CUA_p31_c3",
+        "CUA_p29_c2"
+      ],
+      "distancias": [
+        0.3864,
+        0.4999,
+        0.591
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": "conceptos_basicos",
+      "relevantes": [
+        "CUA_p29_c2"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 1.0,
+      "mrr": 0.333,
+      "tema_coincide": true
+    },
+    {
+      "id": "R03",
+      "tipo": "recuperacion",
+      "pregunta": "¿En qué se diferencia el interés simple del interés compuesto?",
+      "recuperados": [
+        "CUA_p32_c2",
+        "CUA_p23_c1",
+        "CUA_p31_c1"
+      ],
+      "distancias": [
+        0.4321,
+        0.5165,
+        0.5216
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": "conceptos_basicos",
+      "relevantes": [
+        "CUA_p31_c2"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": true
+    },
+    {
+      "id": "R04",
+      "tipo": "recuperacion",
+      "pregunta": "¿Cómo armo un presupuesto mensual?",
+      "recuperados": [
+        "CUA_p20_c0",
+        "CUA_p21_c0",
+        "CUA_p18_c0"
+      ],
+      "distancias": [
+        0.6216,
+        0.6251,
+        0.629
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": "conceptos_basicos",
+      "relevantes": [
+        "CUA_p18_c0",
+        "CUA_p20_c0"
+      ],
+      "precision_at_3": 0.667,
+      "recall_at_3": 1.0,
+      "mrr": 1.0,
+      "tema_coincide": true
+    },
+    {
+      "id": "R05",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué son los gastos hormiga?",
+      "recuperados": [
+        "CUA_p17_c0",
+        "CUA_p20_c1",
+        "CNV_p9_c0"
+      ],
+      "distancias": [
+        0.5081,
+        0.5399,
+        0.5818
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": "conceptos_basicos",
+      "relevantes": [
+        "CUA_p17_c0"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 1.0,
+      "mrr": 1.0,
+      "tema_coincide": true
+    },
+    {
+      "id": "R06",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué es la renta fija?",
+      "recuperados": [
+        "CNV_p12_c2",
+        "CNV_p13_c0",
+        "CNV_p12_c1"
+      ],
+      "distancias": [
+        0.5204,
+        0.521,
+        0.5486
+      ],
+      "tema_detectado": "instrumentos_inversion",
+      "tema_esperado": "instrumentos_inversion",
+      "relevantes": [
+        "CNV_p12_c0",
+        "CNV_p14_c0"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": true
+    },
+    {
+      "id": "R07",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué es un CEDEAR?",
+      "recuperados": [
+        "CUA_p18_c1",
+        "CNV_p12_c3",
+        "CNV_p10_c2"
+      ],
+      "distancias": [
+        0.6029,
+        0.7426,
+        0.7759
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": "instrumentos_inversion",
+      "relevantes": [
+        "CNV_p13_c1",
+        "CNV_p13_c2"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": false
+    },
+    {
+      "id": "R08",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué riesgos tiene invertir en acciones?",
+      "recuperados": [
+        "CNV_p6_c0",
+        "CNV_p9_c2",
+        "CNV_p9_c1"
+      ],
+      "distancias": [
+        0.3081,
+        0.3555,
+        0.3891
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": "instrumentos_inversion",
+      "relevantes": [
+        "CNV_p13_c2",
+        "CNV_p14_c0"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": false
+    },
+    {
+      "id": "R09",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué pasa si la empresa que emitió el bono no puede pagarme?",
+      "recuperados": [
+        "CNV_p26_c2",
+        "CNV_p9_c1",
+        "CNV_p23_c0"
+      ],
+      "distancias": [
+        0.6253,
+        0.6272,
+        0.6416
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": "instrumentos_inversion",
+      "relevantes": [
+        "CNV_p13_c0"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": false
+    },
+    {
+      "id": "R10",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?",
+      "recuperados": [
+        "CNV_p12_c2",
+        "CNV_p13_c2",
+        "CNV_p31_c1"
+      ],
+      "distancias": [
+        0.5676,
+        0.5926,
+        0.5945
+      ],
+      "tema_detectado": "instrumentos_inversion",
+      "tema_esperado": "instrumentos_inversion",
+      "relevantes": [
+        "CNV_p12_c2",
+        "CNV_p14_c1"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 0.5,
+      "mrr": 1.0,
+      "tema_coincide": true
+    },
+    {
+      "id": "R11",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué es la aversión a las pérdidas?",
+      "recuperados": [
+        "CNV_p12_c3",
+        "CUA_p18_c1",
+        "CNV_p27_c2"
+      ],
+      "distancias": [
+        0.5996,
+        0.654,
+        0.7423
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": "sesgos_y_riesgos",
+      "relevantes": [
+        "CNV_p21_t3"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": false
+    },
+    {
+      "id": "R12",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué es el sesgo de confirmación?",
+      "recuperados": [
+        "CNV_p12_c3",
+        "CNV_p21_t0",
+        "CNV_p21_t3"
+      ],
+      "distancias": [
+        0.5711,
+        0.6427,
+        0.6475
+      ],
+      "tema_detectado": "sesgos_y_riesgos",
+      "tema_esperado": "sesgos_y_riesgos",
+      "relevantes": [
+        "CNV_p21_t0"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 1.0,
+      "mrr": 0.5,
+      "tema_coincide": true
+    },
+    {
+      "id": "R13",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué son los instrumentos no regulados?",
+      "recuperados": [
+        "CNV_p22_c0",
+        "CNV_p22_c1",
+        "CNV_p22_c2"
+      ],
+      "distancias": [
+        0.5147,
+        0.5606,
+        0.6318
+      ],
+      "tema_detectado": "sesgos_y_riesgos",
+      "tema_esperado": "sesgos_y_riesgos",
+      "relevantes": [
+        "CNV_p22_c1"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 1.0,
+      "mrr": 0.5,
+      "tema_coincide": true
+    },
+    {
+      "id": "R14",
+      "tipo": "recuperacion",
+      "pregunta": "¿Las criptomonedas están reguladas por la CNV?",
+      "recuperados": [
+        "CNV_p22_c0",
+        "CNV_p22_c2",
+        "CNV_p12_c3"
+      ],
+      "distancias": [
+        0.4861,
+        0.4862,
+        0.5381
+      ],
+      "tema_detectado": "sesgos_y_riesgos",
+      "tema_esperado": "sesgos_y_riesgos",
+      "relevantes": [
+        "CNV_p22_c2"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 1.0,
+      "mrr": 0.5,
+      "tema_coincide": true
+    },
+    {
+      "id": "R15",
+      "tipo": "recuperacion",
+      "pregunta": "Todos mis amigos están comprando lo mismo y me dan ganas de imitarlos, ¿es buena idea?",
+      "recuperados": [
+        "CNV_p27_c1",
+        "CNV_p27_c2",
+        "CNV_p29_t0"
+      ],
+      "distancias": [
+        0.5116,
+        0.562,
+        0.5659
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": "sesgos_y_riesgos",
+      "relevantes": [
+        "CNV_p21_t2"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": false
+    },
+    {
+      "id": "R16",
+      "tipo": "recuperacion",
+      "pregunta": "¿Cuáles son las señales de que una oferta de inversión puede ser una estafa?",
+      "recuperados": [
+        "CNV_p24_c0",
+        "CNV_p25_c0",
+        "CNV_p28_t1"
+      ],
+      "distancias": [
+        0.3958,
+        0.4817,
+        0.4969
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "relevantes": [
+        "CNV_p24_c1",
+        "CNV_p25_c0",
+        "CNV_p29_t0"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 0.333,
+      "mrr": 0.5,
+      "tema_coincide": true
+    },
+    {
+      "id": "R17",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué es un esquema Ponzi?",
+      "recuperados": [
+        "CNV_p26_c1",
+        "CUA_p18_c1",
+        "CNV_p25_c2"
+      ],
+      "distancias": [
+        0.5456,
+        0.6786,
+        0.7033
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "relevantes": [
+        "CNV_p26_c0",
+        "CNV_p26_c1"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 0.5,
+      "mrr": 1.0,
+      "tema_coincide": true
+    },
+    {
+      "id": "R18",
+      "tipo": "recuperacion",
+      "pregunta": "¿Qué es el pump and dump?",
+      "recuperados": [
+        "CNV_p12_c3",
+        "CNV_p13_c0",
+        "CNV_p12_c0"
+      ],
+      "distancias": [
+        0.6969,
+        0.7186,
+        0.7268
+      ],
+      "tema_detectado": "instrumentos_inversion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "relevantes": [
+        "CNV_p26_c1",
+        "CNV_p26_c2"
+      ],
+      "precision_at_3": 0.0,
+      "recall_at_3": 0.0,
+      "mrr": 0.0,
+      "tema_coincide": false
+    },
+    {
+      "id": "R19",
+      "tipo": "recuperacion",
+      "pregunta": "¿Cómo puedo protegerme de las estafas de inversión?",
+      "recuperados": [
+        "CNV_p24_c0",
+        "CNV_p29_t0",
+        "CNV_p28_t1"
+      ],
+      "distancias": [
+        0.4859,
+        0.5295,
+        0.5302
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "relevantes": [
+        "CNV_p28_t0",
+        "CNV_p28_t1"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 0.5,
+      "mrr": 0.333,
+      "tema_coincide": true
+    },
+    {
+      "id": "R20",
+      "tipo": "recuperacion",
+      "pregunta": "¿Dónde puedo denunciar una estafa de inversión?",
+      "recuperados": [
+        "CNV_p32_c1",
+        "CNV_p32_c0",
+        "CNV_p24_c0"
+      ],
+      "distancias": [
+        0.4217,
+        0.4952,
+        0.509
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "relevantes": [
+        "CNV_p32_c0"
+      ],
+      "precision_at_3": 0.333,
+      "recall_at_3": 1.0,
+      "mrr": 0.5,
+      "tema_coincide": true
+    },
+    {
+      "id": "O01",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Cómo abro una caja de ahorro en un banco?",
+      "recuperados": [
+        "CUA_p27_c1",
+        "CUA_p27_c0",
+        "CUA_p27_c2"
+      ],
+      "distancias": [
+        0.435,
+        0.4418,
+        0.4578
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": null
+    },
+    {
+      "id": "O02",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Cómo se calculan los intereses de la tarjeta de crédito si pago solo el mínimo?",
+      "recuperados": [
+        "CUA_p31_c1",
+        "CNV_p9_c0",
+        "CNV_p13_c0"
+      ],
+      "distancias": [
+        0.5883,
+        0.6143,
+        0.6197
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": null
+    },
+    {
+      "id": "O03",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Cómo se compra dólar MEP?",
+      "recuperados": [
+        "CUA_p19_c1",
+        "CUA_p18_c1",
+        "CNV_p23_c0"
+      ],
+      "distancias": [
+        0.7647,
+        0.8243,
+        0.8318
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": null
+    },
+    {
+      "id": "O04",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Qué es un fondo money market y cuánto rinde?",
+      "recuperados": [
+        "CUA_p29_c2",
+        "CUA_p29_c1",
+        "CNV_p8_c0"
+      ],
+      "distancias": [
+        0.5267,
+        0.5329,
+        0.5619
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": null
+    },
+    {
+      "id": "O05",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Cómo se calcula el impuesto a las ganancias por vender acciones o bonos?",
+      "recuperados": [
+        "CNV_p24_c1",
+        "CNV_p26_c2",
+        "CNV_p13_c2"
+      ],
+      "distancias": [
+        0.5308,
+        0.5585,
+        0.5633
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": null
+    },
+    {
+      "id": "O06",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Cómo pido un préstamo personal y qué significa el CFT?",
+      "recuperados": [
+        "CNV_p8_c0",
+        "CNV_p27_c1",
+        "CUA_p31_c1"
+      ],
+      "distancias": [
+        0.5894,
+        0.6263,
+        0.6295
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": null
+    },
+    {
+      "id": "O07",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Qué cubre el seguro de depósitos y hasta qué monto?",
+      "recuperados": [
+        "CNV_p8_c1",
+        "CNV_p28_t1",
+        "CNV_p24_c0"
+      ],
+      "distancias": [
+        0.5618,
+        0.5981,
+        0.6053
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": null
+    },
+    {
+      "id": "O08",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Cómo funciona Mercado Pago para pagar con QR?",
+      "recuperados": [
+        "CNV_p6_c2",
+        "CNV_p27_c2",
+        "CNV_p29_t0"
+      ],
+      "distancias": [
+        0.6575,
+        0.6594,
+        0.6597
+      ],
+      "tema_detectado": "fraudes_y_proteccion",
+      "tema_esperado": null
+    },
+    {
+      "id": "O09",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Qué es el riesgo país y cómo afecta a los bonos?",
+      "recuperados": [
+        "CNV_p6_c0",
+        "CNV_p6_c2",
+        "CNV_p9_c2"
+      ],
+      "distancias": [
+        0.5516,
+        0.5737,
+        0.6105
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": null
+    },
+    {
+      "id": "O10",
+      "tipo": "fuera_de_corpus",
+      "pregunta": "¿Cuál es la mejor acción para comprar este mes?",
+      "recuperados": [
+        "CUA_p23_c1",
+        "CNV_p9_c1",
+        "CNV_p26_c2"
+      ],
+      "distancias": [
+        0.5009,
+        0.597,
+        0.6015
+      ],
+      "tema_detectado": "conceptos_basicos",
+      "tema_esperado": null
+    }
+  ]
+}

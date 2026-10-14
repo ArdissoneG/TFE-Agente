@@ -5,6 +5,10 @@ st.title("Asistente de educación financiera")
 
 BACKEND_URL = "http://127.0.0.1:8000"
 
+def md(texto: str) -> str:
+    """Escapa el signo $ para que Streamlit no lo interprete como LaTeX."""
+    return (texto or "").replace("$", "\\$")
+
 PREGUNTAS_DIAGNOSTICO = [
     {
         "tema": "Conceptos básicos",
@@ -109,7 +113,7 @@ else:
 
     for idx, message in enumerate(st.session_state.messages):
         with st.chat_message(message["role"]):
-            st.write(message["content"])
+            st.write((md(message["content"])))
             if message["role"] == "assistant" and message.get("tema_detectado"):
                 st.caption(
                     f"🔎 Tema detectado: {message['tema_detectado'].replace('_', ' ')} "
@@ -123,7 +127,7 @@ else:
                     resultado = verificacion.get("resultado")
                     if resultado is None:
                         st.markdown("**¿Entendiste bien? Elegí la opción correcta:**")
-                        st.write(pregunta["pregunta"])
+                        st.write((md(pregunta["pregunta"])))
                         elegida = st.radio(
                             "Opciones",
                             options=list(textos.keys()),
@@ -138,24 +142,24 @@ else:
                     else:
                         tema_legible = message["tema_detectado"].replace("_", " ")
                         st.markdown("**Pregunta de verificación:**")
-                        st.write(pregunta["pregunta"])
+                        st.write((md(pregunta["pregunta"])))
                         elegida = resultado.get("opcion_elegida")
                         correcta = resultado.get("opcion_correcta")
                         if elegida:
-                            st.write(f"Tu respuesta: **{elegida.upper()})** {textos.get(elegida, '')}")
+                            st.write((md(f"Tu respuesta: **{elegida.upper()})** {textos.get(elegida, '')}")))
                         if resultado["correcto"] is True:
                             st.success(f"✅ ¡Bien! Nivel de '{tema_legible}' actualizado: → {resultado['nivel_nuevo']}")
                         elif resultado["correcto"] is False:
                             st.warning(f"❌ Esa no era. Nivel de '{tema_legible}' ajustado: → {resultado['nivel_nuevo']}")
                             if correcta:
-                                st.write(f"La opción correcta era **{correcta.upper()})** {textos.get(correcta, '')}")
+                                st.write((md(f"La opción correcta era **{correcta.upper()})** {textos.get(correcta, '')}")))
                         else:
                             st.info("No pude corregir tu respuesta — el nivel no cambió.")
                         if resultado.get("explicacion"):
-                            st.caption(f"📖 Según el material: {resultado['explicacion']}")
+                            st.caption((md(f"📖 Según el material: {resultado['explicacion']}")))
                         if resultado.get("reexplicacion"):
                             st.markdown("**Probemos de otra forma:**")
-                            st.write(resultado["reexplicacion"])
+                            st.write((md(resultado["reexplicacion"])))
 
     def get_response(user_input: str) -> dict:
         try:

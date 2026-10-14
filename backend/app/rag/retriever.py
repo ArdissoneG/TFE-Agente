@@ -1,9 +1,10 @@
 import chromadb
 import ollama
+from pathlib import Path
 
 from app.config import MODELO_EMBEDDINGS
 
-CHROMA_PATH = "./chroma_db"
+CHROMA_PATH = str(Path(__file__).resolve().parents[2] / "chroma_db")
 COLLECTION_NAME = "educacion_financiera"
 
 

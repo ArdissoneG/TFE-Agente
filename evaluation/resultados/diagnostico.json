@@ -1,0 +1,54 @@
+{
+  "comparaciones": 24,
+  "aciertos": 16,
+  "precision_global": 0.667,
+  "matriz_confusion": {
+    "principiante": {
+      "principiante": 6,
+      "intermedio": 2,
+      "avanzado": 1
+    },
+    "intermedio": {
+      "principiante": 2,
+      "intermedio": 7,
+      "avanzado": 0
+    },
+    "avanzado": {
+      "principiante": 1,
+      "intermedio": 2,
+      "avanzado": 3
+    }
+  },
+  "por_nivel": {
+    "principiante": {
+      "precision": 0.667,
+      "exhaustividad": 0.667,
+      "reales": 9,
+      "predichos": 9
+    },
+    "intermedio": {
+      "precision": 0.636,
+      "exhaustividad": 0.778,
+      "reales": 9,
+      "predichos": 11
+    },
+    "avanzado": {
+      "precision": 0.75,
+      "exhaustividad": 0.5,
+      "reales": 6,
+      "predichos": 4
+    }
+  },
+  "por_autopercepcion": {
+    "calibrada": {
+      "comparaciones": 12,
+      "aciertos": 12,
+      "precision": 1.0
+    },
+    "descalibrada": {
+      "comparaciones": 12,
+      "aciertos": 4,
+      "precision": 0.333
+    }
+  }
+}

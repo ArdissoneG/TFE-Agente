@@ -1,0 +1,275 @@
+{
+  "comportamiento_esperado_fuera_de_corpus": "Reconocer que el material no cubre el tema (o que no puede recomendar) y no inventar datos, cifras ni procedimientos.",
+  "consultas": [
+    {
+      "id": "R01",
+      "tipo": "recuperacion",
+      "tema_esperado": "conceptos_basicos",
+      "pregunta": "¿Cuál es la diferencia entre ahorrar e invertir?",
+      "anclas": ["diferencia entre ambos conceptos es que, mediante el ahorro", "invertir es comprometer parte de los ahorros adquiriendo ciertos activos", "El ahorro es la parte de los ingresos que no se consume"],
+      "relevantes": ["CNV_p5_c0", "CNV_p5_c1", "CUA_p24_c0", "CUA_p25_c0"],
+      "persona_id": "P1"
+    },
+    {
+      "id": "R02",
+      "tipo": "recuperacion",
+      "tema_esperado": "conceptos_basicos",
+      "pregunta": "¿Qué es un plazo fijo UVA?",
+      "anclas": ["Son depósitos en pesos expresados en Unidades de Valor Adquisitivo"],
+      "relevantes": ["CUA_p29_c2"],
+      "persona_id": "P2"
+    },
+    {
+      "id": "R03",
+      "tipo": "recuperacion",
+      "tema_esperado": "conceptos_basicos",
+      "pregunta": "¿En qué se diferencia el interés simple del interés compuesto?",
+      "anclas": ["los intereses producidos en cada período de capitalización son retirados", "los intereses producidos por el capital inicial en cada período no son retirados"],
+      "relevantes": ["CUA_p31_c2"],
+      "persona_id": "P3"
+    },
+    {
+      "id": "R04",
+      "tipo": "recuperacion",
+      "tema_esperado": "conceptos_basicos",
+      "pregunta": "¿Cómo armo un presupuesto mensual?",
+      "anclas": ["Es un resumen de los ingresos estimados y de cómo se piensa usarlos", "Para hacer un presupuesto es necesario separar ingresos y gastos", "modelo de planilla para que puedan elaborar un presupuesto"],
+      "relevantes": ["CUA_p18_c0", "CUA_p20_c0"],
+      "persona_id": "P4"
+    },
+    {
+      "id": "R05",
+      "tipo": "recuperacion",
+      "tema_esperado": "conceptos_basicos",
+      "pregunta": "¿Qué son los gastos hormiga?",
+      "anclas": ["Son pequeños gastos que realizamos casi"],
+      "relevantes": ["CUA_p17_c0"],
+      "persona_id": "P5"
+    },
+    {
+      "id": "R06",
+      "tipo": "recuperacion",
+      "tema_esperado": "instrumentos_inversion",
+      "pregunta": "¿Qué es la renta fija?",
+      "anclas": ["Los de renta fija son aquellos emitidos tanto por el sector público", "Poseen un cronograma de pagos futuros conocido"],
+      "relevantes": ["CNV_p12_c0", "CNV_p14_c0"],
+      "persona_id": "P6"
+    },
+    {
+      "id": "R07",
+      "tipo": "recuperacion",
+      "tema_esperado": "instrumentos_inversion",
+      "pregunta": "¿Qué es un CEDEAR?",
+      "anclas": ["Certificados de Depósito Argentino (CEDEAR)"],
+      "relevantes": ["CNV_p13_c1", "CNV_p13_c2"],
+      "persona_id": "P1"
+    },
+    {
+      "id": "R08",
+      "tipo": "recuperacion",
+      "tema_esperado": "instrumentos_inversion",
+      "pregunta": "¿Qué riesgos tiene invertir en acciones?",
+      "anclas": ["Los principales riesgos de la renta variable están vinculados a la incertidumbre", "El comportamiento de éstos en el pasado no garantiza su evolución futura"],
+      "relevantes": ["CNV_p13_c2", "CNV_p14_c0"],
+      "persona_id": "P2"
+    },
+    {
+      "id": "R09",
+      "tipo": "recuperacion",
+      "tema_esperado": "instrumentos_inversion",
+      "pregunta": "¿Qué pasa si la empresa que emitió el bono no puede pagarme?",
+      "anclas": ["es el riesgo de que el emisor del valor no pueda hacer frente a sus pagos"],
+      "relevantes": ["CNV_p13_c0"],
+      "persona_id": "P3"
+    },
+    {
+      "id": "R10",
+      "tipo": "recuperacion",
+      "tema_esperado": "instrumentos_inversion",
+      "pregunta": "¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?",
+      "anclas": ["Hay títulos de deuda pública, ya sea nacional, provincial o municipal", "Deuda pública Bonos Letras del Tesoro"],
+      "relevantes": ["CNV_p12_c2", "CNV_p14_c1"],
+      "persona_id": "P4"
+    },
+    {
+      "id": "R11",
+      "tipo": "recuperacion",
+      "tema_esperado": "sesgos_y_riesgos",
+      "pregunta": "¿Qué es la aversión a las pérdidas?",
+      "anclas": ["Sesgo: Aversión a las pérdidas"],
+      "relevantes": ["CNV_p21_t3"],
+      "persona_id": "P5"
+    },
+    {
+      "id": "R12",
+      "tipo": "recuperacion",
+      "tema_esperado": "sesgos_y_riesgos",
+      "pregunta": "¿Qué es el sesgo de confirmación?",
+      "anclas": ["Sesgo: Confirmación. Descripción: interpretar la información recibida"],
+      "relevantes": ["CNV_p21_t0"],
+      "persona_id": "P6"
+    },
+    {
+      "id": "R13",
+      "tipo": "recuperacion",
+      "tema_esperado": "sesgos_y_riesgos",
+      "pregunta": "¿Qué son los instrumentos no regulados?",
+      "anclas": ["Los instrumentos no regulados son aquellos que no están definidos como un valor negociable"],
+      "relevantes": ["CNV_p22_c1"],
+      "persona_id": "P1"
+    },
+    {
+      "id": "R14",
+      "tipo": "recuperacion",
+      "tema_esperado": "sesgos_y_riesgos",
+      "pregunta": "¿Las criptomonedas están reguladas por la CNV?",
+      "anclas": ["criptoactivos, criptomonedas, ICO"],
+      "relevantes": ["CNV_p22_c2"],
+      "persona_id": "P2"
+    },
+    {
+      "id": "R15",
+      "tipo": "recuperacion",
+      "tema_esperado": "sesgos_y_riesgos",
+      "pregunta": "Todos mis amigos están comprando lo mismo y me dan ganas de imitarlos, ¿es buena idea?",
+      "anclas": ["Sesgo: Prueba social. Descripción: tendencia a imitar las acciones que realizan otras personas"],
+      "relevantes": ["CNV_p21_t2"],
+      "persona_id": "P3"
+    },
+    {
+      "id": "R16",
+      "tipo": "recuperacion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "pregunta": "¿Cuáles son las señales de que una oferta de inversión puede ser una estafa?",
+      "anclas": ["Afirma la necesidad de que la persona inversora tome una decisión rápida", "Banderas de alerta", "Una oportunidad sin riesgo o con poco riesgo"],
+      "relevantes": ["CNV_p24_c1", "CNV_p25_c0", "CNV_p29_t0"],
+      "persona_id": "P4"
+    },
+    {
+      "id": "R17",
+      "tipo": "recuperacion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "pregunta": "¿Qué es un esquema Ponzi?",
+      "anclas": ["Esquemas Ponzi: es cuando una persona estafadora o hub recoge el dinero", "Los esquemas Ponzi tienden a colapsar cuando"],
+      "relevantes": ["CNV_p26_c0", "CNV_p26_c1"],
+      "persona_id": "P5"
+    },
+    {
+      "id": "R18",
+      "tipo": "recuperacion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "pregunta": "¿Qué es el pump and dump?",
+      "anclas": ["Pump-and-Dump (o inflar y desechar)", "se deshace de los activos al precio elevado y desaparece"],
+      "relevantes": ["CNV_p26_c1", "CNV_p26_c2"],
+      "persona_id": "P6"
+    },
+    {
+      "id": "R19",
+      "tipo": "recuperacion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "pregunta": "¿Cómo puedo protegerme de las estafas de inversión?",
+      "anclas": ["¿Cómo evitar un fraude?", "Protegerse en Internet", "Conocer al vendedor"],
+      "relevantes": ["CNV_p28_t0", "CNV_p28_t1"],
+      "persona_id": "P1"
+    },
+    {
+      "id": "R20",
+      "tipo": "recuperacion",
+      "tema_esperado": "fraudes_y_proteccion",
+      "pregunta": "¿Dónde puedo denunciar una estafa de inversión?",
+      "anclas": ["Antes de formular una denuncia, se sugiere contactar al responsable de relaciones con el público", "Vía web, a través del formulario de denuncias"],
+      "relevantes": ["CNV_p32_c0"],
+      "persona_id": "P2"
+    },
+    {
+      "id": "O01",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "producto bancario",
+      "pregunta": "¿Cómo abro una caja de ahorro en un banco?",
+      "terminos_ausentes": ["requisitos para abrir", "abrir una caja de ahorro"],
+      "persona_id": "P3"
+    },
+    {
+      "id": "O02",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "crédito",
+      "pregunta": "¿Cómo se calculan los intereses de la tarjeta de crédito si pago solo el mínimo?",
+      "terminos_ausentes": ["pago mínimo", "intereses punitorios"],
+      "persona_id": "P4"
+    },
+    {
+      "id": "O03",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "mercado cambiario",
+      "pregunta": "¿Cómo se compra dólar MEP?",
+      "terminos_ausentes": ["MEP", "contado con liquidación"],
+      "persona_id": "P5"
+    },
+    {
+      "id": "O04",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "fondos comunes de inversión",
+      "pregunta": "¿Qué es un fondo money market y cuánto rinde?",
+      "terminos_ausentes": ["money market"],
+      "persona_id": "P6"
+    },
+    {
+      "id": "O05",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "impuestos",
+      "pregunta": "¿Cómo se calcula el impuesto a las ganancias por vender acciones o bonos?",
+      "terminos_ausentes": ["impuesto a las ganancias", "alícuota"],
+      "persona_id": "P1"
+    },
+    {
+      "id": "O06",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "crédito",
+      "pregunta": "¿Cómo pido un préstamo personal y qué significa el CFT?",
+      "terminos_ausentes": ["CFT", "costo financiero total"],
+      "persona_id": "P2"
+    },
+    {
+      "id": "O07",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "protección del ahorrista",
+      "pregunta": "¿Qué cubre el seguro de depósitos y hasta qué monto?",
+      "terminos_ausentes": ["seguro de depósitos", "SEDESA"],
+      "persona_id": "P3"
+    },
+    {
+      "id": "O08",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "medios de pago",
+      "pregunta": "¿Cómo funciona Mercado Pago para pagar con QR?",
+      "terminos_ausentes": ["Mercado Pago"],
+      "persona_id": "P4"
+    },
+    {
+      "id": "O09",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "conceptos macroeconómicos",
+      "pregunta": "¿Qué es el riesgo país y cómo afecta a los bonos?",
+      "terminos_ausentes": ["riesgo país"],
+      "persona_id": "P5"
+    },
+    {
+      "id": "O10",
+      "tipo": "fuera_de_corpus",
+      "tema_esperado": null,
+      "categoria": "recomendación de inversión",
+      "pregunta": "¿Cuál es la mejor acción para comprar este mes?",
+      "terminos_ausentes": ["mejor acción"],
+      "persona_id": "P6"
+    }
+  ]
+}

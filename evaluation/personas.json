@@ -1,0 +1,149 @@
+{
+  "criterio": "Seis personas ficticias, dos por nivel nominal. En cada nivel, una tiene autopercepción calibrada (sus respuestas al diagnóstico coinciden con su nivel real) y otra descalibrada (sobreestima o subestima lo que sabe). El nivel real por tema se fijó al diseñar la persona, de forma independiente del sistema; las respuestas al diagnóstico son las que daría esa persona. En la verificación, una persona de nivel real avanzado acierta, una de nivel principiante elige un distractor de su categoría de error preferida, y una de nivel intermedio acierta en las preguntas de posición par dentro del tema (la primera de cada tema cuenta como posición 0).",
+  "personas": [
+    {
+      "id": "P1",
+      "nombre": "Camila",
+      "nivel_nominal": "principiante",
+      "autopercepcion": "calibrada",
+      "descripcion": "19 años, estudiante universitaria. Nunca invirtió; tiene una caja de ahorro y sabe que existe el plazo fijo. Se reconoce novata en todo.",
+      "nivel_real": {
+        "conceptos_basicos": "principiante",
+        "instrumentos_inversion": "principiante",
+        "sesgos_y_riesgos": "principiante",
+        "fraudes_y_proteccion": "principiante"
+      },
+      "respuestas_diagnostico": {
+        "conceptos_basicos_ahorro_inversion": "algo",
+        "conceptos_basicos_riesgo_rentabilidad": "no",
+        "instrumentos_conoce_acciones_bonos": "no",
+        "instrumentos_conoce_fci_cedears": "no",
+        "sesgos_conoce_sesgos_cognitivos": "no",
+        "sesgos_distingue_regulado_no_regulado": "no",
+        "fraudes_reconoce_senales_estafa": "algo",
+        "fraudes_conoce_canales_denuncia": "no"
+      },
+      "error_preferido": "confusion_conceptos"
+    },
+    {
+      "id": "P2",
+      "nombre": "Martín",
+      "nivel_nominal": "principiante",
+      "autopercepcion": "descalibrada (sobreestima)",
+      "descripcion": "22 años, empleado de comercio. Sigue a influencers de inversiones y cree saber bastante, pero nunca estudió los conceptos. Sobreestima lo que sabe, salvo en sesgos, donde admite no conocerlos.",
+      "nivel_real": {
+        "conceptos_basicos": "principiante",
+        "instrumentos_inversion": "principiante",
+        "sesgos_y_riesgos": "principiante",
+        "fraudes_y_proteccion": "principiante"
+      },
+      "respuestas_diagnostico": {
+        "conceptos_basicos_ahorro_inversion": "si",
+        "conceptos_basicos_riesgo_rentabilidad": "algo",
+        "instrumentos_conoce_acciones_bonos": "si",
+        "instrumentos_conoce_fci_cedears": "si",
+        "sesgos_conoce_sesgos_cognitivos": "algo",
+        "sesgos_distingue_regulado_no_regulado": "no",
+        "fraudes_reconoce_senales_estafa": "si",
+        "fraudes_conoce_canales_denuncia": "algo"
+      },
+      "error_preferido": "senal_superficial"
+    },
+    {
+      "id": "P3",
+      "nombre": "Lucía",
+      "nivel_nominal": "intermedio",
+      "autopercepcion": "calibrada",
+      "descripcion": "28 años, administrativa. Hace plazos fijos y compra dólares, leyó algo sobre bonos y estafas. Conoce poco de sesgos y se reconoce así.",
+      "nivel_real": {
+        "conceptos_basicos": "intermedio",
+        "instrumentos_inversion": "intermedio",
+        "sesgos_y_riesgos": "principiante",
+        "fraudes_y_proteccion": "intermedio"
+      },
+      "respuestas_diagnostico": {
+        "conceptos_basicos_ahorro_inversion": "si",
+        "conceptos_basicos_riesgo_rentabilidad": "algo",
+        "instrumentos_conoce_acciones_bonos": "algo",
+        "instrumentos_conoce_fci_cedears": "algo",
+        "sesgos_conoce_sesgos_cognitivos": "no",
+        "sesgos_distingue_regulado_no_regulado": "algo",
+        "fraudes_reconoce_senales_estafa": "algo",
+        "fraudes_conoce_canales_denuncia": "si"
+      },
+      "error_preferido": "relacion_invertida"
+    },
+    {
+      "id": "P4",
+      "nombre": "Rodrigo",
+      "nivel_nominal": "intermedio",
+      "autopercepcion": "descalibrada (subestima)",
+      "descripcion": "35 años, docente. Invierte hace años en CEDEARs y plazos fijos UVA, pero es muy cauto al declarar lo que sabe y subestima sus conocimientos de conceptos básicos e instrumentos.",
+      "nivel_real": {
+        "conceptos_basicos": "intermedio",
+        "instrumentos_inversion": "intermedio",
+        "sesgos_y_riesgos": "intermedio",
+        "fraudes_y_proteccion": "intermedio"
+      },
+      "respuestas_diagnostico": {
+        "conceptos_basicos_ahorro_inversion": "algo",
+        "conceptos_basicos_riesgo_rentabilidad": "no",
+        "instrumentos_conoce_acciones_bonos": "no",
+        "instrumentos_conoce_fci_cedears": "algo",
+        "sesgos_conoce_sesgos_cognitivos": "algo",
+        "sesgos_distingue_regulado_no_regulado": "algo",
+        "fraudes_reconoce_senales_estafa": "algo",
+        "fraudes_conoce_canales_denuncia": "algo"
+      },
+      "error_preferido": "equivalencia_indebida"
+    },
+    {
+      "id": "P5",
+      "nombre": "Valeria",
+      "nivel_nominal": "avanzado",
+      "autopercepcion": "calibrada",
+      "descripcion": "41 años, analista financiera. Domina instrumentos y conceptos básicos, conoce las señales de estafa; en sesgos sabe lo general pero no todos los detalles.",
+      "nivel_real": {
+        "conceptos_basicos": "avanzado",
+        "instrumentos_inversion": "avanzado",
+        "sesgos_y_riesgos": "intermedio",
+        "fraudes_y_proteccion": "avanzado"
+      },
+      "respuestas_diagnostico": {
+        "conceptos_basicos_ahorro_inversion": "si",
+        "conceptos_basicos_riesgo_rentabilidad": "si",
+        "instrumentos_conoce_acciones_bonos": "si",
+        "instrumentos_conoce_fci_cedears": "si",
+        "sesgos_conoce_sesgos_cognitivos": "si",
+        "sesgos_distingue_regulado_no_regulado": "algo",
+        "fraudes_reconoce_senales_estafa": "si",
+        "fraudes_conoce_canales_denuncia": "si"
+      },
+      "error_preferido": "confusion_conceptos"
+    },
+    {
+      "id": "P6",
+      "nombre": "Federico",
+      "nivel_nominal": "avanzado",
+      "autopercepcion": "descalibrada (subestima)",
+      "descripcion": "47 años, operador de bolsa. Conoce muy bien el material pero responde con excesiva modestia, y se declara más ignorante de lo que es, sobre todo en conceptos básicos, instrumentos y sesgos.",
+      "nivel_real": {
+        "conceptos_basicos": "avanzado",
+        "instrumentos_inversion": "avanzado",
+        "sesgos_y_riesgos": "avanzado",
+        "fraudes_y_proteccion": "intermedio"
+      },
+      "respuestas_diagnostico": {
+        "conceptos_basicos_ahorro_inversion": "si",
+        "conceptos_basicos_riesgo_rentabilidad": "algo",
+        "instrumentos_conoce_acciones_bonos": "algo",
+        "instrumentos_conoce_fci_cedears": "algo",
+        "sesgos_conoce_sesgos_cognitivos": "algo",
+        "sesgos_distingue_regulado_no_regulado": "no",
+        "fraudes_reconoce_senales_estafa": "si",
+        "fraudes_conoce_canales_denuncia": "algo"
+      },
+      "error_preferido": "riesgo_nulo"
+    }
+  ]
+}
