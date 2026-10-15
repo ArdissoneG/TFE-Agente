@@ -9,7 +9,7 @@ from app.verification.preguntas import CATEGORIAS_ERROR, elegir_pregunta, califi
 USUARIO_ID = "default"
 
 INSTRUCCIONES_NIVEL = {
-    "principiante": "Explicá en lenguaje simple, sin jerga técnica. Usá analogías cotidianas cuando ayuden. No asumas conocimientos previos.",
+    "principiante": "Explicá en lenguaje simple, sin jerga técnica. Podés usar una analogía cotidiana breve solo para ilustrar; las definiciones, cifras y datos tienen que salir del contexto, no de la analogía. No asumas conocimientos previos.",
     "intermedio": "Explicá con cierto nivel técnico, pero aclarando los términos clave la primera vez que aparecen.",
     "avanzado": "Respondé de forma directa y técnica, sin explicar conceptos básicos que ya se asumen conocidos.",
 }
@@ -142,9 +142,11 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
             f"La opción que eligió fue: \"{calificacion['texto_elegido']}\". "
             f"Ese error es de este tipo: {CATEGORIAS_ERROR[calificacion['categoria_error']]} "
             f"Lo correcto, según el material, es: \"{calificacion['texto_correcto']}\". "
-            "Explicá el concepto de nuevo en lenguaje simple, con una analogía distinta, "
-            "corrigiendo ese error puntual. Hablale directamente al usuario, sin mencionar "
-            "su error ni referirte a él en tercera persona. "
+            "Explicá el concepto de nuevo en lenguaje simple y con otras palabras, "
+            "corrigiendo ese error puntual. Si el contexto trae un ejemplo con números, usalo. "
+            "No inventes situaciones, cifras ni comparaciones que no estén en el contexto. "
+            "Hablale directamente al usuario, sin mencionar su error ni referirte a él en "
+            "tercera persona, y no empieces con frases como 'entiendo que hay confusión'. "
             "Apoyate en el siguiente contexto extraído de material oficial de educación financiera. "
             "Si el contexto no tiene información suficiente para responder con precisión, decilo "
             "explícitamente en vez de inventar una respuesta.\n\n"
