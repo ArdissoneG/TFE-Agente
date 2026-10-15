@@ -34,3 +34,6 @@ chroma_db/
 
 # Log de interacciones de la app (en evaluación se escribe en evaluation/resultados/)
 backend/registros/
+
+# Corrida de humo del runner de evaluación
+evaluation/resultados/*__prueba/

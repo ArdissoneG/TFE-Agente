@@ -1,6 +1,6 @@
-"""Parámetros de generación compartidos por todas las condiciones (baseline y agente completo)."""
+import os
 
-MODELO_LLM = "phi3:mini"
+MODELO_LLM = os.getenv("TFE_MODELO_LLM", "phi3:mini")
 MODELO_EMBEDDINGS = "nomic-embed-text"
 
 # Temperatura y tamaño de contexto fijos y explícitos (antes se usaban los valores
