@@ -1,0 +1,61 @@
+﻿id_item,run_id,escenario_id,tipo_pregunta,condicion,repeticion,persona_id,tema_detectado,chunk_ids
+X01,O06_agente_completo_s2,O06,fuera_de_corpus,agente_completo,2,P2,conceptos_basicos,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina8_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina27_chunk1;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina31_chunk1
+X02,R14_baseline_s3,R14,recuperacion,baseline,3,P2,,
+X03,R06_baseline_s1,R06,recuperacion,baseline,1,P6,,
+X04,R11_baseline_s2,R11,recuperacion,baseline,2,P5,,
+X05,O02_agente_completo_s3,O02,fuera_de_corpus,agente_completo,3,P4,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina31_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina9_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina13_chunk0
+X06,R16_baseline_s3,R16,recuperacion,baseline,3,P4,,
+X07,R19_agente_completo_s1,R19,recuperacion,agente_completo,1,P1,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina24_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina29_transcripcion_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina28_transcripcion_chunk1
+X08,R09_agente_completo_s3,R09,recuperacion,agente_completo,3,P3,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina26_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina9_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina23_chunk0
+X09,R13_baseline_s3,R13,recuperacion,baseline,3,P1,,
+X10,R08_baseline_s3,R08,recuperacion,baseline,3,P2,,
+X11,R02_baseline_s2,R02,recuperacion,baseline,2,P2,,
+X12,R04_agente_completo_s2,R04,recuperacion,agente_completo,2,P4,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina20_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina21_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina18_chunk0
+X13,R04_baseline_s3,R04,recuperacion,baseline,3,P4,,
+X14,O08_baseline_s2,O08,fuera_de_corpus,baseline,2,P4,,
+X15,R06_agente_completo_s1,R06,recuperacion,agente_completo,1,P6,instrumentos_inversion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina13_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk1
+X16,R02_agente_completo_s2,R02,recuperacion,agente_completo,2,P2,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina28_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina31_chunk3;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina29_chunk2
+X17,R12_baseline_s3,R12,recuperacion,baseline,3,P6,,
+X18,R04_baseline_s2,R04,recuperacion,baseline,2,P4,,
+X19,O03_agente_completo_s2,O03,fuera_de_corpus,agente_completo,2,P5,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina19_chunk1;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina18_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina23_chunk0
+X20,R17_agente_completo_s2,R17,recuperacion,agente_completo,2,P5,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina26_chunk1;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina18_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina25_chunk2
+X21,R10_baseline_s1,R10,recuperacion,baseline,1,P4,,
+X22,R01_baseline_s1,R01,recuperacion,baseline,1,P1,,
+X23,O02_baseline_s3,O02,fuera_de_corpus,baseline,3,P4,,
+X24,R15_baseline_s2,R15,recuperacion,baseline,2,P3,,
+X25,R08_agente_completo_s3,R08,recuperacion,agente_completo,3,P2,conceptos_basicos,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina6_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina9_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina9_chunk1
+X26,O01_baseline_s2,O01,fuera_de_corpus,baseline,2,P3,,
+X27,R07_agente_completo_s1,R07,recuperacion,agente_completo,1,P1,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina18_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk3;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina10_chunk2
+X28,R05_baseline_s3,R05,recuperacion,baseline,3,P5,,
+X29,R09_baseline_s3,R09,recuperacion,baseline,3,P3,,
+X30,R20_agente_completo_s3,R20,recuperacion,agente_completo,3,P2,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina32_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina32_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina24_chunk0
+X31,R07_baseline_s1,R07,recuperacion,baseline,1,P1,,
+X32,O10_baseline_s2,O10,fuera_de_corpus,baseline,2,P6,,
+X33,R20_baseline_s3,R20,recuperacion,baseline,3,P2,,
+X34,R04_agente_completo_s3,R04,recuperacion,agente_completo,3,P4,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina20_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina21_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina18_chunk0
+X35,R16_agente_completo_s3,R16,recuperacion,agente_completo,3,P4,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina24_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina25_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina28_transcripcion_chunk1
+X36,O10_agente_completo_s2,O10,fuera_de_corpus,agente_completo,2,P6,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina23_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina9_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina26_chunk2
+X37,R13_agente_completo_s3,R13,recuperacion,agente_completo,3,P1,sesgos_y_riesgos,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina22_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina22_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina22_chunk2
+X38,O06_baseline_s2,O06,fuera_de_corpus,baseline,2,P2,,
+X39,R14_agente_completo_s3,R14,recuperacion,agente_completo,3,P2,sesgos_y_riesgos,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina22_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina22_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk3
+X40,O08_agente_completo_s2,O08,fuera_de_corpus,agente_completo,2,P4,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina6_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina27_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina29_transcripcion_chunk0
+X41,R04_agente_completo_s1,R04,recuperacion,agente_completo,1,P4,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina20_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina21_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina18_chunk0
+X42,R12_agente_completo_s3,R12,recuperacion,agente_completo,3,P6,sesgos_y_riesgos,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk3;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina21_transcripcion_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina21_transcripcion_chunk3
+X43,R01_agente_completo_s1,R01,recuperacion,agente_completo,1,P1,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina23_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina9_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina5_chunk1
+X44,R10_agente_completo_s3,R10,recuperacion,agente_completo,3,P4,instrumentos_inversion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina13_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina31_chunk1
+X45,R19_baseline_s1,R19,recuperacion,baseline,1,P1,,
+X46,O03_baseline_s2,O03,fuera_de_corpus,baseline,2,P5,,
+X47,R10_agente_completo_s1,R10,recuperacion,agente_completo,1,P4,instrumentos_inversion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina13_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina31_chunk1
+X48,R03_agente_completo_s2,R03,recuperacion,agente_completo,2,P3,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina32_chunk2;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina23_chunk1;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina31_chunk1
+X49,R05_agente_completo_s3,R05,recuperacion,agente_completo,3,P5,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina17_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina20_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina9_chunk0
+X50,R15_agente_completo_s2,R15,recuperacion,agente_completo,2,P3,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina27_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina27_chunk2;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina29_transcripcion_chunk0
+X51,O01_agente_completo_s2,O01,fuera_de_corpus,agente_completo,2,P3,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina27_chunk1;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina27_chunk0;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina27_chunk2
+X52,R10_baseline_s3,R10,recuperacion,baseline,3,P4,,
+X53,R18_baseline_s1,R18,recuperacion,baseline,1,P6,,
+X54,R18_agente_completo_s1,R18,recuperacion,agente_completo,1,P6,instrumentos_inversion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk3;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina13_chunk0;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk0
+X55,R03_agente_completo_s3,R03,recuperacion,agente_completo,3,P3,conceptos_basicos,../data/raw/Educ. Financiera_agosto_2023.pdf_pagina32_chunk2;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina23_chunk1;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina31_chunk1
+X56,R11_agente_completo_s2,R11,recuperacion,agente_completo,2,P5,fraudes_y_proteccion,../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina12_chunk3;../data/raw/Educ. Financiera_agosto_2023.pdf_pagina18_chunk1;../data/raw/texto_guia_de_inversoras_v2_0_2.pdf_pagina27_chunk2
+X57,R04_baseline_s1,R04,recuperacion,baseline,1,P4,,
+X58,R03_baseline_s3,R03,recuperacion,baseline,3,P3,,
+X59,R03_baseline_s2,R03,recuperacion,baseline,2,P3,,
+X60,R17_baseline_s2,R17,recuperacion,baseline,2,P5,,

@@ -1,0 +1,18 @@
+{
+  "modelo": "phi3:mini",
+  "digest": "4f222292793889a9a40a020799cfd28d53f3e01af25d48e06c5e708610fc47e9",
+  "modelo_embeddings": "nomic-embed-text",
+  "temperatura": 0.3,
+  "num_ctx": 4096,
+  "num_predict": 1000,
+  "top_k": 3,
+  "fragmentos_corpus": 116,
+  "commit": "246483ecaf703b80a784e63dad12bda9b68848a7",
+  "cambios_sin_commitear": false,
+  "semillas": [
+    1,
+    2,
+    3
+  ],
+  "creado": "2026-10-15T14:32:13"
+}
