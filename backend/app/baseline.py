@@ -29,6 +29,7 @@ def responder_baseline(mensaje: str, meta: dict | None = None) -> dict:
             "modelo": generacion["modelo"],
             "digest": generacion["digest"],
             "parametros": generacion["parametros"],
+            "finalizacion": generacion["finalizacion"],
             "tema_detectado": None,
             "nivel_aplicado": None,
             "chunk_ids": None,

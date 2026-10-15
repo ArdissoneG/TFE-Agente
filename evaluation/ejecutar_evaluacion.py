@@ -22,6 +22,7 @@ retoma donde quedó. Cada corrida se guarda en su propio archivo; una corrida in
 Resultados: evaluation/resultados/<modelo>/
     configuracion.json      modelo, digest, parámetros, commit y corpus de la evaluación
     corridas/<run_id>.jsonl un archivo por corrida (todos los eventos registrados)
+    descartadas/            intentos descartados por texto degenerado (si los hubo)
     interacciones.jsonl     todas las corridas juntas (se regenera al terminar)
 """
 import argparse
@@ -40,6 +41,35 @@ RAIZ_REPO = RAIZ_EVALUACION.parent
 sys.path.insert(0, str(RAIZ_EVALUACION))
 
 CONDICIONES = ["baseline", "agente_completo"]
+
+# --- Protección contra fallas técnicas del servidor de Ollama -------------------------------------
+# En una primera ejecución, tras ~100 generaciones el modelo empezó a devolver texto sin sentido y
+# siguió así hasta el final (probablemente tras respuestas desbordadas de miles de tokens). Para que
+# eso no contamine la evaluación: (1) las respuestas tienen un tope de tokens (NUM_PREDICT), (2) se
+# descarga y recarga el modelo cada tanto, y (3) si una corrida produce texto degenerado, se descarta,
+# se guarda en descartadas/ (queda registro) y se repite con el modelo recargado.
+MAX_INTENTOS = 3
+UMBRAL_ESPANOL = 0.15  # proporción mínima de palabras vacías del español; lo legítimo da >= 0,26
+_PALABRAS_ES = frozenset(
+    "el la los las de del que y en un una es se por con para como al lo su sus o no más pero también "
+    "cuando si este esta son ser tu tus le les ya hay muy sin sobre entre".split())
+
+
+def texto_degenerado(texto: str) -> bool:
+    """True si el texto no parece español coherente (vacío, mezcla de símbolos, otro idioma)."""
+    palabras = re.findall(r"[a-záéíóúñü]+", texto.lower())
+    if len(palabras) < 3:
+        return True
+    return sum(p in _PALABRAS_ES for p in palabras) / len(palabras) < UMBRAL_ESPANOL
+
+
+def descargar_modelo(be) -> None:
+    """Descarga el modelo de la memoria de Ollama; la próxima llamada lo recarga con estado limpio."""
+    import ollama
+    try:
+        ollama.chat(model=be.config.MODELO_LLM, messages=[], keep_alive=0)
+    except Exception as e:
+        print(f"  (no pude descargar el modelo: {e})")
 
 
 def carpeta_modelo(modelo: str, prueba: bool = False) -> Path:
@@ -110,6 +140,7 @@ def verificar_entorno(be, forzar: bool) -> dict:
         "modelo_embeddings": be.config.MODELO_EMBEDDINGS,
         "temperatura": be.config.TEMPERATURA,
         "num_ctx": be.config.NUM_CTX,
+        "num_predict": be.config.NUM_PREDICT,
         "top_k": 3,
         "fragmentos_corpus": actuales,
         **_commit(),
@@ -120,7 +151,7 @@ def guardar_configuracion(carpeta: Path, nueva: dict, semillas: list[int], forza
     ruta = carpeta / "configuracion.json"
     if ruta.exists():
         previa = json.loads(ruta.read_text(encoding="utf-8"))
-        cambios = [k for k in ("modelo", "digest", "temperatura", "num_ctx", "fragmentos_corpus")
+        cambios = [k for k in ("modelo", "digest", "temperatura", "num_ctx", "num_predict", "fragmentos_corpus")
                    if previa.get(k) != nueva.get(k)]
         if cambios and not forzar:
             sys.exit("La configuración cambió desde la primera corrida de esta carpeta "
@@ -176,8 +207,21 @@ def correr_agente(be, esc: dict, persona: dict, meta: dict) -> dict:
     }
 
 
-def ejecutar(be, escenarios, personas, semillas, condiciones, carpeta: Path) -> int:
+def tiene_texto_degenerado(ruta: Path) -> bool:
+    """True si alguna respuesta generada en esta corrida es texto degenerado."""
+    if not ruta.exists():
+        return False
+    for linea in ruta.read_text(encoding="utf-8").splitlines():
+        evento = json.loads(linea)
+        if evento.get("respuesta") is not None and texto_degenerado(evento["respuesta"]):
+            return True
+    return False
+
+
+def ejecutar(be, escenarios, personas, semillas, condiciones, carpeta: Path,
+             recargar_cada: int = 20, tolerar_degeneradas: bool = False) -> int:
     corridas = carpeta / "corridas"
+    descartadas = carpeta / "descartadas"
     corridas.mkdir(parents=True, exist_ok=True)
     tareas = [(s, e, c) for s in semillas for e in escenarios for c in condiciones]
     pendientes = [t for t in tareas
@@ -185,27 +229,54 @@ def ejecutar(be, escenarios, personas, semillas, condiciones, carpeta: Path) -> 
     print(f"{len(tareas)} corridas en total, {len(tareas) - len(pendientes)} ya completas, "
           f"{len(pendientes)} por hacer.")
 
+    descargar_modelo(be)  # arranca siempre con el modelo recién cargado
     fallidas, duraciones = 0, []
     for i, (seed, esc, cond) in enumerate(pendientes, 1):
         run_id = f"{esc['id']}_{cond}_s{seed}"
         ruta = corridas / f"{run_id}.jsonl"
-        if ruta.exists():
-            ruta.unlink()  # quedó incompleta: se rehace entera
         persona = personas[esc["persona_id"]]
         meta = {"seed": seed, "run_id": run_id, "escenario_id": esc["id"], "repeticion": seed,
                 "condicion": cond, "ruta_log": str(ruta)}
+        if recargar_cada and i > 1 and (i - 1) % recargar_cada == 0:
+            descargar_modelo(be)
+
         t0 = time.time()
-        error, extra = None, {}
-        try:
-            extra = correr_baseline(be, esc, meta) if cond == "baseline" \
-                else correr_agente(be, esc, persona, meta)
-        except Exception as e:  # una corrida fallida no frena a las demás
-            error = f"{type(e).__name__}: {e}"
+        for intento in range(1, MAX_INTENTOS + 1):
+            if ruta.exists():
+                ruta.unlink()  # quedó incompleta o se descartó el intento anterior
+            error, extra = None, {}
+            try:
+                extra = correr_baseline(be, esc, meta) if cond == "baseline" \
+                    else correr_agente(be, esc, persona, meta)
+            except Exception as e:  # una corrida fallida no frena a las demás
+                error = f"{type(e).__name__}: {e}"
+            degenerada = error is None and tiene_texto_degenerado(ruta)
+            if not degenerada:
+                break
+            descartadas.mkdir(exist_ok=True)
+            ruta.replace(descartadas / f"{run_id}__intento{intento}.jsonl")
+            print(f"  AVISO: {run_id} generó texto degenerado (intento {intento}/{MAX_INTENTOS}); "
+                  "se descarta y se recarga el modelo.")
+            descargar_modelo(be)
+            if intento == MAX_INTENTOS and not tolerar_degeneradas:
+                sys.exit(f"{run_id} sigue generando texto degenerado tras {MAX_INTENTOS} intentos "
+                         f"(ver {descartadas}). Reiniciá Ollama y relanzá el comando; si la respuesta "
+                         "es legítima pero en otro idioma, usá --tolerar-degeneradas.")
+        if degenerada:  # solo llega acá con --tolerar-degeneradas: se rehace el último intento y se marca
+            ruta.unlink(missing_ok=True)
+            error, extra = None, {}
+            try:
+                extra = correr_baseline(be, esc, meta) if cond == "baseline" \
+                    else correr_agente(be, esc, persona, meta)
+            except Exception as e:
+                error = f"{type(e).__name__}: {e}"
+        if error:
             fallidas += 1
         segundos = round(time.time() - t0, 1)
         be.registrar({"tipo": "corrida_completa", "run_id": run_id, "escenario_id": esc["id"],
                       "tipo_pregunta": esc["tipo"], "persona_id": persona["id"], "condicion": cond,
-                      "seed": seed, "segundos": segundos, "error": error, **extra}, ruta=ruta)
+                      "seed": seed, "segundos": segundos, "error": error,
+                      "intentos": intento, "salida_degenerada": bool(degenerada), **extra}, ruta=ruta)
         duraciones.append(segundos)
         faltan = len(pendientes) - i
         eta = round(faltan * sum(duraciones) / len(duraciones) / 60)
@@ -232,6 +303,10 @@ def main() -> None:
     ap.add_argument("--escenarios", help="ids separados por coma (por ejemplo R01,O03); por defecto todos")
     ap.add_argument("--prueba", action="store_true",
                     help="humo: R01 y O01, semilla 1, en una carpeta aparte (<modelo>__prueba)")
+    ap.add_argument("--recargar-cada", type=int, default=20,
+                    help="descarga y recarga el modelo cada N corridas (0 = nunca); por defecto 20")
+    ap.add_argument("--tolerar-degeneradas", action="store_true",
+                    help="si tras 3 intentos sigue habiendo texto degenerado, lo guarda marcado en vez de abortar")
     ap.add_argument("--forzar", action="store_true",
                     help="ignora el control de corpus/configuración (no recomendado)")
     args = ap.parse_args()
@@ -258,10 +333,11 @@ def main() -> None:
     carpeta.mkdir(parents=True, exist_ok=True)
     guardar_configuracion(carpeta, config, semillas, args.forzar)
     print(f"Modelo {config['modelo']} (digest {config['digest'][:12]}) · "
-          f"temperatura {config['temperatura']} · num_ctx {config['num_ctx']}")
+          f"temperatura {config['temperatura']} · num_ctx {config['num_ctx']} · num_predict {config['num_predict']}")
     print(f"Resultados en {carpeta}")
 
-    fallidas = ejecutar(be, escenarios, personas, semillas, condiciones, carpeta)
+    fallidas = ejecutar(be, escenarios, personas, semillas, condiciones, carpeta,
+                        args.recargar_cada, args.tolerar_degeneradas)
     eventos = consolidar(carpeta)
     print(f"\nListo. {eventos} eventos en interacciones.jsonl.")
     if fallidas:
