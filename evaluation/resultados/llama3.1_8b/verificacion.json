@@ -1,0 +1,54 @@
+{
+  "corridas_agente": 90,
+  "aciertos": 42,
+  "errores": 48,
+  "sin_corregir": 0,
+  "por_persona": {
+    "P1": {
+      "total": 15,
+      "aciertos": 0
+    },
+    "P2": {
+      "total": 15,
+      "aciertos": 0
+    },
+    "P3": {
+      "total": 15,
+      "aciertos": 6
+    },
+    "P4": {
+      "total": 15,
+      "aciertos": 6
+    },
+    "P5": {
+      "total": 15,
+      "aciertos": 15
+    },
+    "P6": {
+      "total": 15,
+      "aciertos": 15
+    }
+  },
+  "categorias_de_error": {
+    "equivalencia_indebida": 6,
+    "confusion_conceptos": 18,
+    "riesgo_nulo": 9,
+    "relacion_invertida": 9,
+    "senal_superficial": 3,
+    "generalizacion_excesiva": 3
+  },
+  "errores_por_tema": {
+    "conceptos_basicos": 24,
+    "fraudes_y_proteccion": 12,
+    "sesgos_y_riesgos": 9,
+    "instrumentos_inversion": 3
+  },
+  "reexplicaciones_generadas": 48,
+  "cambios_de_nivel": {
+    "intermedio->avanzado": 24,
+    "principiante->principiante": 30,
+    "avanzado->avanzado": 15,
+    "intermedio->principiante": 18,
+    "principiante->intermedio": 3
+  }
+}

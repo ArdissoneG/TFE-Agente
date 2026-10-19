@@ -1,0 +1,18 @@
+{
+  "modelo": "llama3.1:8b",
+  "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+  "modelo_embeddings": "nomic-embed-text",
+  "temperatura": 0.3,
+  "num_ctx": 4096,
+  "num_predict": 1000,
+  "top_k": 3,
+  "fragmentos_corpus": 116,
+  "commit": "1682a08e956a35d37527147bc2a04238f7d838e1",
+  "cambios_sin_commitear": false,
+  "semillas": [
+    1,
+    2,
+    3
+  ],
+  "creado": "2026-10-19T17:02:52"
+}
