@@ -1,0 +1,63 @@
+{
+  "respuestas": {
+    "agente_completo | fuera_de_corpus": {
+      "n": 6,
+      "fidelidad_media": null,
+      "alucinacion_tasa": 0.667,
+      "pertinencia_media": 1.5,
+      "artefactos_tasa": 0.167,
+      "reconoce_limite": {
+        "no": 2,
+        "parcial": 3,
+        "si": 1
+      }
+    },
+    "agente_completo | recuperacion": {
+      "n": 24,
+      "fidelidad_media": 1.417,
+      "alucinacion_tasa": 0.125,
+      "pertinencia_media": 1.958,
+      "artefactos_tasa": 0.042
+    },
+    "baseline | fuera_de_corpus": {
+      "n": 6,
+      "fidelidad_media": null,
+      "alucinacion_tasa": 0.833,
+      "pertinencia_media": 1.333,
+      "artefactos_tasa": 0.0,
+      "reconoce_limite": {
+        "no": 5,
+        "si": 1
+      }
+    },
+    "baseline | recuperacion": {
+      "n": 24,
+      "fidelidad_media": 1.208,
+      "alucinacion_tasa": 0.458,
+      "pertinencia_media": 1.833,
+      "artefactos_tasa": 0.0
+    }
+  },
+  "reexplicaciones": {
+    "n": 30,
+    "corrige_error": {
+      "si": 11,
+      "parcial": 9,
+      "no": 10
+    },
+    "reproduce_error": {
+      "no": 26,
+      "si": 4
+    },
+    "alucinacion_tasa": 0.5,
+    "artefactos_tasa": 0.033,
+    "por_categoria_de_error": {
+      "relacion_invertida": 8,
+      "riesgo_nulo": 3,
+      "senal_superficial": 2,
+      "equivalencia_indebida": 4,
+      "confusion_conceptos": 11,
+      "generalizacion_excesiva": 2
+    }
+  }
+}

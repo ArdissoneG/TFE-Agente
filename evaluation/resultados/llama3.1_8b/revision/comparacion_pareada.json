@@ -1,0 +1,86 @@
+{
+  "recuperacion | fidelidad": {
+    "pares": 24,
+    "mejora_media_del_agente": 0.208,
+    "ic95": [
+      -0.125,
+      0.542
+    ],
+    "agente_mejor": 9,
+    "empates": 10,
+    "baseline_mejor": 5,
+    "p_signo": 0.424
+  },
+  "recuperacion | alucinacion": {
+    "pares": 24,
+    "mejora_media_del_agente": 0.333,
+    "ic95": [
+      0.125,
+      0.542
+    ],
+    "agente_mejor": 9,
+    "empates": 14,
+    "baseline_mejor": 1,
+    "p_signo": 0.0215
+  },
+  "recuperacion | pertinencia": {
+    "pares": 24,
+    "mejora_media_del_agente": 0.125,
+    "ic95": [
+      -0.042,
+      0.292
+    ],
+    "agente_mejor": 4,
+    "empates": 19,
+    "baseline_mejor": 1,
+    "p_signo": 0.375
+  },
+  "recuperacion | artefactos": {
+    "pares": 24,
+    "mejora_media_del_agente": -0.042,
+    "ic95": [
+      -0.125,
+      0.0
+    ],
+    "agente_mejor": 0,
+    "empates": 23,
+    "baseline_mejor": 1,
+    "p_signo": 1.0
+  },
+  "fuera_de_corpus | alucinacion": {
+    "pares": 6,
+    "mejora_media_del_agente": 0.167,
+    "ic95": [
+      0.0,
+      0.5
+    ],
+    "agente_mejor": 1,
+    "empates": 5,
+    "baseline_mejor": 0,
+    "p_signo": 1.0
+  },
+  "fuera_de_corpus | pertinencia": {
+    "pares": 6,
+    "mejora_media_del_agente": 0.167,
+    "ic95": [
+      0.0,
+      0.5
+    ],
+    "agente_mejor": 1,
+    "empates": 5,
+    "baseline_mejor": 0,
+    "p_signo": 1.0
+  },
+  "fuera_de_corpus | artefactos": {
+    "pares": 6,
+    "mejora_media_del_agente": -0.167,
+    "ic95": [
+      -0.5,
+      0.0
+    ],
+    "agente_mejor": 0,
+    "empates": 5,
+    "baseline_mejor": 1,
+    "p_signo": 1.0
+  }
+}

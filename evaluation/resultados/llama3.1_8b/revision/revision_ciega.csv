@@ -1,5 +1,5 @@
-﻿id_item,pregunta,material_de_referencia,respuesta,fidelidad (0-2),alucinacion (0/1),pertinencia (0-2),artefactos (0/1),reconoce_limite (si/parcial/no),observaciones
-X01,¿Cómo pido un préstamo personal y qué significa el CFT?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Excelente pregunta!
+﻿"id_item","pregunta","material_de_referencia","respuesta","fidelidad (0-2)","alucinacion (0/1)","pertinencia (0-2)","artefactos (0/1)","reconoce_limite (si/parcial/no)","observaciones"
+"X01","¿Cómo pido un préstamo personal y qué significa el CFT?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Excelente pregunta!
 
 En Argentina, para solicitar un préstamo personal, debes seguir los siguientes pasos:
 
@@ -22,8 +22,8 @@ El CFT es importante porque ayuda a las instituciones financieras a evaluar la c
 
 Puedes solicitar a la institución financiera que te proporcione tu CFT o puedes calcularlo tú mismo sumando todos los créditos y débitos que tengas con diferentes instituciones financieras. Es importante tener en cuenta que el CFT puede variar según las fuentes de información utilizadas.
 
-Recuerda siempre revisar las condiciones del préstamo y considerar tu capacidad crediticia antes de solicitar un préstamo personal. ¡Buena suerte!",NA,,,,,
-X02,¿Las criptomonedas están reguladas por la CNV?,"[CNV_p22_c2] l precio máximo de compra y el precio mínimo de venta de un activo 
+Recuerda siempre revisar las condiciones del préstamo y considerar tu capacidad crediticia antes de solicitar un préstamo personal. ¡Buena suerte!","NA","1","1","0","no","Los pasos para pedir el préstamo son generales, pero define mal el CFT como la suma de créditos y débitos, en lugar del costo total del financiamiento. Tampoco reconoce que no tiene material para responder."
+"X02","¿Las criptomonedas están reguladas por la CNV?","[CNV_p22_c2] l precio máximo de compra y el precio mínimo de venta de un activo 
 financiero) en las operaciones. 
  
 Es importante que las personas inversoras identifiquen estos instrumentos y 
@@ -36,8 +36,8 @@ y servicios no regulados sobre los que sugerimos estar informados:
 criptoactivos, criptomonedas, ICO’s  (Initial Coin Offerings ), contratos por 
 diferencia (CFD), mercado FOREX, Servicios de educación financiera,","La Comisión Nacional de Valores (CNV) es el organismo encargado de regular y supervisar las actividades financieras en Argentina, incluyendo las inversiones en criptomonedas. Sin embargo, hasta ahora no hay una normativa específica que regule explícitamente las criptomonedas como activos financieros.
 
-En 2021, la CNV publicó un comunicado donde se establecía que las criptomonedas no están incluidas en el ámbito de aplicación del Código de Valores y se consideraban ""activos digitales"" que no necesariamente son valores.",,,,,NA,
-X03,¿Qué es la renta fija?,"[CNV_p12_c0] 12 
+En 2021, la CNV publicó un comunicado donde se establecía que las criptomonedas no están incluidas en el ámbito de aplicación del Código de Valores y se consideraban ""activos digitales"" que no necesariamente son valores.","1","1","1","0","NA","Se contradice al decir que la CNV regula las criptomonedas y después afirmar que no hay normativa específica. También atribuye a 2021 un comunicado y una clasificación que el material no respalda."
+"X03","¿Qué es la renta fija?","[CNV_p12_c0] 12 
 3. Consejos previos a invertir 
 3.1.  ¿En qué se puede invertir en el mercado de capitales?  
 Esta primera pregunta apunta a conocer qué productos de inversión se 
@@ -97,8 +97,8 @@ Sin embargo, también es importante considerar los siguientes aspectos:
 2. **Riesgo de crédito**: El emisor del bono o letra de Tesoro puede tener problemas para pagar sus obligaciones.
 3. **Rendimiento bajo**: Los instrumentos de renta fija generalmente ofrecen rendimientos más bajos que los activos variables.
 
-Es importante evaluar cuidadosamente las características y riesgos de cada instrumento antes de invertir en la renta fija.",,,,,NA,
-X04,¿Qué es la aversión a las pérdidas?,"[CNV_p21_t3] sgo: deshacer una inversión pensada a largo plazo y adecuada para tu perfil debido a una evolución eventualmente atractiva de los mercados, alterando así los objetivos iniciales y conllevando costes y riesgos asociados. Consejo: es importante determinar y ser coherente con tu plan, objetivos y plazos (no obstante, se hagan revisiones de los mismos de forma periódica).
+Es importante evaluar cuidadosamente las características y riesgos de cada instrumento antes de invertir en la renta fija.","1","1","2","0","NA","Explica la idea general y menciona ejemplos, pero presenta los pagos periódicos y la menor volatilidad como características generales. Incluye los ‘CDP’ como instrumento típico sin respaldo claro en el material."
+"X04","¿Qué es la aversión a las pérdidas?","[CNV_p21_t3] sgo: deshacer una inversión pensada a largo plazo y adecuada para tu perfil debido a una evolución eventualmente atractiva de los mercados, alterando así los objetivos iniciales y conllevando costes y riesgos asociados. Consejo: es importante determinar y ser coherente con tu plan, objetivos y plazos (no obstante, se hagan revisiones de los mismos de forma periódica).
 
 Sesgo: Aversión a las pérdidas. Descripción: tendencia a considerar que las pérdidas pesan más que las ganancias. Riesgo: con tal de no incurrir en pérdidas, se mantenga una inversión con mínimas perspectivas de recuperación y se acabe perdiendo todo lo invertido. Consejo: los mercados suben y bajan. Por eso es importante la diversificación en productos y en horizontes temporales.","La aversión a las pérdidas es un concepto psicológico que describe cómo los individuos tienden a sentir una mayor incomodidad o ansiedad ante la posibilidad de perder algo, en lugar de sentir emoción positiva al ganar. Esta tendencia se debe a que la mente humana valora más lo que se tiene que lo que podría obtenerse.
 
@@ -108,8 +108,8 @@ La aversión a las pérdidas es una fuerza poderosa que puede afectar la toma de
 
 En Argentina, donde las condiciones económicas pueden ser volátiles y la incertidumbre es alta, la aversión a las pérdidas puede ser especialmente perjudicial. Los inversores deben estar preparados para asumir riesgos calculados y tomar decisiones que se ajusten a sus objetivos financieros a largo plazo.
 
-¿Quieres saber más sobre cómo manejar la aversión a las pérdidas en tus inversiones?",,,,,NA,
-X05,¿Cómo se calculan los intereses de la tarjeta de crédito si pago solo el mínimo?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"La pregunta no está directamente relacionada con el contexto proporcionado, pero puedo intentar explicarlo de manera simple.
+¿Quieres saber más sobre cómo manejar la aversión a las pérdidas en tus inversiones?","2","0","2","0","NA","Define correctamente la aversión a las pérdidas y da un ejemplo pertinente de mantener una inversión que no funciona por no querer asumir la pérdida."
+"X05","¿Cómo se calculan los intereses de la tarjeta de crédito si pago solo el mínimo?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","La pregunta no está directamente relacionada con el contexto proporcionado, pero puedo intentar explicarlo de manera simple.
 
 Cuando pagas solo el mínimo en una tarjeta de crédito, los intereses se calculan sobre el saldo pendiente. Aunque no hay información específica sobre cómo se calculan los intereses en la tarjeta de crédito en el contexto proporcionado, puedo dar una explicación general.
 
@@ -124,8 +124,8 @@ Aquí hay un ejemplo simple:
 
 Es importante tener en cuenta que los intereses de una tarjeta de crédito pueden variar dependiendo del tipo de tarjeta, la tasa de interés y las condiciones específicas. Es recomendable revisar el contrato o comunicarse con el banco para obtener información precisa sobre cómo se calculan los intereses en tu caso particular.
 
-Recuerda que pagar solo el mínimo puede llevar a una deuda creciente debido a la acumulación de intereses. Es importante intentar pagar la totalidad del saldo pendiente cada mes para evitar esta situación.",NA,,,,,
-X06,¿Cuáles son las señales de que una oferta de inversión puede ser una estafa?,"[CNV_p24_c1] os o, a veces, beneficios libres de impuestos; 
+Recuerda que pagar solo el mínimo puede llevar a una deuda creciente debido a la acumulación de intereses. Es importante intentar pagar la totalidad del saldo pendiente cada mes para evitar esta situación.","NA","1","1","0","parcial","Aclara que el tema no está en el contexto, pero después da un cálculo incorrecto: el 24% anual sobre $1.000 no genera $24 de interés mensual. La explicación sobre interés compuesto también generaliza demasiado."
+"X06","¿Cuáles son las señales de que una oferta de inversión puede ser una estafa?","[CNV_p24_c1] os o, a veces, beneficios libres de impuestos; 
  Inversiones en acciones, hipotecas, bienes inmuebles o divisas virtuales, 
 planes de ""alta rentabilidad"", Forex (mercado de divisas); 
  Una oportunidad sin riesgo o con poco riesgo, ya que el público inversor: 
@@ -177,8 +177,8 @@ Te solicita: Que uses métodos de pago inusuales (criptos, pagos al exterior o t
 4.  **Falta de respaldo regulatorio**: Si la empresa no está registrada o regulada por las autoridades competentes, puede tratarse de una estafa.
 5.  **Requisitos de inversión excesivos**: Si se requiere una cantidad significativa de dinero para invertir en un producto o servicio que promete altos rendimientos, puede tratarse de una estafa.
 
-Es importante investigar y verificar la información antes de tomar cualquier decisión de inversión.",,,,,NA,
-X07,¿Cómo puedo protegerme de las estafas de inversión?,"[CNV_p28_t0] ¿Cómo evitar un fraude?
+Es importante investigar y verificar la información antes de tomar cualquier decisión de inversión.","2","0","2","0","NA","Enumera señales relevantes, como las promesas exageradas, la presión para decidir rápido y la falta de registro. La respuesta es clara y coincide con el material."
+"X07","¿Cómo puedo protegerme de las estafas de inversión?","[CNV_p28_t0] ¿Cómo evitar un fraude?
 
 Conocer los mecanismos a través de los cuales se producen las estafas puede ayudar a evitar el fraude. Para alcanzar los objetivos financieros es importante aprender a invertir de forma inteligente, informada y segura. Aquí algunos consejos:
 
@@ -207,8 +207,8 @@ Conocer al vendedor: Es fundamental averiguar que los vendedores de valores que 
 7. **Mantén una configuración de privacidad restrictiva en Internet**: Protege tus datos personales y financieros al configurar tu cuenta de correo electrónico y redes sociales de manera segura.
 8. **Sé consciente de tus emociones**: Las estafas suelen apelar a tus miedos y necesidades actuales. Sé consciente de cómo te sientes y no te dejes llevar por la emoción.
 
-Recuerda que la prevención es clave para evitar caer en una estafa. Si tienes alguna duda o sospecha, no dudes en buscar ayuda. La CNV y otros organismos financieros pueden proporcionarte información y asesoramiento para ayudarte a tomar decisiones informadas.",,,,,NA,
-X08,¿Qué pasa si la empresa que emitió el bono no puede pagarme?,"[CNV_p13_c0] 13 
+Recuerda que la prevención es clave para evitar caer en una estafa. Si tienes alguna duda o sospecha, no dudes en buscar ayuda. La CNV y otros organismos financieros pueden proporcionarte información y asesoramiento para ayudarte a tomar decisiones informadas.","2","0","2","0","NA","Da consejos pertinentes y alineados con el material: investigar, verificar al vendedor, desconfiar de promesas altas y evitar decisiones apresuradas."
+"X08","¿Qué pasa si la empresa que emitió el bono no puede pagarme?","[CNV_p13_c0] 13 
 -Riesgo de crédito o de insolvencia: es el riesgo de que el emisor del valor no 
 pueda hacer frente a sus pagos (tanto de cupones como de reembolso del  
 capital) o de que se produzca un retraso en ellos.   
@@ -230,8 +230,8 @@ Si la empresa que emitió un bono (también conocido como deuda) no puede pagart
 
 Es importante tener en cuenta que invertir en bonos implica un riesgo de pérdida de capital si la empresa emisora no puede cumplir con sus obligaciones de pago. Por lo tanto, es fundamental investigar a fondo la solvencia financiera de la empresa antes de invertir en sus bonos.
 
-Si estás considerando invertir en bonos o cualquier otro producto financiero, te recomiendo buscar asesoramiento profesional y hacer una investigación exhaustiva sobre el emisor y las condiciones del producto.",,,,,NA,
-X09,¿Qué son los instrumentos no regulados?,"[CNV_p22_c1] úblico, siempre con 
+Si estás considerando invertir en bonos o cualquier otro producto financiero, te recomiendo buscar asesoramiento profesional y hacer una investigación exhaustiva sobre el emisor y las condiciones del producto.","1","0","2","0","NA","Reconoce que el contexto no contiene información, aunque el material sí describe el riesgo de insolvencia. La explicación general es pertinente y no agrega datos claramente inventados."
+"X09","¿Qué son los instrumentos no regulados?","[CNV_p22_c1] úblico, siempre con 
 el fin de contribuir al desarrollo de un mercado  de capitales federal, 
 transparente, inclusivo y sustentable, protegiendo los intereses de las 
 personas inversoras. 
@@ -266,8 +266,8 @@ En Argentina, la Comisión Nacional de Valores (CNV) es la autoridad responsable
 
 Es importante mencionar que, aunque estos instrumentos no están sujetos a las mismas regulaciones que los tradicionales, todavía deben cumplir con ciertas normativas y requisitos legales. Es fundamental investigar y entender bien los riesgos y características de cada instrumento antes de invertir.
 
-¿Quieres saber más sobre algún instrumento en particular?",,,,,NA,
-X10,¿Qué riesgos tiene invertir en acciones?,"[CNV_p13_c2] ro mercado son las acciones, 
+¿Quieres saber más sobre algún instrumento en particular?","0","1","1","0","NA","Mezcla instrumentos de distinta naturaleza con una definición incorrecta de los no regulados y afirma que la CNV regula estos mercados para garantizar seguridad. La lista incluye categorías que no se pueden considerar automáticamente no reguladas."
+"X10","¿Qué riesgos tiene invertir en acciones?","[CNV_p13_c2] ro mercado son las acciones, 
 los o Certificados de Depósito Argentino  (CEDEAR) que permiten a la persona 
 inversora negociar acciones de empresas extranjeras en el mercado y moneda 
 local, las cuotapartes de Fondos Comunes de Inversión (FCI), y los derivados, 
@@ -303,8 +303,8 @@ momento de la emisión","Al invertir en acciones, existen varios riesgos que deb
 4.  **Riesgo de concentración**: Si tienes una gran parte de tu cartera invertida en pocas acciones, el riesgo de pérdidas aumenta si alguna de ellas experimenta problemas financieros.
 5.  **Riesgo de inflación**: La inflación puede erosionar el valor del dinero y reducir el poder adquisitivo de tus inversiones.
 
-Es importante diversificar tu cartera para minimizar estos riesgos e invertir en acciones que sean sólidas y tienen un buen potencial de crecimiento a largo plazo.",,,,,NA,
-X11,¿Qué es un plazo fijo UVA?,"[CUA_p29_c2] persona a quien se le transfirió  
+Es importante diversificar tu cartera para minimizar estos riesgos e invertir en acciones que sean sólidas y tienen un buen potencial de crecimiento a largo plazo.","1","0","2","0","NA","Explica varios riesgos relevantes, pero presenta el riesgo de crédito como si fuera un riesgo propio de las acciones en los mismos términos que la deuda. La recomendación de diversificar sí es pertinente."
+"X11","¿Qué es un plazo fijo UVA?","[CUA_p29_c2] persona a quien se le transfirió  
 un CEDIP, ésta podrá seleccio-
 nar la entidad financiera y la  
 cuenta bancaria en la cual se 
@@ -352,8 +352,8 @@ Algunas características clave del plazo fijo UVA son:
 - **Garantía**: El BCRA garantiza el pago de los intereses y el capital invertido, lo que reduce el riesgo para el inversor.
 - **Indexación a la inflación**: Los intereses se calculan en base al índice de precios al consumo (IPC) del país, lo que ayuda a proteger el valor del dinero frente a la inflación.
 
-En resumen, el plazo fijo UVA es una herramienta financiera segura y garantizada para invertir el dinero con intereses indexados a la inflación.",,,,,NA,
-X12,¿Cómo armo un presupuesto mensual?,"[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+En resumen, el plazo fijo UVA es una herramienta financiera segura y garantizada para invertir el dinero con intereses indexados a la inflación.","0","1","2","0","NA","Define mal UVA como ‘Unidad de Valor Absoluto’ y afirma que el BCRA emite y garantiza el plazo fijo. También lo describe como libre de riesgo y lo vincula directamente al IPC en vez del CER."
+"X12","¿Cómo armo un presupuesto mensual?","[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 18
 Por momentos Agustín y Lucía sienten que son muchos temas los que 
@@ -430,8 +430,8 @@ Aquí te muestro un ejemplo de cómo podría quedar tu planilla de presupuesto:
 
 Recuerda que este es solo un ejemplo y debes adaptarlo a tus necesidades y circunstancias específicas.
 
-Espero que esto te ayude a armar tu presupuesto mensual de manera sencilla y efectiva!",,,,,NA,
-X13,¿Cómo armo un presupuesto mensual?,"[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+Espero que esto te ayude a armar tu presupuesto mensual de manera sencilla y efectiva!","2","0","2","0","NA","Explica cómo registrar ingresos, clasificar gastos y calcular el resultado. El ejemplo de planilla es claro y complementa el material."
+"X13","¿Cómo armo un presupuesto mensual?","[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 18
 Por momentos Agustín y Lucía sienten que son muchos temas los que 
@@ -496,8 +496,8 @@ Entretenimiento (gastos hormiga)
 5.  *Asigna fondos a cada categoría*: Basándote en tus ingresos e identificando áreas donde puedes reducir gastos, asigna una cantidad mensual a cada categoría.
 6.  **Revisa y ajusta**: Revisa tu presupuesto regularmente para asegurarte de que estás cumpliendo con tus metas financieras y ajusta según sea necesario.
 
-Recuerda que un presupuesto es una herramienta flexible que debe adaptarse a tus necesidades cambiantes. ¡Buena suerte!",,,,,NA,
-X14,¿Cómo funciona Mercado Pago para pagar con QR?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Mercado Pago es una plataforma de pagos que permite a los usuarios realizar transacciones financieras de manera segura y fácil. El pago con código QR es uno de los métodos de pago disponibles en la plataforma.
+Recuerda que un presupuesto es una herramienta flexible que debe adaptarse a tus necesidades cambiantes. ¡Buena suerte!","2","0","2","0","NA","Propone pasos útiles para organizar ingresos, clasificar gastos y fijar montos por categoría. No contradice el material, aunque agrega categorías propias."
+"X14","¿Cómo funciona Mercado Pago para pagar con QR?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Mercado Pago es una plataforma de pagos que permite a los usuarios realizar transacciones financieras de manera segura y fácil. El pago con código QR es uno de los métodos de pago disponibles en la plataforma.
 
 Aquí te explico cómo funciona el pago con código QR en Mercado Pago:
 
@@ -520,8 +520,8 @@ Aquí te explico cómo funciona el pago con código QR en Mercado Pago:
 *   Verifica que tengas suficientes fondos en tu cuenta de Mercado Pago para realizar la transacción.
 *   Asegúrate de que el código QR sea único y no haya sido utilizado previamente.
 
-Espero que esta información te haya ayudado a entender cómo funciona el pago con código QR en Mercado Pago. Si tienes alguna otra pregunta o necesitas más ayuda, no dudes en preguntar.",NA,,,,,
-X15,¿Qué es la renta fija?,"[CNV_p12_c0] 12 
+Espero que esta información te haya ayudado a entender cómo funciona el pago con código QR en Mercado Pago. Si tienes alguna otra pregunta o necesitas más ayuda, no dudes en preguntar.","NA","1","1","0","no","Explica el proceso general de pago con QR, pero asegura que la operación está garantizada como segura y que no tiene comisiones adicionales, sin matices ni respaldo. No reconoce que el material no cubre el tema."
+"X15","¿Qué es la renta fija?","[CNV_p12_c0] 12 
 3. Consejos previos a invertir 
 3.1.  ¿En qué se puede invertir en el mercado de capitales?  
 Esta primera pregunta apunta a conocer qué productos de inversión se 
@@ -562,8 +562,8 @@ En otras palabras, la renta fija es un tipo de inversión que garantiza un rendi
 
 Es importante destacar que la renta fija puede ser tanto fija como variable. En el caso de la renta fija fija, los intereses se pagan a un tipo de interés fijo y constante durante toda la vida del instrumento. En el caso de la renta fija variable, los intereses pueden variar en función de las condiciones del mercado o de la performance de la empresa emisora.
 
-En resumen, la renta fija es una inversión que ofrece un retorno periódico preestablecido y predeterminado, lo que la hace atractiva para aquellos que buscan estabilidad y seguridad en sus inversiones.",,,,,NA,
-X16,¿Qué es un plazo fijo UVA?,"[CUA_p29_c2] persona a quien se le transfirió  
+En resumen, la renta fija es una inversión que ofrece un retorno periódico preestablecido y predeterminado, lo que la hace atractiva para aquellos que buscan estabilidad y seguridad en sus inversiones.","0","1","2","0","NA","Confunde renta fija con rentabilidad garantizada y pagos periódicos obligatorios. Además, afirma que garantiza un rendimiento mínimo y mezcla la idea de renta fija con intereses variables de forma contradictoria."
+"X16","¿Qué es un plazo fijo UVA?","[CUA_p29_c2] persona a quien se le transfirió  
 un CEDIP, ésta podrá seleccio-
 nar la entidad financiera y la  
 cuenta bancaria en la cual se 
@@ -603,8 +603,8 @@ presencialmente.
 
 En otras palabras, si los precios aumentan, el valor de las UVA también aumenta, y si los precios disminuyen, el valor de las UVA disminuye. Esto se hace para proteger el valor del dinero en un entorno inflacionario.
 
-Es importante destacar que este tipo de depósito tiene una tasa de interés mínima garantizada (UVA + 1% nominal anual) si se cumple con el plazo mínimo de contrato de al menos 90 días.",,,,,NA,
-X17,¿Qué es el sesgo de confirmación?,"[CNV_p21_t0] Tabla de sesgos que pueden afectar el comportamiento a la hora de invertir (página 21 de la guía de la CNV). Para cada sesgo se indica su descripción, el riesgo que implica y un consejo.
+Es importante destacar que este tipo de depósito tiene una tasa de interés mínima garantizada (UVA + 1% nominal anual) si se cumple con el plazo mínimo de contrato de al menos 90 días.","2","0","2","0","NA","Describe correctamente el ajuste del plazo fijo UVA por el CER y menciona la tasa UVA + 1% nominal anual si se cumple el plazo mínimo indicado."
+"X17","¿Qué es el sesgo de confirmación?","[CNV_p21_t0] Tabla de sesgos que pueden afectar el comportamiento a la hora de invertir (página 21 de la guía de la CNV). Para cada sesgo se indica su descripción, el riesgo que implica y un consejo.
 
 Sesgo: Ilusión de control. Descripción: es la tendencia a sobreestimar que se dispone del control o de la posibilidad de influir en algo sobre lo que objetivamente no se tiene ningún control. Riesgo: puede llevar a que se asuma un nivel de riesgo superior al adecuado al confiar en que se controlan los vaivenes del mercado. Consejo: evita realizar un exceso de operaciones especulativas en un intento de «ganarle al mercado». Recuerda que no existe la rentabilidad sin riesgo.
 
@@ -612,8 +612,8 @@ Sesgo: Confirmación. Descripción: interpretar la información recibida o busca
 
 Sesgo: Anc","El sesgo de confirmación es una falacia cognitiva que consiste en buscar y dar más importancia a la información que confirma nuestras creencias o hipótesis previas, y descartar o subestimar la que las contradice. Esto puede llevar a tomar decisiones financieras erradas.
 
-Por ejemplo: si un inversor minorista cree que el mercado de valores argentino está en alza, buscará información que confirme esa creencia (como noticias sobre empresas exitosas) y descartará o minimizará la información que sugiera lo contrario (como noticias sobre crisis económicas).",,,,,NA,
-X18,¿Cómo armo un presupuesto mensual?,"[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+Por ejemplo: si un inversor minorista cree que el mercado de valores argentino está en alza, buscará información que confirme esa creencia (como noticias sobre empresas exitosas) y descartará o minimizará la información que sugiera lo contrario (como noticias sobre crisis económicas).","2","0","2","0","NA","Define correctamente el sesgo de confirmación y lo ilustra con un ejemplo claro aplicado a decisiones financieras."
+"X18","¿Cómo armo un presupuesto mensual?","[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 18
 Por momentos Agustín y Lucía sienten que son muchos temas los que 
@@ -687,8 +687,8 @@ Recuerda que un presupuesto es flexible y debe adaptarse a tus necesidades cambi
 *   Educación:
     *   Matrículas y cuotas escolares
     *   Materiales y útiles escolares
-    *   Cursos o talleres de capacitación",,,,,NA,
-X19,¿Cómo se compra dólar MEP?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Lo siento, pero no hay información en el contexto proporcionado sobre cómo comprar dólares MEP (Mercado Electrónico de Pagos). Sin embargo, puedo ofrecerte una respuesta general basada en la información disponible.
+    *   Cursos o talleres de capacitación","2","0","2","0","NA","Explica cómo registrar ingresos, clasificar gastos, asignar montos y revisar el presupuesto. Es pertinente y coherente con el material."
+"X19","¿Cómo se compra dólar MEP?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Lo siento, pero no hay información en el contexto proporcionado sobre cómo comprar dólares MEP (Mercado Electrónico de Pagos). Sin embargo, puedo ofrecerte una respuesta general basada en la información disponible.
 
 En Argentina, los dólares MEP se pueden adquirir a través del Mercado Electrónico de Pagos (MEP), que es un sistema operado por el Banco Central de la República Argentina (BCRA) para realizar transacciones financieras. Para comprar dólares MEP, generalmente debes seguir estos pasos:
 
@@ -696,8 +696,8 @@ En Argentina, los dólares MEP se pueden adquirir a través del Mercado Electró
 2. **Acceder al sistema del Banco**: Debes tener una cuenta bancaria activa en un banco que tenga convenio con el MEPEP para acceder a esta plataforma.
 3. **Realizar la compra**: Una vez dentro de tu cuenta bancaria, puedes realizar la compra de dólares MEP a través de las opciones disponibles (como transferencias o compras directas).
 
-Si necesitas más detalles específicos sobre cómo comprar dólares MEP en el contexto actual, te recomendaría consultar directamente con un banco que tenga convenio con el MEPEP o contactar al BCRA para obtener la información más reciente y precisa.",NA,,,,,
-X20,¿Qué es un esquema Ponzi?,"[CNV_p26_c0] 26 
+Si necesitas más detalles específicos sobre cómo comprar dólares MEP en el contexto actual, te recomendaría consultar directamente con un banco que tenga convenio con el MEPEP o contactar al BCRA para obtener la información más reciente y precisa.","NA","1","1","1","parcial","Reconoce que no tiene información en el contexto, pero inventa que el MEP es un sistema operado por el BCRA y menciona el acrónimo deformado ‘MEPEP’."
+"X20","¿Qué es un esquema Ponzi?","[CNV_p26_c0] 26 
 programa. Las personas es tafadoras que están detrás de estos esquemas 
 fraudulentos suelen hacer todo lo posible para que sus programas parezcan 
 planes legítimos de marketing multinivel  o programas de referidos . Los 
@@ -729,8 +729,8 @@ despertar el interés en la acción o activo y así aumentar su precio. Creyendo
 que están haciendo un buen negocio con este valor negociable prometedor, 
 las personas inversoras crean una demanda de compra  a p","Un esquema Ponzi es un tipo de estafa financiera en la que los inversores son engañados para invertir dinero con la promesa de altos rendimientos o beneficios, pero en realidad el dinero se utiliza para pagar a otros inversores anteriores en lugar de invertirse en activos reales. El esquema requiere un flujo constante de entrada de dinero para mantenerse a flote y tiende a colapsar cuando la persona estafadora no puede atraer nuevos inversores o cuando demasiados intentan sacar su dinero al mismo tiempo.
 
-En otras palabras, en un esquema Ponzi, los fondos recaudados se utilizan para pagar dividendos a los inversores anteriores en lugar de invertirlos en activos productivos. Esto significa que el esquema no puede mantenerse a largo plazo y eventualmente colapsa cuando la persona estafadora no puede cumplir con las promesas de pago.",,,,,NA,
-X21,¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?,"[CNV_p12_c2] o pérdidas a raíz de 
+En otras palabras, en un esquema Ponzi, los fondos recaudados se utilizan para pagar dividendos a los inversores anteriores en lugar de invertirlos en activos productivos. Esto significa que el esquema no puede mantenerse a largo plazo y eventualmente colapsa cuando la persona estafadora no puede cumplir con las promesas de pago.","2","0","2","0","NA","Define correctamente el esquema Ponzi: paga supuestas ganancias a participantes anteriores con el dinero de nuevos inversores y depende de entradas constantes."
+"X21","¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?","[CNV_p12_c2] o pérdidas a raíz de 
 la diferencia entre el precio de compra y el de venta del valor negociable. 
 ¿Qué valores negociables de renta fija existen en el mercado local?  
 Hay títulos de deuda pública, ya sea nacional, provincial o municipal, así como 
@@ -793,8 +793,8 @@ diferedido","En el mercado argentino, puedes encontrar varios tipos de bonos y t
 
 7. **Bonos de la Administración de la Seguridad Social (ANSES)**: Estos bonos son emitidos por ANSES, el organismo encargado de la seguridad social en Argentina, para financiar sus operaciones y ofrecen un rendimiento fijo.
 
-Es importante mencionar que antes de invertir en cualquier título o bono, es fundamental investigar su solvencia crediticia y las condiciones del mercado. Además, siempre es recomendable consultar con un asesor financiero o realizar una investigación exhaustiva antes de tomar una decisión de inversión.",,,,,NA,
-X22,¿Cuál es la diferencia entre ahorrar e invertir?,"[CNV_p5_c0] 5 
+Es importante mencionar que antes de invertir en cualquier título o bono, es fundamental investigar su solvencia crediticia y las condiciones del mercado. Además, siempre es recomendable consultar con un asesor financiero o realizar una investigación exhaustiva antes de tomar una decisión de inversión.","1","1","1","0","NA","Incluye algunos instrumentos válidos, pero mezcla categorías y atribuye características que no corresponden a todos los títulos. La clasificación y las explicaciones no son del todo fiables."
+"X22","¿Cuál es la diferencia entre ahorrar e invertir?","[CNV_p5_c0] 5 
 2. Finanzas personales y principios básicos a la hora 
 de hacer una inversión 
 2.1. Algunas nociones básicas: ahorro, inversión, tasa de 
@@ -908,8 +908,8 @@ Para ilustrarlo:
 
 En resumen: si lo necesitas pronto, es ahorro. Si puedes permitirte arriesgar y espera a largo plazo, es inversión.
 
-¿Quieres saber más sobre cómo invertir en Argentina?",,,,,NA,
-X23,¿Cómo se calculan los intereses de la tarjeta de crédito si pago solo el mínimo?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Cuando pagas solo el mínimo de tu tarjeta de crédito, debes saber que no estás pagando la totalidad del monto adeudado. Por lo general, el pago mínimo es un porcentaje del saldo pendiente (generalmente entre 2% y 5%) más los intereses correspondientes a ese período.
+¿Quieres saber más sobre cómo invertir en Argentina?","1","0","2","0","NA","Distingue correctamente ahorro e inversión, pero generaliza al decir que los ahorros suelen estar protegidos por productos bancarios seguros. La diferencia central queda clara."
+"X23","¿Cómo se calculan los intereses de la tarjeta de crédito si pago solo el mínimo?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Cuando pagas solo el mínimo de tu tarjeta de crédito, debes saber que no estás pagando la totalidad del monto adeudado. Por lo general, el pago mínimo es un porcentaje del saldo pendiente (generalmente entre 2% y 5%) más los intereses correspondientes a ese período.
 
 Para calcular los intereses que se te cobrarán si pagas solo el mínimo, debes tener en cuenta varios factores:
 
@@ -924,8 +924,8 @@ Aquí te presento una fórmula simple para calcular los intereses:
 
 Si deseas saber cuántos intereses se cobrarán en particular, debes considerar el monto que pagaste como mínimo y restarlo al saldo pendiente para obtener el nuevo saldo. Luego, repite el cálculo anterior con el nuevo saldo.
 
-Ten en cuenta que esta fórmula es una simplificación de la realidad, ya que las tasas de interés pueden variar dependiendo del tipo de tarjeta y de otros factores específicos.",NA,,,,,
-X24,"Todos mis amigos están comprando lo mismo y me dan ganas de imitarlos, ¿es buena idea?","[CNV_p21_t2] inversión únicamente porque la recomienda o la aconseja un familiar, amigo, famoso, influencer. Consejo: es importante siempre realizar análisis adicionales donde considerar tus necesidades y perfil de riesgo.
+Ten en cuenta que esta fórmula es una simplificación de la realidad, ya que las tasas de interés pueden variar dependiendo del tipo de tarjeta y de otros factores específicos.","NA","1","1","0","no","Da una explicación general, pero afirma porcentajes habituales y una fórmula sin respaldo y no reconoce que el material no cubre el cálculo específico de la tarjeta."
+"X24","Todos mis amigos están comprando lo mismo y me dan ganas de imitarlos, ¿es buena idea?","[CNV_p21_t2] inversión únicamente porque la recomienda o la aconseja un familiar, amigo, famoso, influencer. Consejo: es importante siempre realizar análisis adicionales donde considerar tus necesidades y perfil de riesgo.
 
 Sesgo: Prueba social. Descripción: tendencia a imitar las acciones que realizan otras personas bajo la creencia de que se está adoptando el comportamiento correcto. Riesgo: verse arrastrado por las decisiones de otras personas y realizar inversiones que no le favorecen únicamente porque otros lo hacen. Consejo: evita las modas y los gurús de turno, así como la toma de decisiones de inversión basadas en rumores o confidencias.
 
@@ -935,8 +935,8 @@ Si todos tus amigos están invirtiendo en algo específico, es posible que esté
 
 Antes de tomar una decisión de inversión, te recomendaría considerar tus propios objetivos financieros y necesidades. ¿Qué tipo de retorno estás buscando? ¿Cuál es tu tolerancia al riesgo? ¿Tienes un plazo de inversión específico en mente?
 
-Es importante investigar y evaluar las opciones de inversión con base en tus propias necesidades y objetivos, en lugar de simplemente seguir a los demás.",,,,,NA,
-X25,¿Qué riesgos tiene invertir en acciones?,"[CNV_p13_c2] ro mercado son las acciones, 
+Es importante investigar y evaluar las opciones de inversión con base en tus propias necesidades y objetivos, en lugar de simplemente seguir a los demás.","2","0","2","0","NA","Recomienda no invertir por imitación y considerar objetivos, plazo y tolerancia al riesgo. Responde de forma clara y pertinente."
+"X25","¿Qué riesgos tiene invertir en acciones?","[CNV_p13_c2] ro mercado son las acciones, 
 los o Certificados de Depósito Argentino  (CEDEAR) que permiten a la persona 
 inversora negociar acciones de empresas extranjeras en el mercado y moneda 
 local, las cuotapartes de Fondos Comunes de Inversión (FCI), y los derivados, 
@@ -980,8 +980,8 @@ momento de la emisión","Al invertir en acciones, existen varios riesgos que deb
 
 7. **Riesgo de gestión**: La calidad de la gestión de la empresa emisora también es un factor importante. Una mala gestión puede llevar a una disminución en el valor de las acciones.
 
-Es importante tener en cuenta que, al igual que menciona el texto, ""cuanto mayor sea la rentabilidad que ofrece una inversión, mayor será su nivel de riesgo"". Por lo tanto, es fundamental evaluar cuidadosamente tus objetivos financieros y tu tolerancia al riesgo antes de invertir en acciones.",,,,,NA,
-X26,¿Cómo abro una caja de ahorro en un banco?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Para abrir una cuenta de ahorros en un banco, necesitarás seguir estos pasos:
+Es importante tener en cuenta que, al igual que menciona el texto, ""cuanto mayor sea la rentabilidad que ofrece una inversión, mayor será su nivel de riesgo"". Por lo tanto, es fundamental evaluar cuidadosamente tus objetivos financieros y tu tolerancia al riesgo antes de invertir en acciones.","1","0","2","0","NA","Menciona riesgos relevantes, pero la explicación del riesgo de crédito en acciones es imprecisa y agrega categorías que el material no desarrolla. La respuesta sigue siendo útil en lo general."
+"X26","¿Cómo abro una caja de ahorro en un banco?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Para abrir una cuenta de ahorros en un banco, necesitarás seguir estos pasos:
 
 1.  **Elegir el banco:** Busca un banco que se adapte a tus necesidades y preferencias. Puedes investigar sobre las características y servicios de diferentes bancos antes de tomar una decisión.
 2.  **Reunir los documentos requeridos:** Los requisitos para abrir una cuenta pueden variar dependiendo del banco, pero generalmente necesitarás presentar:
@@ -1013,8 +1013,8 @@ Algunos bancos pueden cobrar una comisión por la apertura de la cuenta o por ci
 
 Recuerda que la apertura de una cuenta de ahorros es solo el primer paso. Lo importante es mantenerla activa y utilizarla para ahorrar dinero con regularidad.
 
-¿Necesitas ayuda adicional?",NA,,,,,
-X27,¿Qué es un CEDEAR?,"[CNV_p13_c1] dad no 
+¿Necesitas ayuda adicional?","NA","1","2","0","no","Da pasos generales para abrir una caja de ahorro, pero presenta DNI o CUIT y otros documentos como requisitos típicos sin reconocer que el material no cubre el tema. La orientación general sí responde."
+"X27","¿Qué es un CEDEAR?","[CNV_p13_c1] dad no 
 está preestablecida o prefijada al momento de adquirirlos, sino que se 
 encuentran sujetos a la evolución del patrimonio de una determinada sociedad 
 emisora o a las variaciones de precio del mercado en el que se negocian.  
@@ -1048,8 +1048,8 @@ Imagina que al comprar un CEDEAR estás comprando una especie de ""papel de deud
 
 Es importante tener en cuenta que los CEDEAR pueden ofrecer características específicas como garantías adicionales o condiciones de reembolso más flexibles. Sin embargo, es crucial investigar y entender las condiciones particulares de cada emisión antes de tomar una decisión de inversión.
 
-Si necesitas más información o detalles sobre cómo funcionan los CEDEAR en la práctica, te recomendaría consultar fuentes oficiales de educación financiera o hablar con un asesor financiero.",,,,,NA,
-X28,¿Qué son los gastos hormiga?,"[CUA_p17_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+Si necesitas más información o detalles sobre cómo funcionan los CEDEAR en la práctica, te recomendaría consultar fuentes oficiales de educación financiera o hablar con un asesor financiero.","0","1","1","0","NA","Dice que no tiene información suficiente, pero después inventa la expansión de CEDEAR y lo describe como un título de deuda. La explicación central es incorrecta."
+"X28","¿Qué son los gastos hormiga?","[CUA_p17_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 17
 Sus amistades les dieron algunos consejos para empezar una 
@@ -1075,8 +1075,8 @@ son los denominados “gastos hormiga”.","Los gastos hormigas se refieren a un
 *   Gastos en comidas fuera de casa o delivery
 *   Pagos de servicios que se pueden optimizar (teléfono, internet, cable, etc.)
 
-Estos gastos pueden ser difíciles de identificar y controlar, pero es importante tenerlos en cuenta para evitar sobrepasar el presupuesto mensual.",,,,,NA,
-X29,¿Qué pasa si la empresa que emitió el bono no puede pagarme?,"[CNV_p13_c0] 13 
+Estos gastos pueden ser difíciles de identificar y controlar, pero es importante tenerlos en cuenta para evitar sobrepasar el presupuesto mensual.","2","0","2","0","NA","Define bien los gastos hormiga como pequeños gastos que se acumulan y da ejemplos cotidianos pertinentes."
+"X29","¿Qué pasa si la empresa que emitió el bono no puede pagarme?","[CNV_p13_c0] 13 
 -Riesgo de crédito o de insolvencia: es el riesgo de que el emisor del valor no 
 pueda hacer frente a sus pagos (tanto de cupones como de reembolso del  
 capital) o de que se produzca un retraso en ellos.   
@@ -1099,8 +1099,8 @@ En Argentina, existen regulaciones y mecanismos para proteger a los inversores e
 1.  **Fondo de Garantía de Satisfacción de Deudas**: Este fondo es administrado por el Banco Central de la República Argentina (BCRA) y tiene como objetivo garantizar que las entidades financieras cumplan con sus compromisos de pago.
 2.  **Seguro de Depósitos**: El seguro de depósitos es un mecanismo que protege a los depositantes en caso de default bancario.
 
-Es importante tener en cuenta que, aunque estos mecanismos pueden ofrecer cierta protección, no garantizan la recuperación total del monto invertido.",,,,,NA,
-X30,¿Dónde puedo denunciar una estafa de inversión?,"[CNV_p32_c0] 32 
+Es importante tener en cuenta que, aunque estos mecanismos pueden ofrecer cierta protección, no garantizan la recuperación total del monto invertido.","0","1","2","0","NA","Explica el riesgo de default, pero inventa un ‘Fondo de Garantía de Satisfacción de Deudas’ administrado por el BCRA y sugiere protecciones que no garantizan recuperar el bono."
+"X30","¿Dónde puedo denunciar una estafa de inversión?","[CNV_p32_c0] 32 
  
 5.3. El canal de denuncias ante la CNV 
  
@@ -1131,8 +1131,8 @@ Para denunciar la estafa, puedes seguir los siguientes pasos:
  * Por correo postal: dirigido a la CNV, 25 de Mayo 175, 6º piso, CABA (1002).
  * Vía web: a través del formulario de denuncias disponible en: https://www.cnv.gov.ar/SitioWeb/Denuncias
 
-Es importante destacar que la denuncia tiene carácter de reservada y puedes hacerla de manera anónima si lo deseas.",,,,,NA,
-X31,¿Qué es un CEDEAR?,"[CNV_p13_c1] dad no 
+Es importante destacar que la denuncia tiene carácter de reservada y puedes hacerla de manera anónima si lo deseas.","2","0","2","0","NA","Explica el canal de reclamo previo al RRP y las vías para denunciar ante la CNV, en línea con el material."
+"X31","¿Qué es un CEDEAR?","[CNV_p13_c1] dad no 
 está preestablecida o prefijada al momento de adquirirlos, sino que se 
 encuentran sujetos a la evolución del patrimonio de una determinada sociedad 
 emisora o a las variaciones de precio del mercado en el que se negocian.  
@@ -1166,8 +1166,8 @@ Los CEDEAR tienen características similares a las de los Bonos del Tesoro Nacio
 
 Es importante mencionar que, como cualquier inversión en títulos de deuda, el valor de los CEDEAR puede fluctuar en función del mercado y del riesgo percibido por los inversores. Por lo tanto, es fundamental realizar una investigación exhaustiva y considerar las características específicas de cada emisión antes de invertir en CEDEAR o cualquier otro título de deuda.
 
-¿Necesitas más información sobre CEDEAR o cómo invertir en ellos?",,,,,NA,
-X32,¿Cuál es la mejor acción para comprar este mes?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Lo siento, pero no puedo ofrecer asesoramiento específico sobre inversiones o acciones concretas. Sin embargo, puedo proporcionarte información general sobre cómo elegir una buena acción para invertir.
+¿Necesitas más información sobre CEDEAR o cómo invertir en ellos?","0","1","2","0","NA","Define CEDEAR como un certificado de participación en deuda pública y le atribuye emisión estatal, rendimiento fijo y vencimiento. Confunde por completo el instrumento."
+"X32","¿Cuál es la mejor acción para comprar este mes?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Lo siento, pero no puedo ofrecer asesoramiento específico sobre inversiones o acciones concretas. Sin embargo, puedo proporcionarte información general sobre cómo elegir una buena acción para invertir.
 
 Si estás buscando invertir en el mercado de valores argentino, aquí te presento algunos pasos generales que podrían ayudarte a tomar una decisión informada:
 
@@ -1179,8 +1179,8 @@ Si estás buscando invertir en el mercado de valores argentino, aquí te present
 
 4.  **Considerar la diversificación**: No pongas todos tus huevos en una sola canasta. Diversificar tu cartera puede ayudarte a minimizar el riesgo.
 
-5.  **Consultar con un profesional**: Si no tienes experiencia en inversiones, considera consultar con un asesor financiero o un corredor de bolsa.",NA,,,,,
-X33,¿Dónde puedo denunciar una estafa de inversión?,"[CNV_p32_c0] 32 
+5.  **Consultar con un profesional**: Si no tienes experiencia en inversiones, considera consultar con un asesor financiero o un corredor de bolsa.","NA","0","2","0","si","No recomienda una acción concreta y ofrece criterios generales para evaluar una inversión. Reconoce el límite de dar una recomendación específica y responde de manera útil."
+"X33","¿Dónde puedo denunciar una estafa de inversión?","[CNV_p32_c0] 32 
  
 5.3. El canal de denuncias ante la CNV 
  
@@ -1209,8 +1209,8 @@ Asimismo, es importante aclarar que, da","En Argentina, existen varias opciones 
 4.  **Fiscalía General de la Nación**: Si crees que la estafa es grave, puedes denunciarla en la Fiscalía General de la Nación. Puedes hacerlo a través de su sitio web o llamando al número de teléfono 0800-333-1111.
 5.  **Organismos internacionales**: También puedes denunciar la estafa ante organismos internacionales como la Organización Internacional de Normalización (ISO) o el Banco Mundial.
 
-Recuerda que es importante tener documentación y pruebas para respaldar tu denuncia. Además, si crees que estás en peligro, no dudes en buscar ayuda de las autoridades locales o de un profesional.",,,,,NA,
-X34,¿Cómo armo un presupuesto mensual?,"[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+Recuerda que es importante tener documentación y pruebas para respaldar tu denuncia. Además, si crees que estás en peligro, no dudes en buscar ayuda de las autoridades locales o de un profesional.","1","1","2","0","NA","Menciona organismos pertinentes, pero agrega un mismo número telefónico para distintas entidades sin respaldo y ofrece datos de contacto que pueden ser incorrectos."
+"X34","¿Cómo armo un presupuesto mensual?","[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 18
 Por momentos Agustín y Lucía sienten que son muchos temas los que 
@@ -1268,8 +1268,8 @@ Entretenimiento (gastos hormiga)
 4. **Calcula tu presupuesto total**: Suma todos tus ingresos y gastos para determinar si tienes un superávit (más ingresos que gastos) o un déficit (menos ingresos que gastos).
 5. **Revisa y ajusta**: Revisa tu presupuesto mensual y ajustalo según sea necesario. Si tienes un déficit, considera cómo manejar la situación para no tener que recurrir al endeudamiento de emergencia.
 
-Recuerda que el objetivo del presupuesto es ayudarte a controlar tus finanzas y tomar decisiones informadas sobre cómo usar tu dinero. ¡Buena suerte!",,,,,NA,
-X35,¿Cuáles son las señales de que una oferta de inversión puede ser una estafa?,"[CNV_p24_c1] os o, a veces, beneficios libres de impuestos; 
+Recuerda que el objetivo del presupuesto es ayudarte a controlar tus finanzas y tomar decisiones informadas sobre cómo usar tu dinero. ¡Buena suerte!","1","0","2","0","NA","La estructura del presupuesto es adecuada, pero ubica servicios básicos como gastos obligatorios fijos y variables a la vez, y clasifica el transporte de forma poco precisa."
+"X35","¿Cuáles son las señales de que una oferta de inversión puede ser una estafa?","[CNV_p24_c1] os o, a veces, beneficios libres de impuestos; 
  Inversiones en acciones, hipotecas, bienes inmuebles o divisas virtuales, 
 planes de ""alta rentabilidad"", Forex (mercado de divisas); 
  Una oportunidad sin riesgo o con poco riesgo, ya que el público inversor: 
@@ -1320,8 +1320,8 @@ Te solicita: Que uses métodos de pago inusuales (criptos, pagos al exterior o t
 3. **Afirma la necesidad de que la persona inversora tome una decisión rápida o sí se pierde la operación u oportunidad**. Esto es un intento de crear urgencia y presionar al inversor a actuar sin investigar adecuadamente.
 4. **Ofrece prospectos, folletos, certificados de acciones o recibos de aspecto profesional, pero esa información no está disponible en la Autopista de la Información Financiera de la CNV**. La Autopista de la Información Financiera es una base de datos que contiene información sobre las empresas y valores registrados en la CNV.
 
-Si se detectan alguna de estas señales, es importante cortar la comunicación y contactarse con la Oficina de Atención al Inversor de la CNV (inversor@cnv.gov.ar) para consultar por la veracidad de dichas ofertas.",,,,,NA,
-X36,¿Cuál es la mejor acción para comprar este mes?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Lo siento, pero no puedo proporcionar asesoramiento financiero específico ni recomendar acciones o inversiones concretas. Sin embargo, puedo ofrecerte una explicación general sobre por qué no hay una ""mejor acción"" que se pueda comprar en un momento determinado.
+Si se detectan alguna de estas señales, es importante cortar la comunicación y contactarse con la Oficina de Atención al Inversor de la CNV (inversor@cnv.gov.ar) para consultar por la veracidad de dichas ofertas.","2","0","2","0","NA","Recoge las principales señales del material, como no estar inscripto en la CNV y presionar para decidir rápido. La explicación es clara."
+"X36","¿Cuál es la mejor acción para comprar este mes?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Lo siento, pero no puedo proporcionar asesoramiento financiero específico ni recomendar acciones o inversiones concretas. Sin embargo, puedo ofrecerte una explicación general sobre por qué no hay una ""mejor acción"" que se pueda comprar en un momento determinado.
 
 En el contexto de las finanzas y la inversión, es importante entender la diferencia entre ""invertir"" y ""ahorrar"". **Invertir** implica colocar dinero en activos con la esperanza de obtener beneficios a largo plazo, como dividendos o ganancias de capital. Por otro lado, **ahorrar** se refiere a acumular dinero para fines específicos, como una emergencia o un objetivo financiero.
 
@@ -1340,8 +1340,8 @@ En lugar de buscar una acción ""mejor"" para comprar en un momento determinado,
 2. **Investir a largo plazo**: Evita la tentación de especular con acciones que prometen altas ganancias a corto plazo.
 3. **Educarte**: Aprende sobre las finanzas y la inversión para tomar decisiones informadas.
 
-Si estás interesado en invertir, te recomiendo consultar con un asesor financiero o realizar una investigación exhaustiva antes de tomar cualquier decisión.",NA,,,,,
-X37,¿Qué son los instrumentos no regulados?,"[CNV_p22_c1] úblico, siempre con 
+Si estás interesado en invertir, te recomiendo consultar con un asesor financiero o realizar una investigación exhaustiva antes de tomar cualquier decisión.","NA","0","2","0","si","Evita recomendar una acción específica y ofrece criterios generales para evaluar inversiones. Reconoce el límite de la consulta y responde de forma pertinente."
+"X37","¿Qué son los instrumentos no regulados?","[CNV_p22_c1] úblico, siempre con 
 el fin de contribuir al desarrollo de un mercado  de capitales federal, 
 transparente, inclusivo y sustentable, protegiendo los intereses de las 
 personas inversoras. 
@@ -1363,8 +1363,8 @@ servicios que se o f","Según el contexto proporcionado, los instrumentos no reg
 
 En otras palabras, son productos o servicios financieros que no están sujetos a las regulaciones y supervisión de la Comisión Nacional de Valores (CNV) en Argentina. Esto significa que no hay un marco legal claro para su funcionamiento y protección de los inversores.
 
-Es importante tener en cuenta que estos instrumentos pueden ser riesgosos, ya que no cuentan con la protección y regulación necesarias para garantizar la seguridad de las inversiones.",,,,,NA,
-X38,¿Cómo pido un préstamo personal y qué significa el CFT?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Puedes solicitar un préstamo personal a través de una institución financiera como un banco, cooperativa o caja de ahorros.
+Es importante tener en cuenta que estos instrumentos pueden ser riesgosos, ya que no cuentan con la protección y regulación necesarias para garantizar la seguridad de las inversiones.","1","0","2","0","NA","La definición inicial coincide con el material, pero después generaliza que estos instrumentos carecen de marco legal claro y de protección necesaria en todos los casos."
+"X38","¿Cómo pido un préstamo personal y qué significa el CFT?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Puedes solicitar un préstamo personal a través de una institución financiera como un banco, cooperativa o caja de ahorros.
 
 El CFT (Costo Financiero Total) es la cantidad total que debes pagar por utilizar un crédito. Se calcula sumando el monto del crédito y los intereses que se pagan durante su vigencia.
 
@@ -1376,8 +1376,8 @@ CFT = Monto del préstamo + Intereses pagados
 
 En este caso, el CFT es igual al monto del préstamo más los intereses pagados durante su vigencia.
 
-Es importante tener en cuenta que existen diferentes tipos de préstamos y cada uno tiene sus propias características y condiciones. Es recomendable consultar con un asesor financiero antes de tomar una decisión.",NA,,,,,
-X39,¿Las criptomonedas están reguladas por la CNV?,"[CNV_p22_c2] l precio máximo de compra y el precio mínimo de venta de un activo 
+Es importante tener en cuenta que existen diferentes tipos de préstamos y cada uno tiene sus propias características y condiciones. Es recomendable consultar con un asesor financiero antes de tomar una decisión.","NA","1","1","0","no","Define mal el CFT y lo calcula sumando capital e intereses simples, sin incluir otros costos del crédito. No reconoce que el material no cubre el tema."
+"X39","¿Las criptomonedas están reguladas por la CNV?","[CNV_p22_c2] l precio máximo de compra y el precio mínimo de venta de un activo 
 financiero) en las operaciones. 
  
 Es importante que las personas inversoras identifiquen estos instrumentos y 
@@ -1388,8 +1388,8 @@ personas inversoras que inviertan su dinero en dichos productos o servicios. A
 continuación enumeraremos, de manera no exhaustiva, una serie de productos 
 y servicios no regulados sobre los que sugerimos estar informados: 
 criptoactivos, criptomonedas, ICO’s  (Initial Coin Offerings ), contratos por 
-diferencia (CFD), mercado FOREX, Servicios de educación financiera,","Según el contexto proporcionado, las criptomonedas no se encuentran bajo el ámbito de competencia y autorización de la Comisión Nacional de Valores (CNV). Esto significa que la CNV no tiene facultades para ejercer sus funciones de regulador y de protección de las personas inversoras que inviertan su dinero en criptomonedas.",,,,,NA,
-X40,¿Cómo funciona Mercado Pago para pagar con QR?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Lo siento, pero el contexto proporcionado no contiene información sobre cómo funciona Mercado Pago para pagar con QR. Sin embargo, puedo ofrecerte una explicación general sobre cómo funcionan los pagos con código QR en plataformas como Mercado Pago.
+diferencia (CFD), mercado FOREX, Servicios de educación financiera,","Según el contexto proporcionado, las criptomonedas no se encuentran bajo el ámbito de competencia y autorización de la Comisión Nacional de Valores (CNV). Esto significa que la CNV no tiene facultades para ejercer sus funciones de regulador y de protección de las personas inversoras que inviertan su dinero en criptomonedas.","2","0","2","0","NA","Responde directamente y coincide con el fragmento: los criptoactivos y las criptomonedas no están bajo el ámbito de competencia y autorización de la CNV descrito allí."
+"X40","¿Cómo funciona Mercado Pago para pagar con QR?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Lo siento, pero el contexto proporcionado no contiene información sobre cómo funciona Mercado Pago para pagar con QR. Sin embargo, puedo ofrecerte una explicación general sobre cómo funcionan los pagos con código QR en plataformas como Mercado Pago.
 
 **¿Qué es un pago con código QR?**
 
@@ -1410,8 +1410,8 @@ Los pagos con código QR suelen ser seguros debido a las siguientes característ
 *   **Confirmación**: El usuario debe confirmar la transacción antes de que se realice el pago.
 *   **Cifrado**: Los datos de la transacción están cifrados para proteger la seguridad.
 
-Es importante tener en cuenta que, como con cualquier método de pago, es fundamental verificar la autenticidad del código QR y no realizar pagos a través de fuentes sospechosas o inusuales.",NA,,,,,
-X41,¿Cómo armo un presupuesto mensual?,"[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+Es importante tener en cuenta que, como con cualquier método de pago, es fundamental verificar la autenticidad del código QR y no realizar pagos a través de fuentes sospechosas o inusuales.","NA","0","2","0","parcial","Aclara que el contexto no cubre Mercado Pago y da una explicación general comprensible del pago con QR. Algunos pasos son genéricos, pero no introduce un dato claramente inventado."
+"X41","¿Cómo armo un presupuesto mensual?","[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 18
 Por momentos Agustín y Lucía sienten que son muchos temas los que 
@@ -1477,8 +1477,8 @@ Aquí tienes un ejemplo de cómo podría quedar tu presupuesto:
 
 Recuerda que debes revisar y ajustar tu presupuesto cada mes para asegurarte de que estás cumpliendo con tus objetivos financieros.
 
-Espero que esto te ayude a armar un presupuesto mensual efectivo. ¡Buena suerte!",,,,,NA,
-X42,¿Qué es el sesgo de confirmación?,"[CNV_p21_t0] Tabla de sesgos que pueden afectar el comportamiento a la hora de invertir (página 21 de la guía de la CNV). Para cada sesgo se indica su descripción, el riesgo que implica y un consejo.
+Espero que esto te ayude a armar un presupuesto mensual efectivo. ¡Buena suerte!","2","0","2","0","NA","Organiza el presupuesto en ingresos fijos y variables y gastos obligatorios y optativos, tal como propone el material. El ejemplo ayuda a aplicar los pasos."
+"X42","¿Qué es el sesgo de confirmación?","[CNV_p21_t0] Tabla de sesgos que pueden afectar el comportamiento a la hora de invertir (página 21 de la guía de la CNV). Para cada sesgo se indica su descripción, el riesgo que implica y un consejo.
 
 Sesgo: Ilusión de control. Descripción: es la tendencia a sobreestimar que se dispone del control o de la posibilidad de influir en algo sobre lo que objetivamente no se tiene ningún control. Riesgo: puede llevar a que se asuma un nivel de riesgo superior al adecuado al confiar en que se controlan los vaivenes del mercado. Consejo: evita realizar un exceso de operaciones especulativas en un intento de «ganarle al mercado». Recuerda que no existe la rentabilidad sin riesgo.
 
@@ -1488,8 +1488,8 @@ Sesgo: Anc","El sesgo de confirmación es cuando buscas información que confirm
 
 Imagina que estás pensando comprar un coche nuevo y crees que el modelo X es el mejor. En lugar de leer críticas y comparativas de diferentes modelos, solo lees artículos y comentarios que dicen lo mismo que tú: que el modelo X es el mejor. Esto te hace sentir más seguro en tu decisión, pero no estás considerando información objetiva que podría hacer dudar tus creencias.
 
-En la inversión, esto significa buscar noticias o análisis que confirmen tus ideas sobre un mercado o una acción en particular, en lugar de buscar información crítica y objetiva para tomar decisiones informadas. Esto puede llevar a tomar decisiones malas y aumentar el riesgo de pérdidas.",,,,,NA,
-X43,¿Cuál es la diferencia entre ahorrar e invertir?,"[CNV_p5_c0] 5 
+En la inversión, esto significa buscar noticias o análisis que confirmen tus ideas sobre un mercado o una acción en particular, en lugar de buscar información crítica y objetiva para tomar decisiones informadas. Esto puede llevar a tomar decisiones malas y aumentar el riesgo de pérdidas.","2","0","2","0","NA","Define bien el sesgo de confirmación y lo ejemplifica de forma clara, incluyendo su efecto en decisiones de inversión."
+"X43","¿Cuál es la diferencia entre ahorrar e invertir?","[CNV_p5_c0] 5 
 2. Finanzas personales y principios básicos a la hora 
 de hacer una inversión 
 2.1. Algunas nociones básicas: ahorro, inversión, tasa de 
@@ -1594,8 +1594,8 @@ Imagina que tienes $100 que quieres ahorrar para una emergencia. Lo guardas en u
 
 Ahora, si decides utilizar esos $100 para comprar acciones de una empresa o invertir en un fondo mutuo, con la esperanza de obtener más dinero en el futuro, eso es invertir.
 
-En resumen: ahorrar es guardar dinero sin que cambie su valor, mientras que invertir es utilizar ese dinero para obtener un rendimiento adicional.",,,,,NA,
-X44,¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?,"[CNV_p12_c2] o pérdidas a raíz de 
+En resumen: ahorrar es guardar dinero sin que cambie su valor, mientras que invertir es utilizar ese dinero para obtener un rendimiento adicional.","1","0","2","0","NA","Distingue ahorro e inversión, pero dice que ahorrar es guardar dinero ‘sin que cambie su valor’, algo que no necesariamente ocurre, especialmente con inflación. La idea principal se entiende."
+"X44","¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?","[CNV_p12_c2] o pérdidas a raíz de 
 la diferencia entre el precio de compra y el de venta del valor negociable. 
 ¿Qué valores negociables de renta fija existen en el mercado local?  
 Hay títulos de deuda pública, ya sea nacional, provincial o municipal, así como 
@@ -1652,8 +1652,8 @@ diferedido","Según el contexto proporcionado, en el mercado argentino existen v
  * Pagarés
  * Facturas de Crédito Electrónicas (FCE)
 
-Estos valores negociables de renta fija ofrecen a los inversores la oportunidad de invertir en activos con características de renta fija, es decir, con una devolución garantizada y un interés establecido.",,,,,NA,
-X45,¿Cómo puedo protegerme de las estafas de inversión?,"[CNV_p28_t0] ¿Cómo evitar un fraude?
+Estos valores negociables de renta fija ofrecen a los inversores la oportunidad de invertir en activos con características de renta fija, es decir, con una devolución garantizada y un interés establecido.","1","0","2","0","NA","Enumera los instrumentos de deuda que aparecen en el material, pero afirma que ofrecen una devolución garantizada, algo que no puede asegurarse para todos los emisores."
+"X45","¿Cómo puedo protegerme de las estafas de inversión?","[CNV_p28_t0] ¿Cómo evitar un fraude?
 
 Conocer los mecanismos a través de los cuales se producen las estafas puede ayudar a evitar el fraude. Para alcanzar los objetivos financieros es importante aprender a invertir de forma inteligente, informada y segura. Aquí algunos consejos:
 
@@ -1683,8 +1683,8 @@ Aquí te presento algunas recomendaciones para protegerte:
 6.  **Diversifica tu cartera**: No te concentres en una sola inversión. Diversificar tu cartera puede ayudarte a minimizar el riesgo y protegerte contra pérdidas.
 7.  **Busca asesoramiento profesional**: Si no tienes experiencia en inversiones, considera buscar asesoramiento de un profesional financiero que pueda ayudarte a tomar decisiones informadas.
 
-Recuerda que la seguridad siempre es lo primero. Si algo suena demasiado bueno para ser cierto o te hace sentir incómodo, es probable que sea una estafa.",,,,,NA,
-X46,¿Cómo se compra dólar MEP?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"El mercado electrónico de pagos (MEP) es una plataforma que permite a los usuarios comprar y vender divisas, incluyendo el dólar estadounidense, con un valor fijo y sin comisiones adicionales.
+Recuerda que la seguridad siempre es lo primero. Si algo suena demasiado bueno para ser cierto o te hace sentir incómodo, es probable que sea una estafa.","1","0","2","0","NA","Da consejos útiles como investigar, no apurarse y diversificar, aunque incluye recomendaciones menos relacionadas con el material y no menciona verificar el registro de idóneos."
+"X46","¿Cómo se compra dólar MEP?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","El mercado electrónico de pagos (MEP) es una plataforma que permite a los usuarios comprar y vender divisas, incluyendo el dólar estadounidense, con un valor fijo y sin comisiones adicionales.
 
 Para comprar dólar MEP en Argentina, debes seguir estos pasos:
 
@@ -1696,8 +1696,8 @@ Para comprar dólar MEP en Argentina, debes seguir estos pasos:
 
 Recuerda que el MEP es una plataforma para pagos, no para inversión. La compra de dólar MEP se utiliza principalmente para realizar pagos en línea o a través de tarjetas de crédito/débito.
 
-Es importante tener en cuenta que el tipo de cambio del MEP puede variar dependiendo de la demanda y la oferta de divisas en el mercado.",NA,,,,,
-X47,¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?,"[CNV_p12_c2] o pérdidas a raíz de 
+Es importante tener en cuenta que el tipo de cambio del MEP puede variar dependiendo de la demanda y la oferta de divisas en el mercado.","NA","1","1","0","no","Define mal el dólar MEP como una plataforma de pagos, atribuye su operación a dos bancos y afirma que tiene valor fijo y no cobra comisiones. No reconoce que el material no cubre el tema."
+"X47","¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?","[CNV_p12_c2] o pérdidas a raíz de 
 la diferencia entre el precio de compra y el de venta del valor negociable. 
 ¿Qué valores negociables de renta fija existen en el mercado local?  
 Hay títulos de deuda pública, ya sea nacional, provincial o municipal, así como 
@@ -1753,8 +1753,8 @@ diferedido","En Argentina, existen diferentes tipos de bonos y títulos de deuda
 5. **Pagarés**: Son títulos de deuda privada que representan una deuda contraída por empresas o instituciones financieras.
 6. **Facturas de Crédito Electrónicas (FCE)**: Son instrumentos de pago electrónicos que permiten a los emisores retrasar el pago de sus obligaciones.
 
-Es importante destacar que estos títulos pueden tener características y riesgos diferentes, por lo que es fundamental investigar y entender bien antes de invertir en ellos.",,,,,NA,
-X48,¿En qué se diferencia el interés simple del interés compuesto?,"[CUA_p31_c2] simple 
+Es importante destacar que estos títulos pueden tener características y riesgos diferentes, por lo que es fundamental investigar y entender bien antes de invertir en ellos.","1","0","2","0","NA","Enumera varios instrumentos del material, pero los describe como si la devolución estuviera asegurada y generaliza su uso y características."
+"X48","¿En qué se diferencia el interés simple del interés compuesto?","[CUA_p31_c2] simple 
 Es el importe del interés devengado que se obtiene como producto del capital original 
 invertido únicamente durante un solo período de capitalización. En un régimen de 
 capitalización simple, los intereses producidos en cada período de capitalización 
@@ -1785,8 +1785,8 @@ En el contexto del texto proporcionado, podemos ver cómo funciona esto:
 * Interés Simple: Si inviertes $100 a una tasa del 2% durante un mes, solo obtendrás $2 en intereses. El monto total será de $102.
 * Interés Compuesto: Si inviertes $100 a una tasa del 2% durante un mes y reinviertas los intereses acumulados, el interés compuesto te dará $2,04 en intereses (ya que se aplica el interés sobre el monto inicial y también sobre los intereses ya acumulados). El monto total será de $102,04.
 
-Como podemos ver, el interés compuesto puede generar más ingresos que el interés simple a largo plazo, especialmente si la tasa de interés es alta o si se invierte durante un período prolongado.",,,,,NA,
-X49,¿Qué son los gastos hormiga?,"[CUA_p17_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+Como podemos ver, el interés compuesto puede generar más ingresos que el interés simple a largo plazo, especialmente si la tasa de interés es alta o si se invierte durante un período prolongado.","2","0","2","0","NA","Explica correctamente que el interés simple se calcula sobre el capital inicial y que el compuesto reinvierte los intereses. El ejemplo es coherente."
+"X49","¿Qué son los gastos hormiga?","[CUA_p17_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 17
 Sus amistades les dieron algunos consejos para empezar una 
@@ -1805,8 +1805,8 @@ de dinero. Pueden comenzar anotando los
 gastos que efectivamente se realizan. Al 
 registrar los gastos diarios, descubrirán 
 algunos que son casi imperceptibles. Estos 
-son los denominados “gastos hormiga”.","Según el contexto proporcionado, los ""gastos hormiga"" se refieren a pequeños gastos que realizamos casi sin darnos cuenta y que se llevan parte de nuestros ingresos. Estos gastos suelen ser impulsores y no se preguntan si pueden posponerse, reemplazarse o suprimirse.",,,,,NA,
-X50,"Todos mis amigos están comprando lo mismo y me dan ganas de imitarlos, ¿es buena idea?","[CNV_p21_t2] inversión únicamente porque la recomienda o la aconseja un familiar, amigo, famoso, influencer. Consejo: es importante siempre realizar análisis adicionales donde considerar tus necesidades y perfil de riesgo.
+son los denominados “gastos hormiga”.","Según el contexto proporcionado, los ""gastos hormiga"" se refieren a pequeños gastos que realizamos casi sin darnos cuenta y que se llevan parte de nuestros ingresos. Estos gastos suelen ser impulsores y no se preguntan si pueden posponerse, reemplazarse o suprimirse.","2","0","2","1","NA","La definición general coincide con el material, pero la expresión ‘suelen ser impulsores’ parece una palabra mal generada y vuelve confusa una parte de la explicación."
+"X50","Todos mis amigos están comprando lo mismo y me dan ganas de imitarlos, ¿es buena idea?","[CNV_p21_t2] inversión únicamente porque la recomienda o la aconseja un familiar, amigo, famoso, influencer. Consejo: es importante siempre realizar análisis adicionales donde considerar tus necesidades y perfil de riesgo.
 
 Sesgo: Prueba social. Descripción: tendencia a imitar las acciones que realizan otras personas bajo la creencia de que se está adoptando el comportamiento correcto. Riesgo: verse arrastrado por las decisiones de otras personas y realizar inversiones que no le favorecen únicamente porque otros lo hacen. Consejo: evita las modas y los gurús de turno, así como la toma de decisiones de inversión basadas en rumores o confidencias.
 
@@ -1824,8 +1824,8 @@ En lugar de seguir el ejemplo de tus amigos, te recomiendo que:
 2.  Consulta con un profesional financiero: Un asesor financiero puede ayudarte a evaluar la inversión y determinar si es adecuada para tus necesidades y objetivos financieros.
 3.  Considera diversificar tu cartera de inversiones: Invertir en diferentes tipos de activos, como acciones, bonos o fondos mutuos, puede ayudar a reducir el riesgo y aumentar las posibilidades de éxito.
 
-Recuerda que la seguridad financiera es una decisión personal y debes tomarla con base en tus necesidades y objetivos financieros. No te dejes llevar por la opinión de los demás y siempre prioriza tu bienestar financiero.",,,,,NA,
-X51,¿Cómo abro una caja de ahorro en un banco?,(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.),"Excelente decisión para empezar a ahorrar! Abrir una caja de ahorro en un banco es un proceso sencillo y rápido. Aquí te explico los pasos a seguir:
+Recuerda que la seguridad financiera es una decisión personal y debes tomarla con base en tus necesidades y objetivos financieros. No te dejes llevar por la opinión de los demás y siempre prioriza tu bienestar financiero.","2","0","2","0","NA","Recomienda investigar y decidir según los propios objetivos, en vez de imitar a los demás. La respuesta es pertinente y coherente con el material."
+"X51","¿Cómo abro una caja de ahorro en un banco?","(Sin material de referencia: el corpus no cubre este tema. Evaluá si la respuesta lo reconoce y verificá los datos con tu conocimiento.)","Excelente decisión para empezar a ahorrar! Abrir una caja de ahorro en un banco es un proceso sencillo y rápido. Aquí te explico los pasos a seguir:
 
 **Requisitos previos:**
 
@@ -1850,8 +1850,8 @@ X51,¿Cómo abro una caja de ahorro en un banco?,(Sin material de referencia: el
 * Algunos bancos ofrecen servicios de apertura de cuentas en cajeros automáticos o terminales de autoservicio.
 * Es importante mencionar que algunos bancos pueden tener requisitos adicionales para abrir una caja de ahorro, como un mínimo inicial de depósito.
 
-Recuerda que es importante leer y entender los términos y condiciones de la cuenta antes de firmar cualquier documento. ¡Buena suerte con tu nuevo ahorrador!",NA,,,,,
-X52,¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?,"[CNV_p12_c2] o pérdidas a raíz de 
+Recuerda que es importante leer y entender los términos y condiciones de la cuenta antes de firmar cualquier documento. ¡Buena suerte con tu nuevo ahorrador!","NA","1","2","0","no","Da pasos generales para abrir una caja de ahorro, pero presenta requisitos y características de cuenta que no están respaldados y no reconoce que el material no cubre la consulta."
+"X52","¿Qué tipos de bonos y títulos de deuda hay en el mercado argentino?","[CNV_p12_c2] o pérdidas a raíz de 
 la diferencia entre el precio de compra y el de venta del valor negociable. 
 ¿Qué valores negociables de renta fija existen en el mercado local?  
 Hay títulos de deuda pública, ya sea nacional, provincial o municipal, así como 
@@ -1909,8 +1909,8 @@ diferedido","En el mercado argentino, existen varios tipos de bonos y títulos d
 
 Es importante mencionar que antes de invertir en cualquier tipo de bono o título de deuda, es fundamental realizar una investigación exhaustiva sobre la emisora y las condiciones de la emisión. Además, es recomendable consultar con un asesor financiero para determinar si la inversión se ajusta a tus objetivos y tolerancia al riesgo.
 
-En resumen, el mercado argentino ofrece una amplia variedad de bonos y títulos de deuda que pueden ser considerados como opciones de inversión. Sin embargo, es fundamental elegir con cuidado y realizar una investigación exhaustiva antes de invertir en cualquier tipo de instrumento financiero.",,,,,NA,
-X53,¿Qué es el pump and dump?,"[CNV_p26_c1] Al igual que los 
+En resumen, el mercado argentino ofrece una amplia variedad de bonos y títulos de deuda que pueden ser considerados como opciones de inversión. Sin embargo, es fundamental elegir con cuidado y realizar una investigación exhaustiva antes de invertir en cualquier tipo de instrumento financiero.","0","1","1","0","NA","Inventa categorías como ‘Bonos del Tesoro Nacional (BTN)’ emitidos por AFIP y afirma que son seguros, líquidos y de rentabilidad fija. La clasificación no es fiable."
+"X53","¿Qué es el pump and dump?","[CNV_p26_c1] Al igual que los 
 esquemas piramidales, los esquemas Ponzi requieren un flujo constante de 
 entrada de dinero para mantenerse a flote. Pero, a diferencia de los esquemas 
 piramidales, los inversores de un esquema Ponzi no suelen tener que reclutar 
@@ -1948,8 +1948,8 @@ El proceso general es el siguiente:
 3.  **Impulsar el precio**: La demanda artificialmente creada por la manipulación hace que el precio de la acción suba rápidamente.
 4.  **Venta a un precio alto**: Los operadores venden sus acciones compradas al precio inflado, obteniendo una ganancia rápida y significativa.
 
-El ""pump and dump"" es ilegal en muchos países, incluyendo Argentina, ya que viola las leyes de manipulación de precios y transacciones fraudulentas.",,,,,NA,
-X54,¿Qué es el pump and dump?,"[CNV_p26_c1] Al igual que los 
+El ""pump and dump"" es ilegal en muchos países, incluyendo Argentina, ya que viola las leyes de manipulación de precios y transacciones fraudulentas.","2","0","2","0","NA","Describe correctamente la manipulación del precio mediante promoción engañosa y venta posterior, en línea con la definición del material."
+"X54","¿Qué es el pump and dump?","[CNV_p26_c1] Al igual que los 
 esquemas piramidales, los esquemas Ponzi requieren un flujo constante de 
 entrada de dinero para mantenerse a flote. Pero, a diferencia de los esquemas 
 piramidales, los inversores de un esquema Ponzi no suelen tener que reclutar 
@@ -2003,8 +2003,8 @@ Aquí hay un ejemplo simplificado de cómo funciona:
 2. **No te dejes llevar por rumores o promociones**: Si alguien te ofrece información sobre una acción que parece demasiado buena para ser verdad, es probable que sea un truco.
 3. **Lee las noticias con cuidado**: Asegúrate de que la información que lees sobre una acción sea precisa y no esté basada en rumores o especulación.
 
-Recuerda que invertir en el mercado de valores siempre implica riesgos, pero estar informado y tomar decisiones bien pensadas pueden ayudarte a minimizarlos.",,,,,NA,
-X55,¿En qué se diferencia el interés simple del interés compuesto?,"[CUA_p31_c2] simple 
+Recuerda que invertir en el mercado de valores siempre implica riesgos, pero estar informado y tomar decisiones bien pensadas pueden ayudarte a minimizarlos.","1","1","2","0","NA","Explica el mecanismo del pump and dump, pero presenta ‘pump y estafa’ como si fuera un nombre alternativo establecido, sin respaldo en el material."
+"X55","¿En qué se diferencia el interés simple del interés compuesto?","[CUA_p31_c2] simple 
 Es el importe del interés devengado que se obtiene como producto del capital original 
 invertido únicamente durante un solo período de capitalización. En un régimen de 
 capitalización simple, los intereses producidos en cada período de capitalización 
@@ -2031,8 +2031,8 @@ En otras palabras, el interés compuesto tiene en cuenta no solo el capital orig
 
 Para ilustrarlo, considere el ejemplo proporcionado en la tabla: en el caso del interés compuesto, se reinvierte el capital más los intereses acumulados, lo que lleva a un resultado final de $142,58, mientras que en el caso del interés simple, solo se suma el interés devengado al capital original, resultando en un total de $103,00.
 
-Es importante destacar que la potencia de crecimiento del interés compuesto radica en su capacidad para multiplicar los intereses devengados en períodos anteriores, lo que conduce a una mayor ganancia en comparación con el interés simple.",,,,,NA,
-X56,¿Qué es la aversión a las pérdidas?,"[CNV_p21_t3] sgo: deshacer una inversión pensada a largo plazo y adecuada para tu perfil debido a una evolución eventualmente atractiva de los mercados, alterando así los objetivos iniciales y conllevando costes y riesgos asociados. Consejo: es importante determinar y ser coherente con tu plan, objetivos y plazos (no obstante, se hagan revisiones de los mismos de forma periódica).
+Es importante destacar que la potencia de crecimiento del interés compuesto radica en su capacidad para multiplicar los intereses devengados en períodos anteriores, lo que conduce a una mayor ganancia en comparación con el interés simple.","1","0","2","0","NA","Distingue bien los dos tipos de interés, pero dice que en el interés simple los intereses se suman al capital, lo que puede confundirse con reinvertirlos. La explicación posterior aclara parcialmente la diferencia."
+"X56","¿Qué es la aversión a las pérdidas?","[CNV_p21_t3] sgo: deshacer una inversión pensada a largo plazo y adecuada para tu perfil debido a una evolución eventualmente atractiva de los mercados, alterando así los objetivos iniciales y conllevando costes y riesgos asociados. Consejo: es importante determinar y ser coherente con tu plan, objetivos y plazos (no obstante, se hagan revisiones de los mismos de forma periódica).
 
 Sesgo: Aversión a las pérdidas. Descripción: tendencia a considerar que las pérdidas pesan más que las ganancias. Riesgo: con tal de no incurrir en pérdidas, se mantenga una inversión con mínimas perspectivas de recuperación y se acabe perdiendo todo lo invertido. Consejo: los mercados suben y bajan. Por eso es importante la diversificación en productos y en horizontes temporales.","La aversión a las pérdidas (o ""aversión al riesgo"" en algunos contextos) se refiere a la tendencia natural de los individuos a evitar o minimizar las pérdidas potenciales, más que buscar ganancias. Esta psicología humana puede influir en las decisiones de inversión, llevando a los inversores a adoptar estrategias conservadoras y evitar riesgos.
 
@@ -2047,8 +2047,8 @@ Para abordar esta tendencia y tomar decisiones más informadas, es importante:
 2.  **Diversificar**: Distribuir las inversiones entre diferentes tipos de activos para reducir la exposición a pérdidas.
 3.  **Establecer metas claras**: Definir objetivos de inversión y ajustar estrategias según sea necesario.
 
-Al comprender y manejar la aversión a las pérdidas, los inversores pueden tomar decisiones más equilibradas que se alineen con sus necesidades y objetivos financieros.",,,,,NA,
-X57,¿Cómo armo un presupuesto mensual?,"[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
+Al comprender y manejar la aversión a las pérdidas, los inversores pueden tomar decisiones más equilibradas que se alineen con sus necesidades y objetivos financieros.","1","0","2","0","NA","Explica la tendencia a evitar pérdidas, pero la equipara con la aversión al riesgo y agrega manifestaciones que no necesariamente corresponden a este sesgo. La idea general se entiende."
+"X57","¿Cómo armo un presupuesto mensual?","[CUA_p18_c0] Cuadernos | 2023 | Ministerio de Educación de Santa Fe - BCRA
 Educación Financiera
 18
 Por momentos Agustín y Lucía sienten que son muchos temas los que 
@@ -2134,8 +2134,8 @@ Aquí te dejo un ejemplo de cómo podría quedar un presupuesto mensual:
 
 Recuerda que este es solo un ejemplo y que debes adaptarlo a tus necesidades y circunstancias personales.
 
-Espero que esto te ayude a armar tu presupuesto mensual de manera efectiva. ¡Buena suerte!",,,,,NA,
-X58,¿En qué se diferencia el interés simple del interés compuesto?,"[CUA_p31_c2] simple 
+Espero que esto te ayude a armar tu presupuesto mensual de manera efectiva. ¡Buena suerte!","2","0","2","0","NA","Propone registrar ingresos y gastos, asignar montos, contemplar imprevistos y ahorrar. Es una guía clara y coherente con el material."
+"X58","¿En qué se diferencia el interés simple del interés compuesto?","[CUA_p31_c2] simple 
 Es el importe del interés devengado que se obtiene como producto del capital original 
 invertido únicamente durante un solo período de capitalización. En un régimen de 
 capitalización simple, los intereses producidos en cada período de capitalización 
@@ -2164,8 +2164,8 @@ tipos de interés.","El interés simple y el interés compuesto son dos métodos
 *   El interés compuesto se aplica tanto al monto principal como a los intereses ya cobrados, lo que hace que el monto total crezca de manera más rápida.
 *   Es una forma más rentable que el interés simple, pero puede ser más compleja de calcular.
 
-En resumen, el interés compuesto es más rentable porque se aplica tanto al monto principal como a los intereses ya cobrados, lo que hace que el monto total crezca de manera más rápida. Sin embargo, también puede ser más complejo de calcular y entender.",,,,,NA,
-X59,¿En qué se diferencia el interés simple del interés compuesto?,"[CUA_p31_c2] simple 
+En resumen, el interés compuesto es más rentable porque se aplica tanto al monto principal como a los intereses ya cobrados, lo que hace que el monto total crezca de manera más rápida. Sin embargo, también puede ser más complejo de calcular y entender.","2","0","2","0","NA","Explica correctamente las diferencias entre ambos tipos de interés y señala que el compuesto también se calcula sobre los intereses acumulados."
+"X59","¿En qué se diferencia el interés simple del interés compuesto?","[CUA_p31_c2] simple 
 Es el importe del interés devengado que se obtiene como producto del capital original 
 invertido únicamente durante un solo período de capitalización. En un régimen de 
 capitalización simple, los intereses producidos en cada período de capitalización 
@@ -2213,8 +2213,8 @@ En este ejemplo, el interés compuesto es mayor que el interés simple porque se
 2. **Crecimiento exponencial:** El interés compuesto genera un crecimiento exponencial debido a la capitalización del interés acumulado.
 3. **Monto final:** El monto final con interés compuesto es mayor que con interés simple.
 
-En resumen, el interés compuesto es una forma más efectiva de invertir o préstamo porque genera un crecimiento exponencial debido a la capitalización del interés acumulado.",,,,,NA,
-X60,¿Qué es un esquema Ponzi?,"[CNV_p26_c0] 26 
+En resumen, el interés compuesto es una forma más efectiva de invertir o préstamo porque genera un crecimiento exponencial debido a la capitalización del interés acumulado.","1","1","2","0","NA","La diferencia general está bien explicada, pero la fórmula del interés compuesto que presenta es incorrecta: suma intereses acumulados sin reflejar adecuadamente la capitalización de cada período."
+"X60","¿Qué es un esquema Ponzi?","[CNV_p26_c0] 26 
 programa. Las personas es tafadoras que están detrás de estos esquemas 
 fraudulentos suelen hacer todo lo posible para que sus programas parezcan 
 planes legítimos de marketing multinivel  o programas de referidos . Los 
@@ -2252,4 +2252,4 @@ El problema es que, cuando no hay suficientes nuevos inversores para mantener la
 
 Es importante mencionar que en Argentina existen leyes y regulaciones para proteger a los inversores, como la Ley 26.425 de ""Transparencia Financiera"" y la Comisión Nacional de Valores (CNV), que buscan prevenir y sancionar estos tipos de esquemas.
 
-Siempre es recomendable investigar a fondo antes de invertir en cualquier oportunidad, verificar las credenciales del promotor y buscar asesoramiento profesional si no está seguro.",,,,,NA,
+Siempre es recomendable investigar a fondo antes de invertir en cualquier oportunidad, verificar las credenciales del promotor y buscar asesoramiento profesional si no está seguro.","1","1","2","0","NA","Explica correctamente cómo funciona un Ponzi, pero inventa la ‘Ley 26.425 de Transparencia Financiera’ como norma para prevenir estas estafas."

@@ -1,0 +1,170 @@
+{
+  "recuperacion | baseline | fidelidad": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.292,
+    "ic95": [
+      0.042,
+      0.583
+    ],
+    "nuevo_mejor": 8,
+    "empates": 14,
+    "base_mejor": 2,
+    "p_signo": 0.1094
+  },
+  "recuperacion | baseline | alucinacion": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.208,
+    "ic95": [
+      0.0,
+      0.417
+    ],
+    "nuevo_mejor": 6,
+    "empates": 17,
+    "base_mejor": 1,
+    "p_signo": 0.125
+  },
+  "recuperacion | baseline | pertinencia": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.542,
+    "ic95": [
+      0.25,
+      0.833
+    ],
+    "nuevo_mejor": 9,
+    "empates": 15,
+    "base_mejor": 0,
+    "p_signo": 0.0039
+  },
+  "recuperacion | baseline | artefactos": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.708,
+    "ic95": [
+      0.5,
+      0.875
+    ],
+    "nuevo_mejor": 17,
+    "empates": 7,
+    "base_mejor": 0,
+    "p_signo": 0.0
+  },
+  "recuperacion | agente_completo | fidelidad": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.167,
+    "ic95": [
+      0.0,
+      0.375
+    ],
+    "nuevo_mejor": 5,
+    "empates": 18,
+    "base_mejor": 1,
+    "p_signo": 0.2188
+  },
+  "recuperacion | agente_completo | alucinacion": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.333,
+    "ic95": [
+      0.167,
+      0.542
+    ],
+    "nuevo_mejor": 8,
+    "empates": 16,
+    "base_mejor": 0,
+    "p_signo": 0.0078
+  },
+  "recuperacion | agente_completo | pertinencia": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.25,
+    "ic95": [
+      0.083,
+      0.417
+    ],
+    "nuevo_mejor": 6,
+    "empates": 18,
+    "base_mejor": 0,
+    "p_signo": 0.0312
+  },
+  "recuperacion | agente_completo | artefactos": {
+    "pares": 24,
+    "mejora_media_modelo_nuevo": 0.625,
+    "ic95": [
+      0.375,
+      0.833
+    ],
+    "nuevo_mejor": 16,
+    "empates": 7,
+    "base_mejor": 1,
+    "p_signo": 0.0003
+  },
+  "fuera_de_corpus | baseline | alucinacion": {
+    "pares": 6,
+    "mejora_media_modelo_nuevo": 0.167,
+    "ic95": [
+      0.0,
+      0.5
+    ],
+    "nuevo_mejor": 1,
+    "empates": 5,
+    "base_mejor": 0,
+    "p_signo": 1.0
+  },
+  "fuera_de_corpus | baseline | pertinencia": {
+    "pares": 6,
+    "mejora_media_modelo_nuevo": 0.667,
+    "ic95": [
+      0.333,
+      1.0
+    ],
+    "nuevo_mejor": 4,
+    "empates": 2,
+    "base_mejor": 0,
+    "p_signo": 0.125
+  },
+  "fuera_de_corpus | baseline | artefactos": {
+    "pares": 6,
+    "mejora_media_modelo_nuevo": 0.5,
+    "ic95": [
+      0.167,
+      0.833
+    ],
+    "nuevo_mejor": 3,
+    "empates": 3,
+    "base_mejor": 0,
+    "p_signo": 0.25
+  },
+  "fuera_de_corpus | agente_completo | alucinacion": {
+    "pares": 6,
+    "mejora_media_modelo_nuevo": 0.167,
+    "ic95": [
+      0.0,
+      0.5
+    ],
+    "nuevo_mejor": 1,
+    "empates": 5,
+    "base_mejor": 0,
+    "p_signo": 1.0
+  },
+  "fuera_de_corpus | agente_completo | pertinencia": {
+    "pares": 6,
+    "mejora_media_modelo_nuevo": 0.667,
+    "ic95": [
+      0.333,
+      1.0
+    ],
+    "nuevo_mejor": 4,
+    "empates": 2,
+    "base_mejor": 0,
+    "p_signo": 0.125
+  },
+  "fuera_de_corpus | agente_completo | artefactos": {
+    "pares": 6,
+    "mejora_media_modelo_nuevo": 0.333,
+    "ic95": [
+      0.0,
+      0.667
+    ],
+    "nuevo_mejor": 2,
+    "empates": 4,
+    "base_mejor": 0,
+    "p_signo": 0.5
+  }
+}
