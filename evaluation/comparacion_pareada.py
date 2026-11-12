@@ -26,7 +26,7 @@ sys.path.insert(0, str(RAIZ_EVALUACION))
 
 from ejecutar_evaluacion import carpeta_modelo  # noqa: E402
 
-# criterio -> (columna, sentido): +1 si un valor más alto es mejor, -1 si uno más bajo es mejor
+
 CRITERIOS = {
     "fidelidad": ("fidelidad (0-2)", +1),
     "alucinacion": ("alucinacion (0/1)", -1),
@@ -71,7 +71,7 @@ def main() -> None:
     carpeta = carpeta_modelo(args.modelo, args.prueba) / "revision"
 
     clave = {c["id_item"]: c for c in leer(carpeta / "clave_revision.csv")}
-    pares = {}  # (estrato, escenario, repeticion) -> {condicion: fila}
+    pares = {}  
     for fila in leer(carpeta / "revision_ciega.csv"):
         k = clave[fila["id_item"]]
         pares.setdefault((k["tipo_pregunta"], k["escenario_id"], k["repeticion"]), {})[k["condicion"]] = fila
@@ -85,7 +85,7 @@ def main() -> None:
             for p in grupo:
                 a, b = numero(p["agente_completo"][col]), numero(p["baseline"][col])
                 if a is not None and b is not None:
-                    difs.append((a - b) * sentido)  # positivo = el agente es mejor
+                    difs.append((a - b) * sentido)  
             if not difs:
                 continue
             gana, pierde = sum(d > 0 for d in difs), sum(d < 0 for d in difs)

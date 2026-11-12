@@ -47,7 +47,7 @@ def _pregunta(id_, tema, enunciado, posicion_correcta, correcta, distractores,
 
 
 PREGUNTAS = [
-    # ------------------------------------------------------------------ conceptos_basicos
+    # conceptos_basicos
     _pregunta(
         "conceptos_basicos_ahorro_vs_inversion", "conceptos_basicos",
         "Según el material, ¿cuál es la diferencia principal entre ahorrar e invertir?",
@@ -124,7 +124,7 @@ PREGUNTAS = [
         "plazo fijo UVA, unidad de valor adquisitivo, ajuste por inflación, CER",
     ),
 
-    # ------------------------------------------------------------------ instrumentos_inversion
+    # instrumentos_inversion
     _pregunta(
         "instrumentos_inversion_renta_fija_variable", "instrumentos_inversion",
         "¿Qué distingue a los valores negociables de renta fija de los de renta variable?",
@@ -201,7 +201,7 @@ PREGUNTAS = [
         "riesgos de la renta variable, acciones, rentabilidad incierta, el pasado no garantiza el futuro",
     ),
 
-        # ------------------------------------------------------------------ sesgos_y_riesgos
+        # sesgos_y_riesgos
     _pregunta(
         "sesgos_y_riesgos_sesgo_autoridad", "sesgos_y_riesgos",
         "Invertís en algo solo porque te lo recomendó un familiar, un amigo o un influencer, sin analizarlo por tu cuenta. ¿Qué sesgo estás mostrando?",
@@ -278,7 +278,7 @@ PREGUNTAS = [
         "sesgo de descuento hiperbólico, deshacer una inversión de largo plazo por una ganancia inmediata",
     ),
     
-    # ------------------------------------------------------------------ fraudes_y_proteccion
+    # fraudes_y_proteccion
     _pregunta(
         "fraudes_y_proteccion_senales_estafa", "fraudes_y_proteccion",
         "¿Cuál de estas es una señal de advertencia de una posible estafa de inversión?",
@@ -437,7 +437,7 @@ def calificar_respuesta(pregunta_id: str, opcion_id: str) -> dict | None:
 
 def siguiente_nivel(nivel_actual: str, acierto: bool | None) -> str:
     if acierto is None:
-        return nivel_actual  # no se pudo corregir (opción inválida): el nivel no cambia
+        return nivel_actual  
     idx = NIVELES_ORDEN.index(nivel_actual)
     idx = min(idx + 1, len(NIVELES_ORDEN) - 1) if acierto else max(idx - 1, 0)
     return NIVELES_ORDEN[idx]

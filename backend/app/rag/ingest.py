@@ -90,8 +90,7 @@ def ingestar_documento(collection, path: str, rangos_tema: list, ingestar_sin_te
 
         for j, chunk in enumerate(chunks):
             embedding = generar_embedding(chunk)
-            # id único combinando nombre de archivo + página + chunk,
-            # para que no choquen ids entre documentos distintos
+            # id = archivo + página + chunk
             chunk_id = f"{path}_pagina{num_pagina}_chunk{j}"
             collection.add(
                 ids=[chunk_id],
@@ -110,8 +109,7 @@ def ingestar_transcripcion(collection, transcripcion: dict) -> int:
         texto = f.read()
     chunks = dividir_en_chunks(texto, CHUNK_SIZE, CHUNK_OVERLAP)
     for j, chunk in enumerate(chunks):
-        # el id lleva "transcripcion" para no chocar con los chunks que pypdf
-        # ya extrajo de esa misma página (por ejemplo el título de la 28)
+        # distingue la transcripción manual de los chunks de pypdf
         collection.add(
             ids=[f"{transcripcion['fuente']}_pagina{transcripcion['pagina']}_transcripcion_chunk{j}"],
             embeddings=[generar_embedding(chunk)],

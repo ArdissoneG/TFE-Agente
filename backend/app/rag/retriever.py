@@ -29,7 +29,7 @@ def buscar_contexto(pregunta: str, n_resultados: int = 3) -> dict:
     return {
         "chunks": chunks,
         "tema_detectado": tema_detectado,
-        # ids y distancias, en orden de ranking: hacen falta para Precision@3, Recall@3 y MRR
+        # ids y distancias para las métricas
         "ids": resultados["ids"][0],
         "distancias": resultados["distances"][0],
     }

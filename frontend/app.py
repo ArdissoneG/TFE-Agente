@@ -53,7 +53,7 @@ if "knowledge_profile" not in st.session_state:
         if res.status_code == 200:
             st.session_state.knowledge_profile = res.json()["niveles"]
     except requests.exceptions.RequestException:
-        pass  # sin conexión al backend; sigue el flujo de diagnóstico normal
+        pass  
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -68,7 +68,7 @@ with st.sidebar:
         st.session_state.messages = []
         st.rerun()
 
-# --- ETAPA 1: DIAGNÓSTICO DE CONOCIMIENTO ---
+
 if st.session_state.knowledge_profile is None:
     st.subheader("Antes de arrancar, veamos qué tanto sabés de cada tema")
     st.caption("No hay respuestas incorrectas — esto nos ayuda a explicarte con el nivel de detalle justo.")
@@ -94,7 +94,7 @@ if st.session_state.knowledge_profile is None:
             st.error(f"No pude calcular tu diagnóstico: {e}")
 
 
-# --- ETAPA 2: CHAT LIBRE ---
+
 else:
     st.success("Tu diagnóstico de conocimiento:")
     for tema, nivel in st.session_state.knowledge_profile.items():

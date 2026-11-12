@@ -5,6 +5,9 @@ Ejecuta las 30 preguntas (20 de recuperación + 10 fuera de corpus) en dos condi
 modelo y los mismos parámetros:
   - baseline:         solo la línea de rol, sin RAG, sin nivel y sin verificación.
   - agente_completo:  RAG + nivel de la persona + verificación + nueva explicación si se equivoca.
+Ablación (solo con --condiciones, no se corre por defecto):
+  - prompt_honestidad: línea de rol + instrucción de no inventar, sin RAG ni nivel.
+  - rag_sin_nivel:     como el agente completo, sin nivel ni verificación.
 Cada combinación se repite con las semillas 1, 2 y 3 (temperatura fija).
 
 Cada escenario usa una persona ficticia con su propio perfil (el que sale de su diagnóstico) que
@@ -41,6 +44,7 @@ RAIZ_REPO = RAIZ_EVALUACION.parent
 sys.path.insert(0, str(RAIZ_EVALUACION))
 
 CONDICIONES = ["baseline", "agente_completo"]
+CONDICIONES_ABLACION = ["prompt_honestidad", "rag_sin_nivel"]  # se piden con --condiciones
 
 # --- Protección contra fallas técnicas del servidor de Ollama -------------------------------------
 # En una primera ejecución, tras ~100 generaciones el modelo empezó a devolver texto sin sentido y
@@ -83,6 +87,7 @@ def _cargar_backend() -> SimpleNamespace:
 
     import personas
     from app import config
+    from app.ablacion import responder_prompt_honestidad, responder_rag_sin_nivel
     from app.baseline import responder_baseline
     from app.graph.grafo import grafo
     from app.llm import digest_modelo
@@ -91,6 +96,7 @@ def _cargar_backend() -> SimpleNamespace:
 
     return SimpleNamespace(
         Command=Command, config=config, responder_baseline=responder_baseline, grafo=grafo,
+        responder_prompt_honestidad=responder_prompt_honestidad, responder_rag_sin_nivel=responder_rag_sin_nivel,
         digest_modelo=digest_modelo, CHROMA_PATH=CHROMA_PATH, COLLECTION_NAME=COLLECTION_NAME,
         registrar=registrar, cargar_personas=personas.cargar_personas,
         perfil_diagnosticado=personas.perfil_diagnosticado, opcion_elegida=personas.opcion_elegida,
@@ -184,6 +190,18 @@ def correr_baseline(be, esc: dict, meta: dict) -> dict:
     return {}
 
 
+def correr_condicion(be, cond: str, esc: dict, persona: dict, meta: dict) -> dict:
+    if cond == "baseline":
+        return correr_baseline(be, esc, meta)
+    if cond == "prompt_honestidad":
+        be.responder_prompt_honestidad(esc["pregunta"], meta)
+        return {}
+    if cond == "rag_sin_nivel":
+        be.responder_rag_sin_nivel(esc["pregunta"], meta)
+        return {}
+    return correr_agente(be, esc, persona, meta)
+
+
 def correr_agente(be, esc: dict, persona: dict, meta: dict) -> dict:
     perfil = be.perfil_diagnosticado(persona)
     meta = {**meta, "persistir": False, "usuario_id": persona["id"]}
@@ -246,8 +264,7 @@ def ejecutar(be, escenarios, personas, semillas, condiciones, carpeta: Path,
                 ruta.unlink()  # quedó incompleta o se descartó el intento anterior
             error, extra = None, {}
             try:
-                extra = correr_baseline(be, esc, meta) if cond == "baseline" \
-                    else correr_agente(be, esc, persona, meta)
+                extra = correr_condicion(be, cond, esc, persona, meta)
             except Exception as e:  # una corrida fallida no frena a las demás
                 error = f"{type(e).__name__}: {e}"
             degenerada = error is None and tiene_texto_degenerado(ruta)
@@ -266,8 +283,7 @@ def ejecutar(be, escenarios, personas, semillas, condiciones, carpeta: Path,
             ruta.unlink(missing_ok=True)
             error, extra = None, {}
             try:
-                extra = correr_baseline(be, esc, meta) if cond == "baseline" \
-                    else correr_agente(be, esc, persona, meta)
+                extra = correr_condicion(be, cond, esc, persona, meta)
             except Exception as e:
                 error = f"{type(e).__name__}: {e}"
         if error:
@@ -324,7 +340,7 @@ def main() -> None:
     semillas = [1] if args.prueba else [int(s) for s in args.semillas.split(",")]
     condiciones = args.condiciones.split(",")
     for c in condiciones:
-        if c not in CONDICIONES:
+        if c not in CONDICIONES + CONDICIONES_ABLACION:
             sys.exit(f"Condición desconocida: {c}")
     personas = {p["id"]: p for p in be.cargar_personas()}
 

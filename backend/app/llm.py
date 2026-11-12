@@ -33,7 +33,7 @@ def generar(messages: list[dict], seed: int | None = None) -> dict:
     opciones = parametros_generacion(seed)
     resultado = ollama.chat(model=MODELO_LLM, messages=messages, options=opciones)
     try:
-        finalizacion = resultado["done_reason"]  # "stop" = terminó sola; "length" = la cortó el tope
+        finalizacion = resultado["done_reason"]  
     except (KeyError, TypeError):
         finalizacion = None
     return {

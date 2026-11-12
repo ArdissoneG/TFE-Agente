@@ -104,8 +104,7 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
     niveles_actualizados = dict(state["knowledge_profile"])
     niveles_actualizados[tema] = nivel_nuevo
 
-    # En evaluación (meta["persistir"] = False) el perfil queda solo en el estado del grafo,
-    # así cada persona ficticia tiene el suyo y no se pisa el perfil real guardado en SQLite.
+    # En evaluación el perfil no se guarda en SQLite.
     if meta.get("persistir", True):
         guardar_perfil(meta.get("usuario_id", USUARIO_ID), niveles_actualizados)
 
@@ -132,10 +131,7 @@ def evaluar_verificacion(state: EstadoChat) -> dict:
     }
 
     if acierto is False:
-        # Nueva explicación: ya no recibe la explicación anterior (el modelo tendía a copiarla y a
-        # repetir sus errores). Recibe el contexto recuperado, la opción incorrecta que eligió la
-        # persona con su categoría de error, y el enunciado correcto del banco, que está escrito
-        # de antemano a partir del corpus: el modelo solo tiene que reformularlo para esa persona.
+        # la reexplicación no recibe la explicación anterior.
         prompt_reexplicacion = (
             "Sos un asistente de educación financiera para inversores minoristas en Argentina. "
             "El usuario leyó una explicación y después respondió una pregunta de opción múltiple "

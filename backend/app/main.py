@@ -86,15 +86,7 @@ def responder_verificacion(request: ResponderVerificacionRequest):
         "explicacion": calificacion.get("explicacion"),
     }
 
-    #return {
-    #    "correcto": resultado["correcto"],
-    #    "nivel_nuevo": resultado["nivel_nuevo"],
-    #    "knowledge_profile": {"niveles": resultado["knowledge_profile"]},
-    #   "reexplicacion": resultado.get("reexplicacion"),
-    #}
-
-
 @app.post("/chat/baseline")
 def chat_baseline(request: ChatRequest):
-    # Caso base de la evaluación: mismo modelo y parámetros, sin RAG, nivel ni verificación.
+    
     return responder_baseline(request.message)

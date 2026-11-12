@@ -74,7 +74,7 @@ def material_referencia(consulta: dict, corpus: dict) -> str:
 
 
 def escribir_csv(ruta: Path, columnas: list[str], filas: list[dict]) -> None:
-    with open(ruta, "w", encoding="utf-8-sig", newline="") as f:  # utf-8-sig: Excel lo abre bien
+    with open(ruta, "w", encoding="utf-8-sig", newline="") as f:  
         w = csv.DictWriter(f, fieldnames=columnas)
         w.writeheader()
         w.writerows(filas)

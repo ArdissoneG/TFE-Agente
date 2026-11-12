@@ -32,7 +32,7 @@ def main() -> int:
     corpus = cargar_corpus()
     texto_corpus = " ".join(normalizar(f["texto"]).lower() for f in corpus.values())
 
-    # ---------------------------------------------------------------- personas
+    #  personas
     personas = cargar_personas()
     ids_personas = [p["id"] for p in personas]
     if len(ids_personas) != 6 or len(set(ids_personas)) != 6:
@@ -57,7 +57,7 @@ def main() -> int:
             if por_nivel[(nivel, tipo)] != 1:
                 errores.append(f"nivel {nivel}: se esperaba 1 persona {tipo}, hay {por_nivel[(nivel, tipo)]}")
 
-    # ---------------------------------------------------------------- consultas
+    #  consultas
     consultas = cargar_consultas()
     ids = [c["id"] for c in consultas]
     if len(ids) != len(set(ids)):
