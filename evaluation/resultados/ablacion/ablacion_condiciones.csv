@@ -1,0 +1,9 @@
+﻿estrato,condicion,pares,fidelidad,alucinacion,pertinencia,artefactos,reconoce_limite
+recuperacion,baseline,24,1.208,0.458,1.833,0.0,
+recuperacion,prompt_honestidad,24,1.167,0.333,2.0,0.0,
+recuperacion,rag_sin_nivel,24,1.708,0.0,1.958,0.0,
+recuperacion,agente_completo,24,1.417,0.125,1.958,0.042,
+fuera_de_corpus,baseline,6,,0.833,1.333,0.0,"{""no"": 5, ""parcial"": 0, ""si"": 1}"
+fuera_de_corpus,prompt_honestidad,6,,0.333,1.667,0.0,"{""no"": 4, ""parcial"": 1, ""si"": 1}"
+fuera_de_corpus,rag_sin_nivel,6,,0.333,1.667,0.0,"{""no"": 0, ""parcial"": 3, ""si"": 3}"
+fuera_de_corpus,agente_completo,6,,0.667,1.5,0.167,"{""no"": 2, ""parcial"": 3, ""si"": 1}"

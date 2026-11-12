@@ -1,0 +1,550 @@
+{
+  "chequeo": {
+    "pares": 30,
+    "mismos_fragmentos_rag_vs_agente": 30,
+    "respuestas_cortadas_por_tope": {
+      "baseline": 0,
+      "prompt_honestidad": 0,
+      "rag_sin_nivel": 0,
+      "agente_completo": 0
+    }
+  },
+  "condiciones": [
+    {
+      "estrato": "recuperacion",
+      "condicion": "baseline",
+      "pares": 24,
+      "fidelidad": 1.208,
+      "alucinacion": 0.458,
+      "pertinencia": 1.833,
+      "artefactos": 0.0
+    },
+    {
+      "estrato": "recuperacion",
+      "condicion": "prompt_honestidad",
+      "pares": 24,
+      "fidelidad": 1.167,
+      "alucinacion": 0.333,
+      "pertinencia": 2.0,
+      "artefactos": 0.0
+    },
+    {
+      "estrato": "recuperacion",
+      "condicion": "rag_sin_nivel",
+      "pares": 24,
+      "fidelidad": 1.708,
+      "alucinacion": 0.0,
+      "pertinencia": 1.958,
+      "artefactos": 0.0
+    },
+    {
+      "estrato": "recuperacion",
+      "condicion": "agente_completo",
+      "pares": 24,
+      "fidelidad": 1.417,
+      "alucinacion": 0.125,
+      "pertinencia": 1.958,
+      "artefactos": 0.042
+    },
+    {
+      "estrato": "fuera_de_corpus",
+      "condicion": "baseline",
+      "pares": 6,
+      "fidelidad": null,
+      "alucinacion": 0.833,
+      "pertinencia": 1.333,
+      "artefactos": 0.0,
+      "reconoce_limite": "{\"no\": 5, \"parcial\": 0, \"si\": 1}"
+    },
+    {
+      "estrato": "fuera_de_corpus",
+      "condicion": "prompt_honestidad",
+      "pares": 6,
+      "fidelidad": null,
+      "alucinacion": 0.333,
+      "pertinencia": 1.667,
+      "artefactos": 0.0,
+      "reconoce_limite": "{\"no\": 4, \"parcial\": 1, \"si\": 1}"
+    },
+    {
+      "estrato": "fuera_de_corpus",
+      "condicion": "rag_sin_nivel",
+      "pares": 6,
+      "fidelidad": null,
+      "alucinacion": 0.333,
+      "pertinencia": 1.667,
+      "artefactos": 0.0,
+      "reconoce_limite": "{\"no\": 0, \"parcial\": 3, \"si\": 3}"
+    },
+    {
+      "estrato": "fuera_de_corpus",
+      "condicion": "agente_completo",
+      "pares": 6,
+      "fidelidad": null,
+      "alucinacion": 0.667,
+      "pertinencia": 1.5,
+      "artefactos": 0.167,
+      "reconoce_limite": "{\"no\": 2, \"parcial\": 3, \"si\": 1}"
+    }
+  ],
+  "contrastes": [
+    {
+      "contraste": "prompt_honestidad vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "fidelidad",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": -0.042,
+      "ic95": [
+        -0.25,
+        0.167
+      ],
+      "a_mejor": 3,
+      "empates": 17,
+      "b_mejor": 4,
+      "p": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "contraste": "prompt_honestidad vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "alucinacion",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": 0.125,
+      "ic95": [
+        -0.083,
+        0.333
+      ],
+      "a_mejor": 5,
+      "empates": 17,
+      "b_mejor": 2,
+      "p": 0.4531,
+      "p_holm": 1.0
+    },
+    {
+      "contraste": "prompt_honestidad vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "pertinencia",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": 0.167,
+      "ic95": [
+        0.042,
+        0.333
+      ],
+      "a_mejor": 4,
+      "empates": 20,
+      "b_mejor": 0,
+      "p": 0.125,
+      "p_holm": 0.75
+    },
+    {
+      "contraste": "prompt_honestidad vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 24,
+      "mejora_media": 0.0,
+      "ic95": [
+        0.0,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 24,
+      "b_mejor": 0,
+      "p": 1.0
+    },
+    {
+      "contraste": "prompt_honestidad vs baseline",
+      "estrato": "fuera_de_corpus",
+      "criterio": "alucinacion",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.5,
+      "ic95": [
+        0.167,
+        0.833
+      ],
+      "a_mejor": 3,
+      "empates": 3,
+      "b_mejor": 0,
+      "p": 0.25
+    },
+    {
+      "contraste": "prompt_honestidad vs baseline",
+      "estrato": "fuera_de_corpus",
+      "criterio": "pertinencia",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.333,
+      "ic95": [
+        0.0,
+        0.667
+      ],
+      "a_mejor": 2,
+      "empates": 4,
+      "b_mejor": 0,
+      "p": 0.5
+    },
+    {
+      "contraste": "prompt_honestidad vs baseline",
+      "estrato": "fuera_de_corpus",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.0,
+      "ic95": [
+        0.0,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 6,
+      "b_mejor": 0,
+      "p": 1.0
+    },
+    {
+      "contraste": "rag_sin_nivel vs prompt_honestidad",
+      "estrato": "recuperacion",
+      "criterio": "fidelidad",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": 0.542,
+      "ic95": [
+        0.208,
+        0.875
+      ],
+      "a_mejor": 11,
+      "empates": 11,
+      "b_mejor": 2,
+      "p": 0.0225,
+      "p_holm": 0.18
+    },
+    {
+      "contraste": "rag_sin_nivel vs prompt_honestidad",
+      "estrato": "recuperacion",
+      "criterio": "alucinacion",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": 0.333,
+      "ic95": [
+        0.167,
+        0.542
+      ],
+      "a_mejor": 8,
+      "empates": 16,
+      "b_mejor": 0,
+      "p": 0.0078,
+      "p_holm": 0.0702
+    },
+    {
+      "contraste": "rag_sin_nivel vs prompt_honestidad",
+      "estrato": "recuperacion",
+      "criterio": "pertinencia",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": -0.042,
+      "ic95": [
+        -0.125,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 23,
+      "b_mejor": 1,
+      "p": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "contraste": "rag_sin_nivel vs prompt_honestidad",
+      "estrato": "recuperacion",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 24,
+      "mejora_media": 0.0,
+      "ic95": [
+        0.0,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 24,
+      "b_mejor": 0,
+      "p": 1.0
+    },
+    {
+      "contraste": "rag_sin_nivel vs prompt_honestidad",
+      "estrato": "fuera_de_corpus",
+      "criterio": "alucinacion",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.0,
+      "ic95": [
+        -0.5,
+        0.5
+      ],
+      "a_mejor": 1,
+      "empates": 4,
+      "b_mejor": 1,
+      "p": 1.0
+    },
+    {
+      "contraste": "rag_sin_nivel vs prompt_honestidad",
+      "estrato": "fuera_de_corpus",
+      "criterio": "pertinencia",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.0,
+      "ic95": [
+        -0.5,
+        0.5
+      ],
+      "a_mejor": 1,
+      "empates": 4,
+      "b_mejor": 1,
+      "p": 1.0
+    },
+    {
+      "contraste": "rag_sin_nivel vs prompt_honestidad",
+      "estrato": "fuera_de_corpus",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.0,
+      "ic95": [
+        0.0,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 6,
+      "b_mejor": 0,
+      "p": 1.0
+    },
+    {
+      "contraste": "agente_completo vs rag_sin_nivel",
+      "estrato": "recuperacion",
+      "criterio": "fidelidad",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": -0.292,
+      "ic95": [
+        -0.5,
+        -0.083
+      ],
+      "a_mejor": 1,
+      "empates": 15,
+      "b_mejor": 8,
+      "p": 0.0391,
+      "p_holm": 0.2737
+    },
+    {
+      "contraste": "agente_completo vs rag_sin_nivel",
+      "estrato": "recuperacion",
+      "criterio": "alucinacion",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": -0.125,
+      "ic95": [
+        -0.25,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 21,
+      "b_mejor": 3,
+      "p": 0.25,
+      "p_holm": 1.0
+    },
+    {
+      "contraste": "agente_completo vs rag_sin_nivel",
+      "estrato": "recuperacion",
+      "criterio": "pertinencia",
+      "familia": "primaria",
+      "pares": 24,
+      "mejora_media": 0.0,
+      "ic95": [
+        0.0,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 24,
+      "b_mejor": 0,
+      "p": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "contraste": "agente_completo vs rag_sin_nivel",
+      "estrato": "recuperacion",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 24,
+      "mejora_media": -0.042,
+      "ic95": [
+        -0.125,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 23,
+      "b_mejor": 1,
+      "p": 1.0
+    },
+    {
+      "contraste": "agente_completo vs rag_sin_nivel",
+      "estrato": "fuera_de_corpus",
+      "criterio": "alucinacion",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": -0.333,
+      "ic95": [
+        -0.667,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 4,
+      "b_mejor": 2,
+      "p": 0.5
+    },
+    {
+      "contraste": "agente_completo vs rag_sin_nivel",
+      "estrato": "fuera_de_corpus",
+      "criterio": "pertinencia",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": -0.167,
+      "ic95": [
+        -0.5,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 5,
+      "b_mejor": 1,
+      "p": 1.0
+    },
+    {
+      "contraste": "agente_completo vs rag_sin_nivel",
+      "estrato": "fuera_de_corpus",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": -0.167,
+      "ic95": [
+        -0.5,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 5,
+      "b_mejor": 1,
+      "p": 1.0
+    },
+    {
+      "contraste": "agente_completo vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "fidelidad",
+      "familia": "exploratoria",
+      "pares": 24,
+      "mejora_media": 0.208,
+      "ic95": [
+        -0.125,
+        0.542
+      ],
+      "a_mejor": 9,
+      "empates": 10,
+      "b_mejor": 5,
+      "p": 0.424
+    },
+    {
+      "contraste": "agente_completo vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "alucinacion",
+      "familia": "exploratoria",
+      "pares": 24,
+      "mejora_media": 0.333,
+      "ic95": [
+        0.125,
+        0.542
+      ],
+      "a_mejor": 9,
+      "empates": 14,
+      "b_mejor": 1,
+      "p": 0.0215
+    },
+    {
+      "contraste": "agente_completo vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "pertinencia",
+      "familia": "exploratoria",
+      "pares": 24,
+      "mejora_media": 0.125,
+      "ic95": [
+        -0.042,
+        0.292
+      ],
+      "a_mejor": 4,
+      "empates": 19,
+      "b_mejor": 1,
+      "p": 0.375
+    },
+    {
+      "contraste": "agente_completo vs baseline",
+      "estrato": "recuperacion",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 24,
+      "mejora_media": -0.042,
+      "ic95": [
+        -0.125,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 23,
+      "b_mejor": 1,
+      "p": 1.0
+    },
+    {
+      "contraste": "agente_completo vs baseline",
+      "estrato": "fuera_de_corpus",
+      "criterio": "alucinacion",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.167,
+      "ic95": [
+        0.0,
+        0.5
+      ],
+      "a_mejor": 1,
+      "empates": 5,
+      "b_mejor": 0,
+      "p": 1.0
+    },
+    {
+      "contraste": "agente_completo vs baseline",
+      "estrato": "fuera_de_corpus",
+      "criterio": "pertinencia",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": 0.167,
+      "ic95": [
+        0.0,
+        0.5
+      ],
+      "a_mejor": 1,
+      "empates": 5,
+      "b_mejor": 0,
+      "p": 1.0
+    },
+    {
+      "contraste": "agente_completo vs baseline",
+      "estrato": "fuera_de_corpus",
+      "criterio": "artefactos",
+      "familia": "exploratoria",
+      "pares": 6,
+      "mejora_media": -0.167,
+      "ic95": [
+        -0.5,
+        0.0
+      ],
+      "a_mejor": 0,
+      "empates": 5,
+      "b_mejor": 1,
+      "p": 1.0
+    }
+  ],
+  "familia_primaria": 9
+}

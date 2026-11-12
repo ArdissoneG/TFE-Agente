@@ -1,0 +1,46 @@
+{
+  "fidelidad": {
+    "n": 19,
+    "acuerdo_exacto": 0.526,
+    "kappa_ponderado": 0.558,
+    "acuerdo_por_modelo": {
+      "phi3:mini": 0.222,
+      "llama3.1:8b": 0.8
+    }
+  },
+  "alucinacion": {
+    "n": 20,
+    "acuerdo_exacto": 0.85,
+    "kappa_ponderado": 0.7,
+    "acuerdo_por_modelo": {
+      "phi3:mini": 0.7,
+      "llama3.1:8b": 1.0
+    }
+  },
+  "pertinencia": {
+    "n": 20,
+    "acuerdo_exacto": 0.75,
+    "kappa_ponderado": 0.342,
+    "acuerdo_por_modelo": {
+      "phi3:mini": 0.7,
+      "llama3.1:8b": 0.8
+    }
+  },
+  "artefactos": {
+    "n": 20,
+    "acuerdo_exacto": 0.8,
+    "kappa_ponderado": 0.273,
+    "acuerdo_por_modelo": {
+      "phi3:mini": 0.6,
+      "llama3.1:8b": 1.0
+    }
+  },
+  "reconoce_limite": {
+    "n": 1,
+    "acuerdo_exacto": 1.0,
+    "kappa_ponderado": null,
+    "acuerdo_por_modelo": {
+      "phi3:mini": 1.0
+    }
+  }
+}
