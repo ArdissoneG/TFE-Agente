@@ -1,0 +1,57 @@
+{
+  "fidelidad": {
+    "n": 24,
+    "acuerdo_exacto": 0.792,
+    "kappa_ponderado": 0.796,
+    "diferencia_media_revisor_menos_autor": -0.125,
+    "acuerdo_por_fuente": {
+      "v1 llama3.1:8b": 0.875,
+      "v1 phi3:mini": 0.5,
+      "ablacion llama3.1:8b": 1.0
+    }
+  },
+  "alucinacion": {
+    "n": 30,
+    "acuerdo_exacto": 0.9,
+    "kappa_ponderado": 0.798,
+    "diferencia_media_revisor_menos_autor": -0.033,
+    "acuerdo_por_fuente": {
+      "v1 llama3.1:8b": 0.9,
+      "v1 phi3:mini": 1.0,
+      "ablacion llama3.1:8b": 0.8
+    }
+  },
+  "pertinencia": {
+    "n": 30,
+    "acuerdo_exacto": 0.867,
+    "kappa_ponderado": 0.688,
+    "diferencia_media_revisor_menos_autor": 0.067,
+    "acuerdo_por_fuente": {
+      "v1 llama3.1:8b": 0.9,
+      "v1 phi3:mini": 0.8,
+      "ablacion llama3.1:8b": 0.9
+    }
+  },
+  "artefactos": {
+    "n": 30,
+    "acuerdo_exacto": 0.967,
+    "kappa_ponderado": 0.911,
+    "diferencia_media_revisor_menos_autor": -0.033,
+    "acuerdo_por_fuente": {
+      "v1 llama3.1:8b": 1.0,
+      "v1 phi3:mini": 0.9,
+      "ablacion llama3.1:8b": 1.0
+    }
+  },
+  "reconoce_limite": {
+    "n": 6,
+    "acuerdo_exacto": 1.0,
+    "kappa_ponderado": 1.0,
+    "diferencia_media_revisor_menos_autor": 0.0,
+    "acuerdo_por_fuente": {
+      "v1 phi3:mini": 1.0,
+      "v1 llama3.1:8b": 1.0,
+      "ablacion llama3.1:8b": 1.0
+    }
+  }
+}
